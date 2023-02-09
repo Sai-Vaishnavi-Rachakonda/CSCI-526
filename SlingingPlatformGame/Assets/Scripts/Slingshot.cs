@@ -24,7 +24,7 @@ public class Slingshot : MonoBehaviour
     Rigidbody2D platform;
     Collider2D platformCollider;
 
-    public float force;
+    public float force; //make it 7
 
     void Start()
     {
