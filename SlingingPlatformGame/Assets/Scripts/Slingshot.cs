@@ -49,6 +49,20 @@ public class Slingshot : MonoBehaviour
 
     void Update()
     {
+        
+
+        var lineRendererPosition = lineRenderers[0].GetPosition(0);
+        
+        if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
+            lineRenderers[0].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
+            lineRenderers[1].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
+        }
+        else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
+            lineRenderers[0].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
+            lineRenderers[1].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
+        }
+
+
         if (isMouseDown)
         {
             Vector3 mousePosition = Input.mousePosition;
