@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Proyecto26;
 
 using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static long timeLine;
     void Start()
     {
         
@@ -22,7 +24,15 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))  //once the player reached the finish block
         {
+            Buttonscript.timePerParse.Stop();
+            timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
+            postToDatabase();
             SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
         }
+    }
+
+    private void postToDatabase(){
+        AnalyticsObj dbObj = new AnalyticsObj();
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/.json", dbObj);
     }
 }
