@@ -23,7 +23,7 @@ public class PathPoints : MonoBehaviour
     {
         GameObject point = Instantiate(pathTemplates[lastIndex], position, Quaternion.identity, 
             transform);
-        point.SetActive(true);
+        point.SetActive(false);
         lastPoints.Add(point);
 
         lastIndex++;
