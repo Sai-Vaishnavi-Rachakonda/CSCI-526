@@ -26,6 +26,8 @@ public class FinishLine : MonoBehaviour
         {
             Buttonscript.timePerParse.Stop();
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
+            UnityEngine.Debug.Log("HEllo stopwatch - "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"));
+             UnityEngine.Debug.Log("HEllo stopwatch - "+ timeLine.ToString());
             postToDatabase();
             SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
         }
