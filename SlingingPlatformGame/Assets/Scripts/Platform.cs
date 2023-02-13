@@ -12,9 +12,16 @@ public class Platform : MonoBehaviour
     private Vector3 lastPosition = Vector3.negativeInfinity; //set the last poistion of the platform to  neg infinit
     public Rigidbody2D platformShape;// get the variable to create the new platform.
     public float timer;
+
+    GameObject Slingshot;
+
+
+
     private void Start()
     {
         newPlatform = GetComponent<Rigidbody2D>(); // assign the platform to the var
+        
+        
     }
 
     private void Update()
@@ -41,9 +48,12 @@ public class Platform : MonoBehaviour
             if (timer>= 0.015f )
             {
                 Debug.Log("its been 2s");
+                
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
+                
+                
                 break;
             }
             // if (transform.position.y<lastPosition.y || collided) // when there is a collision or the y axis of the parabola decreases then freeze the platform

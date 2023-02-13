@@ -5,7 +5,10 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject target;
+    // public GameObject target;
+
+
+
     void Start()
     {
         
@@ -14,6 +17,8 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(target.transform.position.x, transform.position.y, -10);
+        
+        // Debug.Log(transform.scale.y);
+        // transform.position = new Vector3(target.transform.position.x, transform.position.y, -10);
     }
 }
