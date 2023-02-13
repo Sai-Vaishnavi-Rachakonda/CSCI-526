@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
         count++;
 
-        if(count>1000){
+        if(count>2000){
             
             var slingShotpositionX = Slingshot.transform.position.x;
             var slingShotpositionY = Slingshot.transform.position.y;

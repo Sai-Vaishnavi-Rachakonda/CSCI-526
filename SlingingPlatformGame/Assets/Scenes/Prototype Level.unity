@@ -579,7 +579,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.7}
+  m_Size: {x: 3, y: 2.7}
   m_EdgeRadius: 0
 --- !u!114 &788119533
 MonoBehaviour:
@@ -606,7 +606,7 @@ MonoBehaviour:
   bottomBoundary: -3.5
   platformPrefab: {fileID: 9208262240435130192, guid: a4db532eaa7644d3eb48c261168c3ca9, type: 3}
   platformPositionOffset: 0
-  force: 5
+  force: 7
 --- !u!4 &788119534
 Transform:
   m_ObjectHideFlags: 0
