@@ -19,8 +19,11 @@ public class IcePlatform : MonoBehaviour
     IEnumerator myWaitCoroutine()
     {
         yield return new WaitForSeconds(5f);// Wait for one second
+      
         GetComponent<Rigidbody2D>().GetComponent<Renderer>().enabled = false; // make old small platform disappear
-       // gameObject.SetActive(false);
+        Destroy(gameObject);
+       gameObject.SetActive(false);
+       Destroy(this.gameObject);
 
        
     }

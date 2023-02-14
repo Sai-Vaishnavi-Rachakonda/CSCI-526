@@ -54,10 +54,11 @@ public class Platform : MonoBehaviour
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
-                Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
-                
-                
+                Destroy(newPlatform);
+                gameObject.SetActive(false);
+                Destroy(this.gameObject);
+                Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 break;
             }
             // if (transform.position.y<lastPosition.y || collided) // when there is a collision or the y axis of the parabola decreases then freeze the platform
