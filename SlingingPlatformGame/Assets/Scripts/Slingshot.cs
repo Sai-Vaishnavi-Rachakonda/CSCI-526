@@ -17,7 +17,7 @@ public class Slingshot : MonoBehaviour
 
     bool isMouseDown;
 
-    public GameObject platformPrefab;
+    public GameObject[] platformPrefab;
 
     public float platformPositionOffset;
 
@@ -25,20 +25,23 @@ public class Slingshot : MonoBehaviour
     Collider2D platformCollider;
 
     public float force;
-
+    private Vector3 lr0;
+    private Vector3 lr1;
+    private GameObject player;
     void Start()
     {
         lineRenderers[0].positionCount = 2;
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, stripPositions[0].position);
         lineRenderers[1].SetPosition(0, stripPositions[1].position);
+        lr0 = transform.position;
 
         CreatePlatform();
     }
 
     void CreatePlatform()
     {
-        platform = Instantiate(platformPrefab).GetComponent<Rigidbody2D>();
+        platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,2)]).GetComponent<Rigidbody2D>();
         platformCollider = platform.GetComponent<Collider2D>();
         platformCollider.enabled = false;
 
@@ -52,16 +55,25 @@ public class Slingshot : MonoBehaviour
         
 
         var lineRendererPosition = lineRenderers[0].GetPosition(0);
+        var lineRendererPosition1 = lineRenderers[1].GetPosition(0);
+        
+
+        var nposSling = transform.position;
+        var change = nposSling - lr0;
         
         if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
-            lineRenderers[0].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
-            lineRenderers[1].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
-        }
-        else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
-            lineRenderers[0].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
-            lineRenderers[1].SetPosition(0, new Vector3(transform.position.x+0.38f,transform.position.y+1.0752f,transform.position.z-0.00071f));
+            Debug.Log("ew;lk;lkds;lk");
+            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
         }
 
+        else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
+            Debug.Log("ew;lk;lkds;lk");
+            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
+        }
+
+        lr0 = transform.position;
 
         if (isMouseDown)
         {

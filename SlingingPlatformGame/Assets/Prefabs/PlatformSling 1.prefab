@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7318848877859278332}
   - component: {fileID: -6665534934248732921}
   m_Layer: 0
-  m_Name: PlatformSling
+  m_Name: PlatformSling 1
   m_TagString: PlatformPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: d919a4638f2db4fc5b12ae0632975e46, type: 3}
-  m_Color: {r: 0.6415094, g: 0.60822356, b: 0.60822356, a: 1}
+  m_Color: {r: 0.0045834924, g: 0.8244521, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collided: 0
-  platformShape: {fileID: 9208262240435130192, guid: 261db434922dc4ae9bcd6a0bda36a143, type: 3}
+  platformShape: {fileID: -6665534934248732921, guid: 1cc11fe5dc7d0413cb6a6441e70efedd, type: 3}
   timer: 0
 --- !u!50 &-6665534934248732921
 Rigidbody2D:

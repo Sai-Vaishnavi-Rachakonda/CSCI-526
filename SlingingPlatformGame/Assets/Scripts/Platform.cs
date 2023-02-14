@@ -45,13 +45,17 @@ public class Platform : MonoBehaviour
             //     Debug.Log("clickedd");
             // }
             //
-            if (timer>= 0.015f )
+            // if (timer >= 0.019f ) //for runtime in unity
+                if (timer >= 0.09f ) // for webGl
             {
                 Debug.Log("its been 2s");
                 
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
+                // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
+                newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
                 Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
+                platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 
                 
                 break;
@@ -64,7 +68,8 @@ public class Platform : MonoBehaviour
             //     Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
             //     break;
             // }
-            timer += 0.90F * Time.deltaTime;
+            timer += 0.90f * Time.deltaTime;
+            Debug.Log(timer);
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             lastPosition = transform.position; //store the latest position of the platform for comparision in the above if.
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
