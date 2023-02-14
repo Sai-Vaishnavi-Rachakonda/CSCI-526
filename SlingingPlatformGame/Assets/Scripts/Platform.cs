@@ -35,12 +35,8 @@ public class Platform : MonoBehaviour
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
                 Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
-<<<<<<< Updated upstream
-=======
                 platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 
-                
->>>>>>> Stashed changes
                 break;
             }
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
