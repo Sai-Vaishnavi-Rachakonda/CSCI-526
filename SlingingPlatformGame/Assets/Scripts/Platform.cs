@@ -45,13 +45,17 @@ public class Platform : MonoBehaviour
             //     Debug.Log("clickedd");
             // }
             //
-            if (timer>= 0.09f )
+            // if (timer >= 0.019f ) //for runtime in unity
+                if (timer >= 0.09f ) // for webGl
             {
                 Debug.Log("its been 2s");
                 
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
+                // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
+                newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
                 Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
+                platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 
                 
                 break;

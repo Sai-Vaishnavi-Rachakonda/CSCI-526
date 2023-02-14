@@ -29,7 +29,14 @@ public class FinishLine : MonoBehaviour
             UnityEngine.Debug.Log("HEllo stopwatch - "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"));
              UnityEngine.Debug.Log("HEllo stopwatch - "+ timeLine.ToString());
             postToDatabase();
-            SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
+            if (player_script.ScoreNum == 2)
+            {
+                SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
+            }
+            else
+            {
+                Debug.Log("LoST!1");
+            }
         }
     }
 
