@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6665534934248732921}
   m_Layer: 0
   m_Name: PlatformSling
-  m_TagString: Ground
+  m_TagString: PlatformPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collided: 0
   platformShape: {fileID: 9208262240435130192, guid: 261db434922dc4ae9bcd6a0bda36a143, type: 3}
+  timer: 0
 --- !u!50 &-6665534934248732921
 Rigidbody2D:
   serializedVersion: 4
