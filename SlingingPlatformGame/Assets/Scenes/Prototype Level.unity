@@ -1706,7 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jump: 450
+  jump: 500
   isJumping: 0
 --- !u!50 &2056053471
 Rigidbody2D:

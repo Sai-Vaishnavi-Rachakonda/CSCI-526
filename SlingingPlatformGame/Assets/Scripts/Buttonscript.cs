@@ -15,7 +15,7 @@ public class Buttonscript : MonoBehaviour
     {
         SceneManager.LoadScene(gameStartScene);
         timePerParse = Stopwatch.StartNew();
-        Timer.text = "Timer: 00:00";
+        // Timer.text = "Timer: 00:00";
     }
 
      // Update is called once per frame

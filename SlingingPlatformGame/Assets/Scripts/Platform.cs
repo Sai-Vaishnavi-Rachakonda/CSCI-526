@@ -45,7 +45,7 @@ public class Platform : MonoBehaviour
             //     Debug.Log("clickedd");
             // }
             //
-            if (timer>= 0.007f )
+            if (timer>= 0.09f )
             {
                 Debug.Log("its been 2s");
                 
@@ -65,6 +65,7 @@ public class Platform : MonoBehaviour
             //     break;
             // }
             timer += 0.90f * Time.deltaTime;
+            Debug.Log(timer);
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             lastPosition = transform.position; //store the latest position of the platform for comparision in the above if.
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
