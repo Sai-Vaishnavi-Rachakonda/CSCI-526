@@ -13,11 +13,13 @@ public class IcePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // gameObject.GetComponent<Renderer>().material.color = new Color(curColor.r, curColor.g, curColor.b, 1);
+
     }
 
     IEnumerator myWaitCoroutine()
     {
-        yield return new WaitForSeconds(5f); // Wait for one second
+        yield return new WaitForSeconds(7f); // Wait for one second
 
         GetComponent<Rigidbody2D>().GetComponent<Renderer>().enabled = false; // make old small platform disappear
         gameObject.SetActive(false);
