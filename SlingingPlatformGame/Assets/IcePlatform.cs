@@ -8,24 +8,19 @@ public class IcePlatform : MonoBehaviour
     void Start()
     {
         StartCoroutine(myWaitCoroutine());
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
+
     IEnumerator myWaitCoroutine()
     {
-        yield return new WaitForSeconds(5f);// Wait for one second
-      
+        yield return new WaitForSeconds(5f); // Wait for one second
+
         GetComponent<Rigidbody2D>().GetComponent<Renderer>().enabled = false; // make old small platform disappear
-        Destroy(gameObject);
-       gameObject.SetActive(false);
-       Destroy(this.gameObject);
-
-       
+        gameObject.SetActive(false);
+        // Destroy(gameObject,50f);
     }
-
 }
