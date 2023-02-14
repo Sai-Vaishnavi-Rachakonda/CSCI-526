@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collided: 0
-  platformShape: {fileID: -6665534934248732921, guid: 1cc11fe5dc7d0413cb6a6441e70efedd, type: 3}
+  platformShape: {fileID: 8892281177357756097, guid: 1cc11fe5dc7d0413cb6a6441e70efedd, type: 3}
   timer: 0
 --- !u!50 &-6665534934248732921
 Rigidbody2D:
