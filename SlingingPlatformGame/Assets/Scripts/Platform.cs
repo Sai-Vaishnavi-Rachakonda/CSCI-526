@@ -30,7 +30,7 @@ public class Platform : MonoBehaviour
 
     public void Release()
     {
-        PathPoints.instance.Clear();
+        // PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints()); //create the points traveled by the platform
     }
     
@@ -39,16 +39,16 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("its been " + timer);
+            // Debug.Log("its been " + timer);
             // if (Input.GetMouseButtonDown(0))
             // {
             //     Debug.Log("clickedd");
             // }
             //
-            // if (timer >= 0.019f ) //for runtime in unity
-                if (timer >= 0.10f ) // for webGl
+            if (timer >= 0.012f ) //for runtime in unity
+                // if (timer >= 0.10f ) // for webGl
             {
-                Debug.Log("its been 2s");
+                // Debug.Log("its been 2s");
                 
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
@@ -70,7 +70,7 @@ public class Platform : MonoBehaviour
             //     break;
             // }
             timer += 0.90f * Time.deltaTime;
-            Debug.Log(timer);
+            // Debug.Log(timer);
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             lastPosition = transform.position; //store the latest position of the platform for comparision in the above if.
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
