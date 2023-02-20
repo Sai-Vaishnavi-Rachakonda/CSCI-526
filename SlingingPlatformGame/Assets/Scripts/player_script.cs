@@ -11,7 +11,7 @@ public class player_script : MonoBehaviour
     void Start()
     {
         ScoreNum = 0;
-        MyscoreText.text = "Energy level : " + ScoreNum + "/2";
+        // MyscoreText.text = "Energy level : " + ScoreNum + "/2";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +20,7 @@ public class player_script : MonoBehaviour
         {
             ScoreNum += 1;
             Destroy(collision.gameObject);
-            MyscoreText.text = "Energy level : " + ScoreNum + "/2";
+            // MyscoreText.text = "Energy level : " + ScoreNum + "/2";
         }
     }
 }

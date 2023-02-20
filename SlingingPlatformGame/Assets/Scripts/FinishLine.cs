@@ -9,12 +9,9 @@ public class FinishLine : MonoBehaviour
 {
     // Start is called before the first frame update
     public static long timeLine;
-<<<<<<< HEAD
     private AnalyticsObj dbObj = new AnalyticsObj();
     private static DateTime dt = DateTime.Now;
-=======
     public string nextScene;
->>>>>>> 438526d (Added prefabs and new levels.)
     void Start()
     {
         
@@ -35,7 +32,7 @@ public class FinishLine : MonoBehaviour
             dbObj.setTimeLine(timeLine);
             dbObj.setOutcome(1);
             postToDatabase(dbObj);
-            if (player_script.ScoreNum > 0)
+            if (player_script.ScoreNum == 2)
             {
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
             }
