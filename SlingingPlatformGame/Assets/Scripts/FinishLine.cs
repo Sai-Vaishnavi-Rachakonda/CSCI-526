@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour
     private AnalyticsObj dbObj = new AnalyticsObj();
     private static DateTime dt = DateTime.Now;
     public string nextScene;
+    public int score;
     void Start()
     {
         
@@ -32,7 +33,7 @@ public class FinishLine : MonoBehaviour
             dbObj.setTimeLine(timeLine);
             dbObj.setOutcome(1);
             postToDatabase(dbObj);
-            if (player_script.ScoreNum == 2)
+            if (player_script.ScoreNum >= score)
             {
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
             }
