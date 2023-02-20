@@ -10,6 +10,7 @@ public class FinishLine : MonoBehaviour
     // Start is called before the first frame update
     public static long timeLine;
     public string nextScene;
+    public int score;
     void Start()
     {
         
@@ -30,7 +31,7 @@ public class FinishLine : MonoBehaviour
             UnityEngine.Debug.Log("HEllo stopwatch - "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"));
              UnityEngine.Debug.Log("HEllo stopwatch - "+ timeLine.ToString());
             postToDatabase();
-            if (player_script.ScoreNum > 0)
+            if (player_script.ScoreNum >= score)
             {
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
             }

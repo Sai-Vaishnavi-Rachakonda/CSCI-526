@@ -13,7 +13,7 @@ public class Buttonscript : MonoBehaviour
     public TextMeshProUGUI Timer;
     public void StartGame()
     {
-        SceneManager.LoadScene(gameStartScene);
+        SceneManager.LoadScene("Level 0");
         timePerParse = Stopwatch.StartNew();
         // Timer.text = "Timer: 00:00";
     }
