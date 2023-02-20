@@ -13,6 +13,7 @@ public class FinishLine : MonoBehaviour
     public int score;
     private AnalyticsObj dbObj = new AnalyticsObj();
     private static DateTime dt = DateTime.Now;
+    public string nextScene;
     void Start()
     {
         
