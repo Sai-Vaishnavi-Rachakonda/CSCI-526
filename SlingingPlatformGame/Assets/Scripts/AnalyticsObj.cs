@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class AnalyticsObj : MonoBehaviour
 {
-    public int replayNumber;
     public long levelTimeLine;
+    public string userID;
+    public int  outcome;
 
     public AnalyticsObj(){
-        replayNumber = ReloadScene.replayNumber;
-        levelTimeLine = FinishLine.timeLine;
+        userID = Buttonscript.userID;
     }
+
+    public void setOutcome (int outcome){
+        this.outcome = outcome;
+    }
+
+    public void setTimeLine (long timeLine){
+        this.levelTimeLine = timeLine;
+    }
+
 }
