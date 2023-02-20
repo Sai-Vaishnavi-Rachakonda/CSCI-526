@@ -9,6 +9,8 @@ public class FinishLine : MonoBehaviour
 {
     // Start is called before the first frame update
     public static long timeLine;
+    private AnalyticsObj dbObj = new AnalyticsObj();
+    private static DateTime dt = DateTime.Now;
     void Start()
     {
         
@@ -26,9 +28,9 @@ public class FinishLine : MonoBehaviour
         {
             Buttonscript.timePerParse.Stop();
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
-            UnityEngine.Debug.Log("HEllo stopwatch - "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"));
-             UnityEngine.Debug.Log("HEllo stopwatch - "+ timeLine.ToString());
-            postToDatabase();
+            dbObj.setTimeLine(timeLine);
+            dbObj.setOutcome(1);
+            postToDatabase(dbObj);
             if (player_script.ScoreNum == 2)
             {
                 SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
@@ -40,8 +42,7 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    private void postToDatabase(){
-        AnalyticsObj dbObj = new AnalyticsObj();
-        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/.json", dbObj);
+    public static void postToDatabase(AnalyticsObj dbObj){
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/pre-midterm/"+dt.Month+".json", dbObj);
     }
 }
