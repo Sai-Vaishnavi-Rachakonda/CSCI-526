@@ -7,9 +7,10 @@ public class AnalyticsObj : MonoBehaviour
     public long levelTimeLine;
     public string userID;
     public int  outcome;
-
-    public AnalyticsObj(){
-        userID = Buttonscript.userID;
+    public int  level;
+    
+    public void setuserID (string userID){
+        this.userID = userID;
     }
 
     public void setOutcome (int outcome){
@@ -18,6 +19,10 @@ public class AnalyticsObj : MonoBehaviour
 
     public void setTimeLine (long timeLine){
         this.levelTimeLine = timeLine;
+    }
+
+    public void setLevel (int level){
+        this.level = level;
     }
 
 }
