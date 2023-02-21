@@ -11,6 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private float move;
     public bool isJumping;
 
+    private float BoundaryTop = Screen.height;
+    private float BoundaryBottom = -Screen.height;
+    public float BoundaryRight = Screen.width;
+    public float BoundaryLeft= -Screen.width;
+    
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
@@ -52,6 +57,20 @@ public class PlayerMovement : MonoBehaviour
                 Camera.transform.position = new Vector3(Camera.transform.position.x - Time.deltaTime*diff, Camera.transform.position.y, Camera.transform.position.z);
         }
 
+        //restrict player top and bottom of boundary
+        // if (transform.position.y >= BoundaryTop) {
+        //     transform.position = new Vector3(transform.position.x, BoundaryTop, 0);
+        // }
+        // else if(transform.position.y <= BoundaryBottom) {
+        //     transform.position = new Vector3(transform.position.x, BoundaryBottom, 0);
+        // }
+        // //restrict player top and bottom of boundary
+        // if (transform.position.x >= BoundaryRight) {
+        //     transform.position = new Vector3(BoundaryRight, transform.position.y, 0);
+        // }
+        // else if(transform.position.x <= BoundaryLeft) {
+        //     transform.position = new Vector3(BoundaryLeft, transform.position.y, 0);
+        // }
         
     }
 

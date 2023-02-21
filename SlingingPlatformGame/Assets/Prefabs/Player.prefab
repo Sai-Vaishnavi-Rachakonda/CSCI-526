@@ -124,6 +124,9 @@ MonoBehaviour:
   speed: 7
   jump: 500
   isJumping: 0
+  BoundaryBottom: 0
+  BoundaryRight: 0
+  BoundaryLeft: 0
 --- !u!61 &1974054790608611349
 BoxCollider2D:
   m_ObjectHideFlags: 0
