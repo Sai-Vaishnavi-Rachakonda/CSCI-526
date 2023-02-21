@@ -11,7 +11,7 @@ public class ReloadScene : MonoBehaviour
     // private System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
     public static System.Diagnostics.Stopwatch timerParse;
     public static long timeLine;
-    private AnalyticsObj dbObj = new AnalyticsObj();
+    // private AnalyticsObj dbObj = new AnalyticsObj();
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player")) //when the player hits the red ground.
@@ -24,9 +24,9 @@ public class ReloadScene : MonoBehaviour
             if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
                 Timer.text = "Timer: "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
             }
-            dbObj.setTimeLine(timeLine);
-            dbObj.setOutcome(0);
-            FinishLine.postToDatabase(dbObj);
+            Buttonscript.dbObj.setTimeLine(timeLine);
+            Buttonscript.dbObj.setOutcome(0);
+            FinishLine.postToDatabase(Buttonscript.dbObj);
         }
     }
 }

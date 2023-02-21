@@ -11,6 +11,7 @@ public class Buttonscript : MonoBehaviour
     private System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
     public static System.Diagnostics.Stopwatch timePerParse;
     public TextMeshProUGUI Timer;
+    public static AnalyticsObj dbObj = new AnalyticsObj();
     public static string userID; 
     public void StartGame()
     {
@@ -23,6 +24,9 @@ public class Buttonscript : MonoBehaviour
             PlayerPrefs.Save();
         }
         userID = PlayerPrefs.GetString("userID");
+        dbObj.setLevel(0);
+        dbObj.setuserID(userID);
+
     }
 
     // Update is called once per frame
