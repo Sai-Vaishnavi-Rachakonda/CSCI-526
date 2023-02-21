@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using TMPro;
+using Debug = UnityEngine.Debug;
 
 public class ReloadScene : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ReloadScene : MonoBehaviour
             }
             Buttonscript.dbObj.setTimeLine(timeLine);
             Buttonscript.dbObj.setOutcome(0);
+            Debug.Log("lksjlkj"+Buttonscript.dbObj.platformCords);
             FinishLine.postToDatabase(Buttonscript.dbObj);
         }
     }

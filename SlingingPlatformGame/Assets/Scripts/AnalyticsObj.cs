@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AnalyticsObj : MonoBehaviour
@@ -8,6 +9,8 @@ public class AnalyticsObj : MonoBehaviour
     public string userID;
     public int  outcome;
     public int  level;
+    public List<Platform.PositionCords> platformCords = new List<Platform.PositionCords>();
+
     
     public void setuserID (string userID){
         this.userID = userID;
@@ -25,4 +28,10 @@ public class AnalyticsObj : MonoBehaviour
         this.level = level;
     }
 
+    public void setPlatformCords(Platform.PositionCords cords)
+    {
+        Debug.Log(""+cords);
+        this.platformCords.Add(cords);
+        Debug.Log(""+this.platformCords);
+    }
 }

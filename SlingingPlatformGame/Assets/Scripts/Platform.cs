@@ -13,6 +13,18 @@ public class Platform : MonoBehaviour
     public float timer;
     GameObject Slingshot;
 
+    
+    public class PositionCords
+    {
+        public float x { get; set; }
+        public float y { get; set; }
+        public PositionCords(){}
+        public PositionCords(float x, float y)
+        {
+            x = x;
+            y = y;
+        }
+    }
 
 
     private void Start()
@@ -35,13 +47,18 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-            // if (timer >= 0.012f ) //for runtime in unity
-            if (timer >= 0.10f ) // for webGl
+            if (timer >= 0.012f ) //for runtime in unity
+            // if (timer >= 0.10f ) // for webGl
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
+                var pos = new PositionCords();
+                pos.x = transform.position.x;
+                pos.y = transform.position.y;
+                Debug.Log(""+pos);
+                Buttonscript.dbObj.setPlatformCords(pos);
                 Destroy(newPlatform);
                 gameObject.SetActive(false);
                 Destroy(this.gameObject);
