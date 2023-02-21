@@ -42,6 +42,7 @@ public class FinishLine : MonoBehaviour
                 Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
                 Buttonscript.timePerParse.Reset();
+                Buttonscript.dbObj.resetPlatformCords();
                 Buttonscript.timePerParse.Start();
                 
             }

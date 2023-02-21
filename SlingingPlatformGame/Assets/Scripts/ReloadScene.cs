@@ -27,8 +27,8 @@ public class ReloadScene : MonoBehaviour
             }
             Buttonscript.dbObj.setTimeLine(timeLine);
             Buttonscript.dbObj.setOutcome(0);
-            Debug.Log("lksjlkj"+Buttonscript.dbObj.platformCords);
             FinishLine.postToDatabase(Buttonscript.dbObj);
+            Buttonscript.dbObj.resetPlatformCords();
         }
     }
 }

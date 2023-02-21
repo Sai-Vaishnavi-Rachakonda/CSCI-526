@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnalyticsObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnalyticsObj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FinishLine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReloadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slingshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slingshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

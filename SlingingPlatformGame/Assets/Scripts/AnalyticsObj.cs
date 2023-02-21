@@ -35,4 +35,9 @@ public class AnalyticsObj : MonoBehaviour
         this.platformCords +="{"+cords+"},";
         Debug.Log(this.platformCords);
     }
+
+    public void resetPlatformCords()
+    {
+        this.platformCords = "";
+    }
 }

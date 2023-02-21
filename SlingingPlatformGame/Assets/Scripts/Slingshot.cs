@@ -147,7 +147,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
-        vector.y = Mathf.Clamp(vector.y, bottomBoundary, topBoundary);
+        vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
         
         return vector;
     }
