@@ -9,7 +9,7 @@ public class AnalyticsObj : MonoBehaviour
     public string userID;
     public int  outcome;
     public int  level;
-    public List<Platform.PositionCords> platformCords = new List<Platform.PositionCords>();
+    public string platformCords = "";
 
     
     public void setuserID (string userID){
@@ -28,10 +28,11 @@ public class AnalyticsObj : MonoBehaviour
         this.level = level;
     }
 
-    public void setPlatformCords(Platform.PositionCords cords)
+    // public void setPlatformCords(Platform.PositionCords cords)
+    public void setPlatformCords(string cords)
+
     {
-        Debug.Log(""+cords);
-        this.platformCords.Add(cords);
-        Debug.Log(""+this.platformCords);
+        this.platformCords +="{"+cords+"},";
+        Debug.Log(this.platformCords);
     }
 }

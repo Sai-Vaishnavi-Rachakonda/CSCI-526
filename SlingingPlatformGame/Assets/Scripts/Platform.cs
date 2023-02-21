@@ -14,17 +14,17 @@ public class Platform : MonoBehaviour
     GameObject Slingshot;
 
     
-    public class PositionCords
-    {
-        public float x { get; set; }
-        public float y { get; set; }
-        public PositionCords(){}
-        public PositionCords(float x, float y)
-        {
-            x = x;
-            y = y;
-        }
-    }
+    // public class PositionCords
+    // {
+    //     public float x { get; set; }
+    //     public float y { get; set; }
+    //     public PositionCords(){}
+    //     public PositionCords(float x, float y)
+    //     {
+    //         x = x;
+    //         y = y;
+    //     }
+    // }
 
 
     private void Start()
@@ -54,9 +54,10 @@ public class Platform : MonoBehaviour
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
-                var pos = new PositionCords();
-                pos.x = transform.position.x;
-                pos.y = transform.position.y;
+                // var pos = new PositionCords();
+                var pos = "";
+                pos += "x:"+transform.position.x.ToString();
+                pos += ",y:"+transform.position.y.ToString();
                 Debug.Log(""+pos);
                 Buttonscript.dbObj.setPlatformCords(pos);
                 Destroy(newPlatform);
