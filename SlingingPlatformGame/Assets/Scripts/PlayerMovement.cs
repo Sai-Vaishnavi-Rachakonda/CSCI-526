@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     private GameObject[] platforms;  // @author: Chirag
 
+    public float BoundaryTop;
+    public float BoundaryBottom;
+    public float BoundaryRight;
+    public float BoundaryLeft;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,6 +58,20 @@ public class PlayerMovement : MonoBehaviour
                 Camera.transform.position = new Vector3(Camera.transform.position.x - Time.deltaTime*diff, Camera.transform.position.y, Camera.transform.position.z);
         }
 
+        //restrict player top and bottom of boundary
+        if (transform.position.y >= BoundaryTop) {
+            transform.position = new Vector3(transform.position.x, BoundaryTop, 0);
+        }
+        else if(transform.position.y <= BoundaryBottom) {
+            transform.position = new Vector3(transform.position.x, BoundaryBottom, 0);
+        }
+        //restrict player top and bottom of boundary
+        if (transform.position.x >= BoundaryRight) {
+            transform.position = new Vector3(BoundaryRight, transform.position.y, 0);
+        }
+        else if(transform.position.x <= BoundaryLeft) {
+            transform.position = new Vector3(BoundaryLeft, transform.position.y, 0);
+        }
         
     }
 

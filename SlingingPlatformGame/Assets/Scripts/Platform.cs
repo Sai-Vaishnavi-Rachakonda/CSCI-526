@@ -26,7 +26,7 @@ public class Platform : MonoBehaviour
 
     public void Release()
     {
-        // PathPoints.instance.Clear();
+        PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints()); //create the points traveled by the platform
     }
     
@@ -35,8 +35,8 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-            // if (timer >= 0.012f ) //for runtime in unity
-                if (timer >= 0.10f ) // for webGl
+            if (timer >= 0.019f ) //for runtime in unity
+               // if (timer >= 0.10f ) // for webGl
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
@@ -58,5 +58,13 @@ public class Platform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collided = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("powerup"))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        }
     }
 }

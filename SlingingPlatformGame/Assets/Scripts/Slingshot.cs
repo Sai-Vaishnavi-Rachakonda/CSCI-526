@@ -14,6 +14,7 @@ public class Slingshot : MonoBehaviour
     public float maxLength;
 
     public float bottomBoundary;
+    public float topBoundary;
 
     bool isMouseDown;
 
@@ -146,7 +147,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
-        vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
+        vector.y = Mathf.Clamp(vector.y, bottomBoundary, topBoundary);
         return vector;
     }
 }
