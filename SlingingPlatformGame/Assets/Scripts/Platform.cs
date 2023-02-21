@@ -45,7 +45,7 @@ public class Platform : MonoBehaviour
             //     Debug.Log("clickedd");
             // }
             //
-            if (timer >= 0.012f ) //for runtime in unity
+            if (timer >= 0.032f ) //for runtime in unity
                 // if (timer >= 0.10f ) // for webGl
             {
                 // Debug.Log("its been 2s");

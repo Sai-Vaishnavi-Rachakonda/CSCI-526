@@ -788,6 +788,7 @@ MonoBehaviour:
   platformPrefab:
   - {fileID: 9208262240435130192, guid: 3898e622b7c8344b89032f1f600f82af, type: 3}
   - {fileID: 9208262240435130192, guid: a4db532eaa7644d3eb48c261168c3ca9, type: 3}
+  - {fileID: 9208262240435130192, guid: a57041df4ff4f3048b7efddbb8b350df, type: 3}
   platformPositionOffset: 0
   force: 7
 --- !u!4 &788119534
