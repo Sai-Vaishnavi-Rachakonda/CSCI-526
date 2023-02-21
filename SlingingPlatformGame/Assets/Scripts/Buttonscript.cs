@@ -14,7 +14,7 @@ public class Buttonscript : MonoBehaviour
     public static string userID; 
     public void StartGame()
     {
-        SceneManager.LoadScene(gameStartScene);
+        SceneManager.LoadScene("Level 0");
         timePerParse = Stopwatch.StartNew();
         if(!PlayerPrefs.HasKey("userID")){
             System.Guid myuuid = System.Guid.NewGuid();

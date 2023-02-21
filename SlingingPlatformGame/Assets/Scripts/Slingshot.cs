@@ -41,7 +41,8 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
-        platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,3)]).GetComponent<Rigidbody2D>();
+        var platformPrefabLen = platformPrefab.Length;
+        platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         platformCollider = platform.GetComponent<Collider2D>();
         platformCollider.enabled = false;
 
