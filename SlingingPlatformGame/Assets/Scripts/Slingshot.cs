@@ -14,10 +14,11 @@ public class Slingshot : MonoBehaviour
     public float maxLength;
 
     public float bottomBoundary;
+    public float topBoundary = Screen.height;
 
     bool isMouseDown;
 
-    public GameObject platformPrefab;
+    public GameObject[] platformPrefab;
 
     public float platformPositionOffset;
 
@@ -41,7 +42,8 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
-        platform = Instantiate(platformPrefab).GetComponent<Rigidbody2D>();
+        var platformPrefabLen = platformPrefab.Length;
+        platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         platformCollider = platform.GetComponent<Collider2D>();
         platformCollider.enabled = false;
 
@@ -62,13 +64,13 @@ public class Slingshot : MonoBehaviour
         var change = nposSling - lr0;
         
         if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
-            Debug.Log("ew;lk;lkds;lk");
+            
             lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
             lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
         }
 
         else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
-            Debug.Log("ew;lk;lkds;lk");
+            
             lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
             lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
         }
@@ -146,6 +148,7 @@ public class Slingshot : MonoBehaviour
     Vector3 ClampBoundary(Vector3 vector)
     {
         vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
+        
         return vector;
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - PlatformPrefab
+  - powerup
   layers:
   - Default
   - TransparentFX
