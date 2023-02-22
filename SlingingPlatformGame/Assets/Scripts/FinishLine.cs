@@ -40,7 +40,7 @@ public class FinishLine : MonoBehaviour
             // if (player_script.ScoreNum >= score)
             Debug.Log(player_script.currentHealth);
             Debug.Log(player_script.MaxHealth);
-            if(player_script.currentHealth ==  player_script.MaxHealth)
+            if(player_script.currentHealth >=  player_script.MaxHealth)
             {
                 Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
