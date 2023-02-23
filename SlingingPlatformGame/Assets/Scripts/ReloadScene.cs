@@ -17,9 +17,12 @@ public class ReloadScene : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) //when the player hits the red ground.
         {
+            
+            
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);// reloads the scene from the start
+            //TODO: change the analytics code to sync the addition of a checkpoint.
             Buttonscript.timePerParse.Stop();
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);// reloads the scene from the start
             Buttonscript.timePerParse.Reset();
             Buttonscript.timePerParse.Start();
             if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
