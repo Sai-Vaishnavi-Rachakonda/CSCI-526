@@ -92,7 +92,7 @@ public class Slingshot : MonoBehaviour
 
             if (platformCollider)
             {
-                platformCollider.enabled = true;
+                platformCollider.enabled = false;  // @author: Chirag
             }
         }
         else

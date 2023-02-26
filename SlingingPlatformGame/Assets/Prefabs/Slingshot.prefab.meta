@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: e1e64a11c87e4403e97265f8082e4f0c
+=======
 guid: e1e64a11c87e4403e97265f8082e4f0c
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+>>>>>>> main
