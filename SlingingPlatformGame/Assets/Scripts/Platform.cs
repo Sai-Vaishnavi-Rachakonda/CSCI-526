@@ -47,19 +47,8 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-<<<<<<< Updated upstream
-            // Debug.Log("its been " + timer);
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     Debug.Log("clickedd");
-            // }
-            //
-            if (timer >= 0.012f ) //for runtime in unity
-                // if (timer >= 0.10f ) // for webGl
-=======
             if (timer >= 0.012f ) //for runtime in unity
             // if (timer >= 0.10f ) // for webGl
->>>>>>> Stashed changes
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
