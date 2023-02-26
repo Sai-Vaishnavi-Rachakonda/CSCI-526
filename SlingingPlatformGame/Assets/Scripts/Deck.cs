@@ -33,6 +33,12 @@ public class Deck : MonoBehaviour
 
     void OnMouseDown()
     {
+        script.selectedPlatform = platformType;
+        script.CreatePlatformFromIndex();
+    }
+
+    public void DecreaseCount()
+    {
         if (textMesh != null)
         {
             // Reduce the counter by 1 and update the TextMesh text
@@ -40,8 +46,6 @@ public class Deck : MonoBehaviour
             {
                 counter--;
                 textMesh.text = counter.ToString();
-                script.selectedPlatform = platformType;
-                script.CreatePlatformFromIndex();
             }
         }
     }
