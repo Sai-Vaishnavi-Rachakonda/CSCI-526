@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
-    private GameObject[] platforms;  // @author: Chirag
+    private Collision2D currentPlatform;  // @author: Chirag
     public Vector3 respawnPosition;
 
     void Start()
