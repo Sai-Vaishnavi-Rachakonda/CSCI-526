@@ -64,6 +64,7 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   maxLength: 3
   bottomBoundary: -3.5
+  topBoundary: 64
   platformPrefab:
   - {fileID: 9208262240435130192, guid: a4db532eaa7644d3eb48c261168c3ca9, type: 3}
   platformPositionOffset: 0
