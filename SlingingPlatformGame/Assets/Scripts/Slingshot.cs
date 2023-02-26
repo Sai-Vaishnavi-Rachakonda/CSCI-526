@@ -94,6 +94,25 @@ public class Slingshot : MonoBehaviour
             {
                 platformCollider.enabled = false;  // @author: Chirag
             }
+
+            Vector3 platformForce = (currentPosition - center.position) * force * -1;
+
+            // simulate the trajectory of the projectile
+            Vector3[] positions = new Vector3[8];
+            for (int i = 0; i < positions.Length; i++)
+            {
+                float t = i / (float)positions.Length;
+                positions[i] = currentPosition + platformForce * t + Physics.gravity * t * t / 2f;
+            }
+
+            // draw the trajectory line using a LineRenderer component
+            LineRenderer lineRenderer = GetComponent<LineRenderer>();
+            lineRenderer.positionCount = positions.Length;
+            for (int i = 0; i < positions.Length; i++)
+            {
+                lineRenderer.SetPosition(i, positions[i]);
+            }
+
         }
         else
         {
