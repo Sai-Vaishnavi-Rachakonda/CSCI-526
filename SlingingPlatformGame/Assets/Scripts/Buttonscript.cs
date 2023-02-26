@@ -11,14 +11,25 @@ public class Buttonscript : MonoBehaviour
     private System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
     public static System.Diagnostics.Stopwatch timePerParse;
     public TextMeshProUGUI Timer;
+    public static AnalyticsObj dbObj = new AnalyticsObj();
+    public static string userID; 
     public void StartGame()
     {
-        SceneManager.LoadScene(gameStartScene);
+        SceneManager.LoadScene("Level 0");
         timePerParse = Stopwatch.StartNew();
-        // Timer.text = "Timer: 00:00";
+        if(!PlayerPrefs.HasKey("userID")){
+            System.Guid myuuid = System.Guid.NewGuid();
+            string myuuidAsString = myuuid.ToString();
+            PlayerPrefs.SetString("userID", myuuidAsString);
+            PlayerPrefs.Save();
+        }
+        userID = PlayerPrefs.GetString("userID");
+        dbObj.setLevel(0);
+        dbObj.setuserID(userID);
+
     }
 
-     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         if (timePerParse!= null && Timer != null && timePerParse.Elapsed != null &&  timePerParse.Elapsed.ToString("mm\\:ss")!= ""){

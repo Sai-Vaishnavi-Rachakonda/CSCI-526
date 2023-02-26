@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9208262240435130193}
   - component: {fileID: 9208262240435130028}
   - component: {fileID: 7318848877859278332}
-  - component: {fileID: 5061155147309054593}
   - component: {fileID: 8892281177357756097}
+  - component: {fileID: -7920045871850950596}
   m_Layer: 0
   m_Name: Platform 1
   m_TagString: Ground
@@ -129,18 +129,6 @@ MonoBehaviour:
   collided: 0
   platformShape: {fileID: 8892281177357756097}
   timer: 0
---- !u!114 &5061155147309054593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9208262240435130192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1f9cfda334e41debb1c9780f935adf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &8892281177357756097
 Rigidbody2D:
   serializedVersion: 4
@@ -162,3 +150,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7920045871850950596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208262240435130192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da90624d1c49c340b442e32563cf22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 10

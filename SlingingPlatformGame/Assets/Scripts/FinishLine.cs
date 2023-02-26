@@ -1,14 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Proyecto26;
+using TMPro;
 
 using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     // Start is called before the first frame update
     public static long timeLine;
+    private static DateTime dt = DateTime.Now;
+    public string nextScene;
+    public int score;
+    public TextMeshProUGUI Timer;
     void Start()
     {
         
@@ -17,7 +23,9 @@ public class FinishLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
+            Timer.text = "Timer: "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+        } 
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -26,12 +34,20 @@ public class FinishLine : MonoBehaviour
         {
             Buttonscript.timePerParse.Stop();
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
-            UnityEngine.Debug.Log("HEllo stopwatch - "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"));
-             UnityEngine.Debug.Log("HEllo stopwatch - "+ timeLine.ToString());
-            postToDatabase();
-            if (player_script.ScoreNum == 2)
+            Buttonscript.dbObj.setTimeLine(timeLine);
+            Buttonscript.dbObj.setOutcome(1);
+            postToDatabase(Buttonscript.dbObj);
+            // if (player_script.ScoreNum >= score)
+            Debug.Log(player_script.currentHealth);
+            Debug.Log(player_script.MaxHealth);
+            if(player_script.currentHealth >=  player_script.MaxHealth)
             {
-                SceneManager.LoadScene("LEVEL2"); //send the player to the next level.
+                Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
+                SceneManager.LoadScene(nextScene); //send the player to the next level.
+                Buttonscript.timePerParse.Reset();
+                Buttonscript.dbObj.resetPlatformCords();
+                Buttonscript.timePerParse.Start();
+                
             }
             else
             {
@@ -40,8 +56,9 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    private void postToDatabase(){
-        AnalyticsObj dbObj = new AnalyticsObj();
-        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/.json", dbObj);
+    
+
+    public static void postToDatabase(AnalyticsObj dbObj){
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/pre-midterm/"+dt.Month+".json", dbObj);
     }
 }

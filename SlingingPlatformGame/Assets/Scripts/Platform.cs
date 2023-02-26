@@ -9,19 +9,27 @@ public class Platform : MonoBehaviour
 
     // private Rigidbody2D newPlatform;
     private Rigidbody2D newPlatform; //create a new variable to access the new platform
-    private Vector3 lastPosition = Vector3.negativeInfinity; //set the last poistion of the platform to  neg infinit
     public Rigidbody2D platformShape;// get the variable to create the new platform.
     public float timer;
-
     GameObject Slingshot;
 
+    
+    // public class PositionCords
+    // {
+    //     public float x { get; set; }
+    //     public float y { get; set; }
+    //     public PositionCords(){}
+    //     public PositionCords(float x, float y)
+    //     {
+    //         x = x;
+    //         y = y;
+    //     }
+    // }
 
 
     private void Start()
     {
         newPlatform = GetComponent<Rigidbody2D>(); // assign the platform to the var
-        
-        
     }
 
     private void Update()
@@ -30,7 +38,7 @@ public class Platform : MonoBehaviour
 
     public void Release()
     {
-        // PathPoints.instance.Clear();
+        PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints()); //create the points traveled by the platform
     }
     
@@ -53,12 +61,16 @@ public class Platform : MonoBehaviour
             // if (timer >= 0.10f ) // for webGl
 >>>>>>> Stashed changes
             {
-                // Debug.Log("its been 2s");
-                
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
                 // Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
                 newPlatform.GetComponent<Renderer>().enabled = false; // make old small platform disappear
+                // var pos = new PositionCords();
+                var pos = "";
+                pos += "x:"+transform.position.x.ToString();
+                pos += ",y:"+transform.position.y.ToString();
+                Debug.Log(""+pos);
+                Buttonscript.dbObj.setPlatformCords(pos);
                 Destroy(newPlatform);
                 gameObject.SetActive(false);
                 Destroy(this.gameObject);
@@ -66,18 +78,8 @@ public class Platform : MonoBehaviour
                 platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 break;
             }
-            // if (transform.position.y<lastPosition.y || collided) // when there is a collision or the y axis of the parabola decreases then freeze the platform
-            // {
-            //     
-            //     newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
-            //     newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
-            //     Instantiate(platformShape, transform.position, transform.rotation); //create the new big platform
-            //     break;
-            // }
             timer += 0.90f * Time.deltaTime;
-            // Debug.Log(timer);
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
-            lastPosition = transform.position; //store the latest position of the platform for comparision in the above if.
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
         }
     }
@@ -85,5 +87,13 @@ public class Platform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collided = true;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("powerup"))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        }
     }
 }

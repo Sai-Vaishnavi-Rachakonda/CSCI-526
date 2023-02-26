@@ -11,11 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     private float move;
     public bool isJumping;
-
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
-    private Collision2D currentPlatform;  // @author: Chirag
+    private GameObject[] platforms;  // @author: Chirag
+    public Vector3 respawnPosition;
 
     void Start()
     {
@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
         Slingshot = GameObject.Find("Slingshot");
         Camera = GameObject.Find("Main Camera");  
         FinishLine = GameObject.Find("Finish");
-        
+        respawnPosition = transform.position;
+
 
     }
 
@@ -66,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -74,8 +74,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            
-
             // @author: Chirag
             if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
                 if(other.transform.position.y+1.1>transform.position.y && other.transform.position.y-0.1<=transform.position.y){
@@ -83,17 +81,45 @@ public class PlayerMovement : MonoBehaviour
                     currentPlatform = other;            
                 }
             }
+        }
 
-
+        else if (other.gameObject.CompareTag("Checkpoint Flag"))
+        {
+            Debug.Log("entred");
+            respawnPosition = transform.position;
+        }
+        
+        else if (other.gameObject.CompareTag("Lava"))
+        {
+            isJumping = false;
+            transform.position = respawnPosition;
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0);            
+              
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
+        Debug.Log(other.gameObject);
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = true;
         }
-        // throw new NotImplementedException();
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Checkpoint Flag"))
+        {
+            Debug.Log("entred");
+            respawnPosition = transform.position;
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1f, 0);
+            GameObject flag = GameObject.FindGameObjectWithTag("Flag Color");
+            SpriteRenderer flagRendered = flag.GetComponent<SpriteRenderer>();
+            flagRendered.color = Color.green;
+            isJumping = false;
+
+        }
+
     }
 }
