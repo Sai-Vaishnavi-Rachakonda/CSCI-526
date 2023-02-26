@@ -10,6 +10,7 @@ public class AnalyticsObj : MonoBehaviour
     public int  outcome;
     public int  level;
     public string platformCords = "";
+    public int platformCount = 0;
 
     
     public void setuserID (string userID){
