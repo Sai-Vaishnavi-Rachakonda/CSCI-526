@@ -33,8 +33,11 @@ public class Deck : MonoBehaviour
 
     void OnMouseDown()
     {
-        script.selectedPlatform = platformType;
-        script.CreatePlatformFromIndex();
+        if(counter > 0)
+        {
+            script.selectedPlatform = platformType;
+            script.CreatePlatformFromIndex();
+        }
     }
 
     public void DecreaseCount()
@@ -46,6 +49,11 @@ public class Deck : MonoBehaviour
             {
                 counter--;
                 textMesh.text = counter.ToString();
+            }
+            if (counter == 0)
+            {
+                textMesh.text = "X";
+                script.StopPlatform(platformType);
             }
         }
     }
