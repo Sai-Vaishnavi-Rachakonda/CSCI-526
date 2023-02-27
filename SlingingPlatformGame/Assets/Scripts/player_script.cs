@@ -28,6 +28,7 @@ public class player_script : MonoBehaviour
          {
             maxScore = 1;
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            //Debug.Log("myscore",ScoreNum);
             
          }
          else if(sceneName == "Level 1")
@@ -61,7 +62,9 @@ public class player_script : MonoBehaviour
         //     Destroy(collision.gameObject);
         // }
         if(collision.CompareTag("Key")){
+            
             ScoreNum += 1;
+            //Debug.Log(ScoreNum);
             Destroy(collision.gameObject);
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
         }
