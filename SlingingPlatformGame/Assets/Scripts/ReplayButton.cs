@@ -5,9 +5,17 @@ public class ReplayButton : MonoBehaviour
 {
     public void OnClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        // Compare the current scene name with a string
+        if (currentSceneName == "Level 0")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        else
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+        }
     }
-}
-
-
