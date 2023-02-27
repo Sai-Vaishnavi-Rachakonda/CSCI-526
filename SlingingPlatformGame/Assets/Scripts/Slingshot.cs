@@ -33,7 +33,7 @@ public class Slingshot : MonoBehaviour
     public string selectedPlatform = "default";
 
 
-    LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
+    LineRenderer trajectoryLineRenderer;  //LineRenderer for projectile trajectory prediction
     void Start()
     {
         lineRenderers[0].positionCount = 2;
@@ -146,17 +146,17 @@ public class Slingshot : MonoBehaviour
             }
 
             //Drawing the trajectory line using a LineRenderer component
-            lineRenderer = GetComponent<LineRenderer>();
-            lineRenderer.positionCount = positions.Length;
+            trajectoryLineRenderer = GetComponent<LineRenderer>();
+            trajectoryLineRenderer.positionCount = positions.Length;
             for (int i = 0; i < positions.Length; i++)
             {
-                lineRenderer.SetPosition(i, positions[i]);
+                trajectoryLineRenderer.SetPosition(i, positions[i]);
             }
 
         }
         else
         {
-            lineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
+            // trajectoryLineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
             ResetStrips();
         }
     }
