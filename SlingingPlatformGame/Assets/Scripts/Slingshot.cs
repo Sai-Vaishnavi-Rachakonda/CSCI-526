@@ -32,6 +32,7 @@ public class Slingshot : MonoBehaviour
 
     public string selectedPlatform = "default";
 
+    LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
     void Start()
     {
         lineRenderers[0].positionCount = 2;
@@ -135,7 +136,7 @@ public class Slingshot : MonoBehaviour
 
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
 
-            // simulate the trajectory of the projectile
+            //Simulating the trajectory of the projectile
             Vector3[] positions = new Vector3[8];
             for (int i = 0; i < positions.Length; i++)
             {
@@ -143,8 +144,8 @@ public class Slingshot : MonoBehaviour
                 positions[i] = currentPosition + platformForce * t + Physics.gravity * t * t / 2f;
             }
 
-            // draw the trajectory line using a LineRenderer component
-            LineRenderer lineRenderer = GetComponent<LineRenderer>();
+            //Drawing the trajectory line using a LineRenderer component
+            lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.positionCount = positions.Length;
             for (int i = 0; i < positions.Length; i++)
             {
@@ -154,6 +155,7 @@ public class Slingshot : MonoBehaviour
         }
         else
         {
+            lineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
             ResetStrips();
         }
     }
