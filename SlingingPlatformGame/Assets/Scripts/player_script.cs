@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,10 @@ using UnityEngine.SceneManagement;
 public class player_script : MonoBehaviour
 {
     public Text MyscoreText;
-    public static float ScoreNum;
-    public static float maxScore;
-    
+    public static int ScoreNum;
+    public static int maxScore;
+    public List<float> keysArray = new List<float>();
+
     //public static float MaxHealth;
     // public Slider _slide;
     // public static float currentHealth;
@@ -62,8 +64,25 @@ public class player_script : MonoBehaviour
         // }
         if(collision.CompareTag("Key")){
             ScoreNum += 1;
+            keysArray.Add(collision.gameObject.transform.position.x);
+            keysArray.Add(collision.gameObject.transform.position.y);
             Destroy(collision.gameObject);
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
         }
+    }
+
+    public void clearKeysArray()
+    {
+        keysArray = new List<float>();
+        Debug.Log("cleared arr"+keysArray.Count);
+    }
+
+    public void updateScore()
+    {
+        ScoreNum -= keysArray.Count/2;
+        MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        clearKeysArray();
+        Debug.Log("in lava"+keysArray.Count+ScoreNum);
+
     }
 }

@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Collision2D currentPlatform;  // @author: Chirag
     public Vector3 respawnPosition;
+    public player_script ps;
+    public GameObject key;
 
     void Start()
     {
@@ -85,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
 
         else if (other.gameObject.CompareTag("Checkpoint Flag"))
         {
-            Debug.Log("entred");
             respawnPosition = transform.position;
         }
         
@@ -93,8 +94,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
             transform.position = respawnPosition;
-            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0);            
-              
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0);
+            var list = ps.keysArray.ToArray();
+            for (int i = 0; i < list.Length; i+=2)
+            {
+                Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
+            }
+            ps.updateScore();
         }
     }
 
@@ -111,14 +117,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Checkpoint Flag"))
         {
-            Debug.Log("entred");
             respawnPosition = transform.position;
             Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1f, 0);
             GameObject flag = GameObject.FindGameObjectWithTag("Flag Color");
             SpriteRenderer flagRendered = flag.GetComponent<SpriteRenderer>();
             flagRendered.color = Color.green;
+            var flagbox = collision.gameObject.GetComponent<BoxCollider2D>();
+            flagbox.enabled = false;
             isJumping = false;
-
+            ps.clearKeysArray();
+            
         }
 
     }
