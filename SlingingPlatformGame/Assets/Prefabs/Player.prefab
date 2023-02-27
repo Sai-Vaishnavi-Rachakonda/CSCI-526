@@ -124,9 +124,7 @@ MonoBehaviour:
   speed: 7
   jump: 500
   isJumping: 0
-  BoundaryBottom: 0
-  BoundaryRight: 0
-  BoundaryLeft: 0
+  respawnPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &1974054790608611349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,4 +163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1933fe58fdfe146349b94259af06921e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyscoreText: {fileID: 0}
+  MyscoreText: {fileID: 5944536091686643921, guid: 45fe23ee096a4489db6639876a5730f4, type: 3}

@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
+            isJumping=true;
         }
 
 

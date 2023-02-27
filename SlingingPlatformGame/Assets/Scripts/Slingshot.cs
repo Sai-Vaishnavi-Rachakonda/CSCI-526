@@ -30,6 +30,9 @@ public class Slingshot : MonoBehaviour
     private Vector3 lr1;
     private GameObject player;
 
+    public string selectedPlatform = "default";
+
+
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
     void Start()
     {
@@ -42,10 +45,45 @@ public class Slingshot : MonoBehaviour
         CreatePlatform();
     }
 
+    public void CreatePlatformFromIndex()
+    {
+        platform.gameObject.SetActive(false);
+        platform = null;
+        platformCollider = null;
+        platform = new Rigidbody2D();
+        CreatePlatform();
+    }
+
+
     void CreatePlatform()
     {
-        var platformPrefabLen = platformPrefab.Length;
-        platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
+        switch (selectedPlatform)
+        {
+            case "default":
+            {
+                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                break;
+            }
+        
+            case "ice":
+            {
+                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
+                break;
+            }
+        
+            case "weightedPlatform":
+            {
+                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+                break;
+            }
+            default:
+            {
+                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                break;
+            }
+        }
+        //var platformPrefabLen = platformPrefab.Length;
+        //platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         platformCollider = platform.GetComponent<Collider2D>();
         platformCollider.enabled = false;
 
@@ -145,7 +183,13 @@ public class Slingshot : MonoBehaviour
 
         platform = null;
         platformCollider = null;
+        platform = new Rigidbody2D();
         Invoke("CreatePlatform", 2);
+
+        GameObject deckObj = GameObject.Find("deck");
+        GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
+        Deck scriptObj = parentObject.GetComponent<Deck>();
+        scriptObj.DecreaseCount();
     }
 
     void ResetStrips()

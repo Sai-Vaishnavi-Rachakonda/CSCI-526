@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6233770839758449336}
   - component: {fileID: 6233770839758449338}
   - component: {fileID: 6233770839758449339}
+  - component: {fileID: -6614014693314500166}
   m_Layer: 0
   m_Name: Finish
-  m_TagString: Untagged
+  m_TagString: door color
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: d919a4638f2db4fc5b12ae0632975e46, type: 3}
-  m_Color: {r: 0.18705037, g: 0.990566, b: 0.0046724924, a: 1}
+  m_Color: {r: 0.017781902, g: 0.01886791, b: 0.017532917, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,5 +123,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8f12ff2698142ad8c4e6d3f92bb7e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: 
+  score: 0
+  Timer: {fileID: 0}
+--- !u!114 &-6614014693314500166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233770839758449335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5b1f11d84854085bbceb9ffb1ff3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -12,6 +12,7 @@ TagManager:
   - Checkpoint Flag
   - Flag Color
   - Key
+  - door color
   layers:
   - Default
   - TransparentFX
