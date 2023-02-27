@@ -164,7 +164,7 @@ public class Slingshot : MonoBehaviour
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
 
             //Simulating the trajectory of the projectile
-            Vector3[] positions = new Vector3[8];
+            Vector3[] positions = new Vector3[3];
             for (int i = 0; i < positions.Length; i++)
             {
                 float t = i / (float)positions.Length;
@@ -182,7 +182,7 @@ public class Slingshot : MonoBehaviour
         }
         else
         {
-            lineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
+            // lineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
             ResetStrips();
         }
     }
@@ -213,9 +213,12 @@ public class Slingshot : MonoBehaviour
         Invoke("CreatePlatform", 2);
 
         GameObject deckObj = GameObject.Find("deck");
-        GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
-        Deck scriptObj = parentObject.GetComponent<Deck>();
-        scriptObj.DecreaseCount();
+        if (deckObj)
+        {
+            GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
+            Deck scriptObj = parentObject.GetComponent<Deck>();
+            scriptObj.DecreaseCount();
+        }
     }
 
     void ResetStrips()
