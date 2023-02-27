@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Slingshot : MonoBehaviour
 {
@@ -31,6 +33,8 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
+    public ArrayList StoppedPlatforms = new ArrayList();
+    public ArrayList PlatformNames = new ArrayList {"default", "ice", "weightedPlatform"};
 
     void Start()
     {
@@ -45,38 +49,69 @@ public class Slingshot : MonoBehaviour
 
     public void CreatePlatformFromIndex()
     {
-        platform.gameObject.SetActive(false);
+        Debug.Log("new platform");
+        if (platform != null)
+        {
+            platform.gameObject.SetActive(false);
+        }
         platform = null;
         platformCollider = null;
         platform = new Rigidbody2D();
         CreatePlatform();
     }
 
+    public void StopPlatform(string PlatformName){
+        if (!StoppedPlatforms.Contains(PlatformName))
+        {
+            StoppedPlatforms.Add(PlatformName);
+        }
+        foreach (var element in StoppedPlatforms)
+        {
+            Debug.Log(element);
+        }
+    }
 
     void CreatePlatform()
     {
+        Debug.Log("create new platform");
+        Debug.Log(selectedPlatform);
+        if (StoppedPlatforms.Count == PlatformNames.Count)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         switch (selectedPlatform)
         {
             case "default":
             {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                if (!StoppedPlatforms.Contains(selectedPlatform))
+                {
+                    platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                }
                 break;
             }
         
             case "ice":
             {
-                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
+                if (!StoppedPlatforms.Contains(selectedPlatform))
+                {
+                    platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
+                }
                 break;
             }
         
             case "weightedPlatform":
             {
-                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+                if (!StoppedPlatforms.Contains(selectedPlatform))
+                {
+                    platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+                }
                 break;
             }
             default:
             {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                //platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                platform = null;
                 break;
             }
         }
@@ -168,6 +203,7 @@ public class Slingshot : MonoBehaviour
         GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
         Deck scriptObj = parentObject.GetComponent<Deck>();
         scriptObj.DecreaseCount();
+        //selectedPlatform = "";
     }
 
     void ResetStrips()

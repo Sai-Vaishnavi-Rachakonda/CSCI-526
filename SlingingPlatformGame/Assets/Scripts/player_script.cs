@@ -43,23 +43,23 @@ public class player_script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // if(collision.CompareTag("powerup"))
-        // {
-        //     //ScoreNum += 0.5f;
-        //     //Destroy(collision.gameObject);
-        //     // MyscoreText.text = "Energy level : " + ScoreNum + "/10";
-        //     if (level == 0) 
-        //     {
-        //         currentHealth = currentHealth + 10;
-        //     }
-        //     else if(level == 1)
-        //     {
-        //         currentHealth = currentHealth + 3;
-        //     }
+        if(collision.CompareTag("powerup"))
+        {
+            //ScoreNum += 0.5f;
+            //Destroy(collision.gameObject);
+            // MyscoreText.text = "Energy level : " + ScoreNum + "/10";
+            // if (level == 0) 
+            // {
+            //     currentHealth = currentHealth + 10;
+            // }
+            // else if(level == 1)
+            // {
+            //     currentHealth = currentHealth + 3;
+            // }
             
-        //     _slide.value = currentHealth;
-        //     Destroy(collision.gameObject);
-        // }
+            // _slide.value = currentHealth;
+            Destroy(collision.gameObject);
+        }
         if(collision.CompareTag("Key")){
             ScoreNum += 1;
             Destroy(collision.gameObject);

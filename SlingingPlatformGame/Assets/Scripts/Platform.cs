@@ -77,13 +77,23 @@ public class Platform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collided = true;
+        //Debug.Log("collided");
+        // Transform collidedObject = collision.gameObject.transform;
+        // Transform otherObject = transform;
+        // int otherObjectZIndex = otherObject.GetSiblingIndex();
+        // collidedObject.SetSiblingIndex(otherObjectZIndex + 1);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("powerup"))
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
-        }
+        Debug.Log("entered");
+        // if(collision.CompareTag("powerup"))
+        // {
+        //     transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        // }
+        Transform collidedObject = collision.gameObject.transform;
+        Transform otherObject = transform;
+        int otherObjectZIndex = otherObject.GetSiblingIndex();
+        collidedObject.SetSiblingIndex(otherObjectZIndex + 5);
     }
 }

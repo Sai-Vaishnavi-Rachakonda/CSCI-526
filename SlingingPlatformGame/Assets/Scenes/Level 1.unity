@@ -776,6 +776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 6539972740384751599, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
 --- !u!1001 &958843261
@@ -1103,7 +1107,7 @@ GameObject:
   - component: {fileID: 1460292141}
   - component: {fileID: 1460292144}
   m_Layer: 0
-  m_Name: platform2
+  m_Name: weightedPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,7 +1222,7 @@ GameObject:
   - component: {fileID: 1465391796}
   - component: {fileID: 1465391799}
   m_Layer: 0
-  m_Name: platform1
+  m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1733,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
       propertyPath: bottomBoundary
-      value: -10.5
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
       propertyPath: platformPrefab.Array.size
@@ -1839,7 +1843,7 @@ GameObject:
   - component: {fileID: 2128662899}
   - component: {fileID: 2128662902}
   m_Layer: 0
-  m_Name: platform2
+  m_Name: ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

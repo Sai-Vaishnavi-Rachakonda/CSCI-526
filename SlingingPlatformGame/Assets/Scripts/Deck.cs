@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    public int counter = 10;  // Initial value of counter
+    public int counter = 3;  // Initial value of counter
     private TextMesh textMesh;
     public Color highlightColor = Color.black;  // Color to use for highlight
     private Color originalColor;  // Original color of the game object
@@ -33,8 +33,14 @@ public class Deck : MonoBehaviour
 
     void OnMouseDown()
     {
-        script.selectedPlatform = platformType;
-        script.CreatePlatformFromIndex();
+        if(counter > 0)
+        {
+            script.selectedPlatform = platformType;
+            script.CreatePlatformFromIndex();
+        }
+        // else {
+        //     script.StopPlatform(platformType);
+        // }
     }
 
     public void DecreaseCount()
@@ -46,6 +52,11 @@ public class Deck : MonoBehaviour
             {
                 counter--;
                 textMesh.text = counter.ToString();
+            }
+            if (counter == 0)
+            {
+                textMesh.text = "X";
+                script.StopPlatform(platformType);
             }
         }
     }
