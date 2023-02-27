@@ -614,6 +614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6539972740384751599, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
 --- !u!1 &887293227
@@ -1103,7 +1107,7 @@ GameObject:
   - component: {fileID: 1460292141}
   - component: {fileID: 1460292144}
   m_Layer: 0
-  m_Name: platform2
+  m_Name: weightedPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,7 +1222,7 @@ GameObject:
   - component: {fileID: 1465391796}
   - component: {fileID: 1465391799}
   m_Layer: 0
-  m_Name: platform1
+  m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1812,6 +1816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6539972740384751599, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10319367ded4a4c0f93c63a8a2b471a6, type: 3}
 --- !u!114 &2115340697 stripped
@@ -1839,7 +1847,7 @@ GameObject:
   - component: {fileID: 2128662899}
   - component: {fileID: 2128662902}
   m_Layer: 0
-  m_Name: platform2
+  m_Name: ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
