@@ -32,6 +32,7 @@ public class ReloadScene : MonoBehaviour
             Buttonscript.dbObj.setOutcome(0);
             FinishLine.postToDatabase(Buttonscript.dbObj);
             Buttonscript.dbObj.resetPlatformCords();
+            Buttonscript.dbObj.resetPlatformCount();
         }
     }
 }
