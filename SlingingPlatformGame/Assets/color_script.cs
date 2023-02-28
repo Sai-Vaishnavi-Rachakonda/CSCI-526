@@ -15,13 +15,8 @@ public class color_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player_script.ScoreNum ==  player_script.maxScore)
-            {
-                GameObject door = GameObject.FindGameObjectWithTag("door color");
-                SpriteRenderer doorRendered = door.GetComponent<SpriteRenderer>();
-                doorRendered.color = Color.green;
-                
-            }
-        
-    }
+        GameObject door = GameObject.FindGameObjectWithTag("door color");
+        SpriteRenderer doorRendered = door.GetComponent<SpriteRenderer>();
+        doorRendered.color = player_script.ScoreNum == player_script.maxScore ? Color.green : Color.black;
+    }
 }
