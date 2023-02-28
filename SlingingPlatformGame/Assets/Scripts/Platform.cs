@@ -47,8 +47,8 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-            if (timer >= 0.012f ) //for runtime in unity
-            // if (timer >= 0.10f ) // for webGl
+            // if (timer >= 0.012f ) //for runtime in unity
+            if (timer >= 0.15f ) // for webGl
             // if (timer >= 0.05f ) //for runtime in unity (Pratik's PC)
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
@@ -69,7 +69,7 @@ public class Platform : MonoBehaviour
                 platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 break;
             }
-            timer += 0.90f * Time.deltaTime;
+            timer += 0.87f * Time.deltaTime;
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
         }
