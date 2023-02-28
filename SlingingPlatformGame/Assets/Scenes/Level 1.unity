@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 9208262240435130192, guid: 875c05f4a8b4742c5bafb9d543bf08fd, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 9208262240435130194, guid: 875c05f4a8b4742c5bafb9d543bf08fd, type: 3}
       propertyPath: m_RootOrder
       value: 2
