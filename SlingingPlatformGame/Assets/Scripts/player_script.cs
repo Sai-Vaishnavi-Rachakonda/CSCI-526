@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class player_script : MonoBehaviour
 {
-    public Text MyscoreText;
     public TextMeshProUGUI scoreText;
     public static float ScoreNum;
     public static float maxScore;
@@ -37,6 +36,15 @@ public class player_script : MonoBehaviour
             
          }
          else if(sceneName == "Level 1")
+         {
+            maxScore = 3;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+            
+         }
+         else if(sceneName == "Level 2")
          {
             maxScore = 3;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;

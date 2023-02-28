@@ -60,12 +60,12 @@ public class PlayerMovement : MonoBehaviour
             Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y + Time.deltaTime*diff, Camera.transform.position.z);
         }else if(Camera.transform.position.y-0.1>=transform.position.y){ // moving backward
             var diff = Camera.transform.position.y - transform.position.y;
-            if(Camera.transform.position.y>=1.75) // Initial position of camera aprox 0
+             if(Camera.transform.position.y>=1.75) // Initial position of camera aprox 0
                 Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
         }
         if(currentPlatform!=null){
-            if(SceneManager.GetActiveScene().name!="Level 0")
-                Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
+            if(SceneManager.GetActiveScene().name!="Level 0"){}
+                // Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
         }
         
 
@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
             transform.position = respawnPosition;
+            transform.rotation = Quaternion.identity;
             Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0); 
             var list = ps.keysArray.ToArray();
             for (int i = 0; i < list.Length; i+=2)

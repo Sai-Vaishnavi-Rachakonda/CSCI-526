@@ -58,6 +58,11 @@ public class Slingshot : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            selectedPlatform = "ice";
+        }
+
         CreatePlatform();
     }
 
@@ -243,7 +248,7 @@ public class Slingshot : MonoBehaviour
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
             platform.velocity = platformForce;    
 
-            platform.GetComponent<Platform>().Release();
+            platform.GetComponent<Platform>().Release(selectedPlatform);
         }
 
         platform = null;
