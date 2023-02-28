@@ -248,7 +248,7 @@ public class Slingshot : MonoBehaviour
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
             platform.velocity = platformForce;    
 
-            platform.GetComponent<Platform>().Release();
+            platform.GetComponent<Platform>().Release(selectedPlatform);
         }
 
         platform = null;

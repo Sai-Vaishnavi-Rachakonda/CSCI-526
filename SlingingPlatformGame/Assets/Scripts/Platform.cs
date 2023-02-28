@@ -36,19 +36,19 @@ public class Platform : MonoBehaviour
     {
     }
 
-    public void Release()
+    public void Release(string selectedPlatform)
     {
         PathPoints.instance.Clear();
-        StartCoroutine(CreatePathPoints()); //create the points traveled by the platform
+        StartCoroutine(CreatePathPoints(selectedPlatform)); //create the points traveled by the platform
     }
     
     
-    IEnumerator CreatePathPoints()
+    IEnumerator CreatePathPoints(string selectedPlatform)
     {
         while (true)
         {
-            // if (timer >= 0.012f ) //for runtime in unity
-            if (timer >= 0.15f ) // for webGl
+            //  if (timer >= 0.012f ) //for runtime in unity
+             if (timer >= 0.15f ) // for webGl
             // if (timer >= 0.05f ) //for runtime in unity (Pratik's PC)
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
@@ -62,6 +62,7 @@ public class Platform : MonoBehaviour
                 Debug.Log(""+pos);
                 Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformCords(pos);
+                Buttonscript.dbObj.setPlatformsShoot(selectedPlatform);
                 Destroy(newPlatform);
                 gameObject.SetActive(false);
                 Destroy(this.gameObject);
