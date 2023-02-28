@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class player_script : MonoBehaviour
 {
     public Text MyscoreText;
+    public TextMeshProUGUI scoreText;
     public static float ScoreNum;
     public static float maxScore;
     public List<float> keysArray = new List<float>();
@@ -28,14 +29,20 @@ public class player_script : MonoBehaviour
          if (sceneName == "Level 0") 
          {
             maxScore = 1;
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
             //Debug.Log("myscore",ScoreNum);
             
          }
          else if(sceneName == "Level 1")
          {
             maxScore = 3;
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
             
          }
         // currentHealth = 0;
@@ -69,7 +76,36 @@ public class player_script : MonoBehaviour
             keysArray.Add(collision.gameObject.transform.position.x);
             keysArray.Add(collision.gameObject.transform.position.y);
             Destroy(collision.gameObject);
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            Debug.Log(scoreText.text);
+            scoreText.text = ScoreNum + "/" + maxScore;
+            Debug.Log(scoreText.text);
+        }
+
+        if(collision.CompareTag("default-powerup")){
+            Destroy(collision.gameObject);
+
+            //decrease count of the platform
+            GameObject deckObj = GameObject.Find("PlatformPanel");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find("default").gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.IncreaseCount();
+            }
+        }
+
+        if(collision.CompareTag("ice-powerup")){
+            Destroy(collision.gameObject);
+
+            //decrease count of the platform
+            GameObject deckObj = GameObject.Find("PlatformPanel");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find("ice").gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.IncreaseCount();
+            }
         }
     }
     public void clearKeysArray()
@@ -81,7 +117,9 @@ public class player_script : MonoBehaviour
     public void updateScore()
     {
         ScoreNum -= keysArray.Count/2;
-        MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        Debug.Log("changingn gthe etecdtnvvrn");
+        scoreText.text = ScoreNum + "/" + maxScore;
         clearKeysArray();
         Debug.Log("in lava"+keysArray.Count+ScoreNum);
 

@@ -18,6 +18,9 @@ public class Deck : MonoBehaviour
         if(countVal!= null){
            countVal.text =  counter.ToString();
         }
+        if(counter == 0){
+            script.StopPlatform(platformType);
+        }
     }
 
     // void OnMouseDown()
@@ -49,5 +52,13 @@ public class Deck : MonoBehaviour
                 script.StopPlatform(platformType);
             }
     }
+
+    public void IncreaseCount(){
+            counter++;
+            countVal.text = counter.ToString();
+
+    }
+
+
 
 }

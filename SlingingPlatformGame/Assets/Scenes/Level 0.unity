@@ -371,6 +371,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7373474424913929452, guid: f29441ed4f68b436ca394c9ee6a26b0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f29441ed4f68b436ca394c9ee6a26b0b, type: 3}
+--- !u!114 &757343351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5434724536780169702, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
+  m_PrefabInstance: {fileID: 797796354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &797796354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,6 +737,10 @@ PrefabInstance:
       propertyPath: _slide
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1974054790608611348, guid: 29bf891c149f94197a83ca4df82dbf79, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 757343351}
     - target: {fileID: 1974054790608611348, guid: 29bf891c149f94197a83ca4df82dbf79, type: 3}
       propertyPath: MyscoreText
       value: 
