@@ -212,7 +212,7 @@ public class Slingshot : MonoBehaviour
         platform = new Rigidbody2D();
         Invoke("CreatePlatform", 2);
 
-        GameObject deckObj = GameObject.Find("deck");
+        GameObject deckObj = GameObject.Find("PlatformPanel");
         if (deckObj)
         {
             GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;

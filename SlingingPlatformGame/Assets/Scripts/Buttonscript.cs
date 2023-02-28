@@ -33,7 +33,7 @@ public class Buttonscript : MonoBehaviour
     void Update()
     {
         if (timePerParse!= null && Timer != null && timePerParse.Elapsed != null &&  timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
-            Timer.text = "Timer: "+ timePerParse.Elapsed.ToString("mm\\:ss"); 
+            Timer.text = timePerParse.Elapsed.ToString("mm\\:ss"); 
         }
     }
 }
