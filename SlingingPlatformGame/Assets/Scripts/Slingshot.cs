@@ -34,12 +34,24 @@ public class Slingshot : MonoBehaviour
 
     public string selectedPlatform = "default";
     public ArrayList StoppedPlatforms = new ArrayList();
-    public ArrayList PlatformNames = new ArrayList {"default", "ice", "weightedPlatform"};
+    public ArrayList PlatformNames = new ArrayList {"default", "ice"};
+
+    public float targetTimeAfterPlatformIsOver=10f,waitForMessage=5f;
 
 
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
     void Start()
     {
+        GameObject canvasObj = GameObject.Find("Canvas");
+        if (canvasObj)
+        {
+            GameObject Pannel = canvasObj.transform.Find("RestartingPanel").gameObject;
+            if (Pannel != null)
+            {
+                Pannel.SetActive(false);
+            }
+        }
+
         lineRenderers[0].positionCount = 2;
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, stripPositions[0].position);
@@ -51,9 +63,7 @@ public class Slingshot : MonoBehaviour
 
     public void CreatePlatformFromIndex()
     {
-        if (platform != null) {
-            platform.gameObject.SetActive(false);
-        }
+        platform.gameObject.SetActive(false);
         platform = null;
         platformCollider = null;
         platform = new Rigidbody2D();
@@ -70,10 +80,6 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
-        if (StoppedPlatforms.Count == PlatformNames.Count)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
         switch (selectedPlatform)
         {
             case "default":
@@ -110,10 +116,12 @@ public class Slingshot : MonoBehaviour
         }
         //var platformPrefabLen = platformPrefab.Length;
         //platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
-        platformCollider = platform.GetComponent<Collider2D>();
-        platformCollider.enabled = false;
+        if(platform) {
+            platformCollider = platform.GetComponent<Collider2D>();
+            platformCollider.enabled = false;
 
-        platform.isKinematic = true;
+            platform.isKinematic = true;
+        }
 
         ResetStrips();
     }
@@ -187,6 +195,32 @@ public class Slingshot : MonoBehaviour
             // lineRenderer.positionCount = 0;  //Reset the trajectory predicting linerenderer
             ResetStrips();
         }
+
+        //when all platforms are used
+        if (StoppedPlatforms.Count == PlatformNames.Count)
+        {
+            targetTimeAfterPlatformIsOver -= Time.deltaTime;
+            if (targetTimeAfterPlatformIsOver<=0.0f){
+                if(waitForMessage==5f)
+                    openRestartPannel();
+                else if(waitForMessage<=0.0f)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                waitForMessage-=Time.deltaTime;
+            }
+        }
+    }
+
+    void openRestartPannel()
+    {
+        GameObject canvasObj = GameObject.Find("Canvas");
+        if (canvasObj)
+        {
+            GameObject Pannel = canvasObj.transform.Find("RestartingPanel").gameObject;
+            if (Pannel != null)
+            {
+                Pannel.SetActive(true);
+            }
+        }
     }
 
     private void OnMouseDown()
@@ -203,11 +237,14 @@ public class Slingshot : MonoBehaviour
 
     void Shoot()
     {
-        platform.isKinematic = false;
-        Vector3 platformForce = (currentPosition - center.position) * force * -1;
-        platform.velocity = platformForce;
+        if(platform)
+        {
+            platform.isKinematic = false;
+            Vector3 platformForce = (currentPosition - center.position) * force * -1;
+            platform.velocity = platformForce;    
 
-        platform.GetComponent<Platform>().Release();
+            platform.GetComponent<Platform>().Release();
+        }
 
         platform = null;
         platformCollider = null;
