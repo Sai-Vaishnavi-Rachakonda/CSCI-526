@@ -29,7 +29,7 @@ public class player_script : MonoBehaviour
          if (sceneName == "Level 0") 
          {
             maxScore = 1;
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;
             }
@@ -39,7 +39,7 @@ public class player_script : MonoBehaviour
          else if(sceneName == "Level 1")
          {
             maxScore = 3;
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;
             }
@@ -76,7 +76,10 @@ public class player_script : MonoBehaviour
             keysArray.Add(collision.gameObject.transform.position.x);
             keysArray.Add(collision.gameObject.transform.position.y);
             Destroy(collision.gameObject);
-            MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            Debug.Log(scoreText.text);
+            scoreText.text = ScoreNum + "/" + maxScore;
+            Debug.Log(scoreText.text);
         }
     }
     public void clearKeysArray()
@@ -88,7 +91,9 @@ public class player_script : MonoBehaviour
     public void updateScore()
     {
         ScoreNum -= keysArray.Count/2;
-        MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        Debug.Log("changingn gthe etecdtnvvrn");
+        scoreText.text = ScoreNum + "/" + maxScore;
         clearKeysArray();
         Debug.Log("in lava"+keysArray.Count+ScoreNum);
 
