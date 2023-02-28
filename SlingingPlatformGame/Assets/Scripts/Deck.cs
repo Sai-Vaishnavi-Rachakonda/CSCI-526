@@ -50,4 +50,12 @@ public class Deck : MonoBehaviour
             }
     }
 
+    public void IncreaseCount(){
+            counter++;
+            countVal.text = counter.ToString();
+
+    }
+
+
+
 }

@@ -71,6 +71,32 @@ public class player_script : MonoBehaviour
             Destroy(collision.gameObject);
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
         }
+
+        if(collision.CompareTag("default-powerup")){
+            Destroy(collision.gameObject);
+
+            //decrease count of the platform
+            GameObject deckObj = GameObject.Find("PlatformPanel");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find("default").gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.IncreaseCount();
+            }
+        }
+
+        if(collision.CompareTag("ice-powerup")){
+            Destroy(collision.gameObject);
+
+            //decrease count of the platform
+            GameObject deckObj = GameObject.Find("PlatformPanel");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find("ice").gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.IncreaseCount();
+            }
+        }
     }
     public void clearKeysArray()
     {
