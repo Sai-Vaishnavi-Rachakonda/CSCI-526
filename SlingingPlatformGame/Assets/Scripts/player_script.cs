@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class player_script : MonoBehaviour
 {
     public Text MyscoreText;
+    public TextMeshProUGUI scoreText;
     public static float ScoreNum;
     public static float maxScore;
     public List<float> keysArray = new List<float>();
@@ -29,6 +30,9 @@ public class player_script : MonoBehaviour
          {
             maxScore = 1;
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
             //Debug.Log("myscore",ScoreNum);
             
          }
@@ -36,6 +40,9 @@ public class player_script : MonoBehaviour
          {
             maxScore = 3;
             MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
             
          }
         // currentHealth = 0;
