@@ -164,7 +164,7 @@ public class Slingshot : MonoBehaviour
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
 
             //Simulating the trajectory of the projectile
-            Vector3[] positions = new Vector3[3];
+            Vector3[] positions = new Vector3[5];
             for (int i = 0; i < positions.Length; i++)
             {
                 float t = i / (float)positions.Length;
@@ -172,11 +172,13 @@ public class Slingshot : MonoBehaviour
             }
 
             //Drawing the trajectory line using a LineRenderer component
-            lineRenderer = GetComponent<LineRenderer>();
-            lineRenderer.positionCount = positions.Length;
+            // lineRenderer = GetComponent<LineRenderer>();
+            // lineRenderer.positionCount = positions.Length;
+            PathPoints.instance.Clear();
             for (int i = 0; i < positions.Length; i++)
             {
-                lineRenderer.SetPosition(i, positions[i]);
+                // lineRenderer.SetPosition(i, positions[i]);
+                PathPoints.instance.CreateCurrentPathPoint(positions[i]);
             }
 
         }

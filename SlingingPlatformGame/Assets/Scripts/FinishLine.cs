@@ -24,7 +24,7 @@ public class FinishLine : MonoBehaviour
     void Update()
     {
        if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
-            Timer.text = "Timer: "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+            Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
         } 
     }
 
