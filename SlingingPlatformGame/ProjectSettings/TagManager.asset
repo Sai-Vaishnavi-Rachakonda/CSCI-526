@@ -13,6 +13,9 @@ TagManager:
   - Flag Color
   - Key
   - door color
+  - normal_powerup
+  - ice_powerup
+  - normal-power
   layers:
   - Default
   - TransparentFX
