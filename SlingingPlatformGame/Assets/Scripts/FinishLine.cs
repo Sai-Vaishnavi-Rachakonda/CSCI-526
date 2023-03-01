@@ -24,7 +24,7 @@ public class FinishLine : MonoBehaviour
     void Update()
     {
        if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
-            Timer.text = "Timer: "+ Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+            Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
         } 
     }
 
@@ -38,9 +38,8 @@ public class FinishLine : MonoBehaviour
             Buttonscript.dbObj.setOutcome(1);
             postToDatabase(Buttonscript.dbObj);
             // if (player_script.ScoreNum >= score)
-            Debug.Log(player_script.currentHealth);
-            Debug.Log(player_script.MaxHealth);
-            if(player_script.currentHealth >=  player_script.MaxHealth)
+            
+            if(player_script.ScoreNum ==  player_script.maxScore)
             {
                 Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
@@ -59,6 +58,6 @@ public class FinishLine : MonoBehaviour
     
 
     public static void postToDatabase(AnalyticsObj dbObj){
-        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/pre-midterm/"+dt.Month+".json", dbObj);
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/week8/"+dt.Month+".json", dbObj);
     }
 }

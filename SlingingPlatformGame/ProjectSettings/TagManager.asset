@@ -7,6 +7,14 @@ TagManager:
   - Ground
   - PlatformPrefab
   - powerup
+  - Lava
+  - Checkpoint
+  - Checkpoint Flag
+  - Flag Color
+  - Key
+  - door color
+  - default-powerup
+  - ice-powerup
   layers:
   - Default
   - TransparentFX

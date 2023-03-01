@@ -10,8 +10,10 @@ public class AnalyticsObj : MonoBehaviour
     public int  outcome;
     public int  level;
     public string platformCords = "";
+    public int platformCount = 0;
+    public string platformsShoot = "";
 
-    
+
     public void setuserID (string userID){
         this.userID = userID;
     }
@@ -39,5 +41,10 @@ public class AnalyticsObj : MonoBehaviour
     public void resetPlatformCords()
     {
         this.platformCords = "";
+    }
+
+    public void setPlatformsShoot(string newPlatform)
+    {
+        this.platformsShoot += "," + newPlatform;
     }
 }
