@@ -1455,16 +1455,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6616719789661522505, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 145.4054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616719789661522505, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 750
+      value: 259.4859
       objectReference: {fileID: 0}
     - target: {fileID: 6616719789661522505, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 204
+      value: 179.777
       objectReference: {fileID: 0}
     - target: {fileID: 6616719789661522505, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6
+      value: -4.0929
       objectReference: {fileID: 0}
     - target: {fileID: 6732887975274181118, guid: 56d185192710a401789a12c7d2d8feee, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
