@@ -60,8 +60,8 @@ public class Platform : MonoBehaviour
                 pos += "x:"+transform.position.x.ToString();
                 pos += ",y:"+transform.position.y.ToString();
                 Debug.Log(""+pos);
-                Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformCords(pos);
+                Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformsShoot(selectedPlatform);
                 Destroy(newPlatform);
                 gameObject.SetActive(false);

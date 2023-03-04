@@ -43,6 +43,9 @@ public class AnalyticsObj : MonoBehaviour
         this.platformCords = "";
     }
 
+    public void resetPlatformCount() {
+        this.platformCount = 0;
+    }
     public void setPlatformsShoot(string newPlatform)
     {
         this.platformsShoot += "," + newPlatform;
