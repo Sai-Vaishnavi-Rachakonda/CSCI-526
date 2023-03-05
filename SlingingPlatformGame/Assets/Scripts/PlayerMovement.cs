@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            // @author: Chirag
+            // @author:  Chirag
             if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
                 if(other.transform.position.y+1.1>transform.position.y && other.transform.position.y-0.1<=transform.position.y){
                     Slingshot.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+2f, 0);
