@@ -74,13 +74,26 @@ public class Slingshot : MonoBehaviour
         CreatePlatform();
     }
 
-    public void StopPlatform(string PlatformName){
+    public void StopPlatform(string PlatformName)
+    {
         if (remainingPlatforms.Contains(PlatformName))
         {
             remainingPlatforms.Remove(PlatformName);
         }
     }
 
+    public void AddPlatform(string PlatformName)
+    {
+        if (!remainingPlatforms.Contains(PlatformName))
+        {
+            remainingPlatforms.Add(PlatformName);
+            if(selectedPlatform == "")
+            {
+                selectedPlatform = PlatformName;
+                CreatePlatform();
+            }
+        }
+    }
 
     void CreatePlatform()
     {
@@ -93,6 +106,7 @@ public class Slingshot : MonoBehaviour
                 selectedPlatform = "";
             }
         }
+
         switch (selectedPlatform)
         {
             case "default":
@@ -112,6 +126,7 @@ public class Slingshot : MonoBehaviour
                 platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
             }
+
             default:
             {
                 platform = null;
@@ -132,28 +147,31 @@ public class Slingshot : MonoBehaviour
 
     void Update()
     {
+        // @author: Chirag
+        lineRenderers[0].SetPosition(0,new Vector3(center.position.x+0.4f,center.position.y-0.06f,center.position.z));
+        lineRenderers[1].SetPosition(0,new Vector3(center.position.x-0.4f,center.position.y-0.06f,center.position.z));
+        lineRenderers[0].SetPosition(1,idlePosition.position);
+        lineRenderers[1].SetPosition(1,idlePosition.position);
+        // var lineRendererPosition = lineRenderers[0].GetPosition(0);
+        // var lineRendererPosition1 = lineRenderers[1].GetPosition(0);
         
 
-        var lineRendererPosition = lineRenderers[0].GetPosition(0);
-        var lineRendererPosition1 = lineRenderers[1].GetPosition(0);
+        // var nposSling = transform.position;
+        // var change = nposSling - lr0;
         
-
-        var nposSling = transform.position;
-        var change = nposSling - lr0;
-        
-        if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
+        // if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
             
-            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
-            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
-        }
+        //     lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+        //     lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
+        // }
 
-        else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
+        // else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
             
-            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
-            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
-        }
+        //     lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+        //     lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
+        // }
 
-        lr0 = transform.position;
+        // lr0 = transform.position;
 
         if (isMouseDown)
         {
@@ -246,6 +264,7 @@ public class Slingshot : MonoBehaviour
             platform.isKinematic = false;
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
             platform.velocity = platformForce;    
+
             platform.GetComponent<Platform>().Release(selectedPlatform);
 
             platform = null;
