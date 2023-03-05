@@ -9,12 +9,14 @@ public class Deck : MonoBehaviour
     private Color originalColor;  // Original color of the game object
     private Renderer renderer;  // Renderer component of the game object
     public Slingshot script;
-    public string platformType;
+    public string platformType="default";
     public TextMeshProUGUI countVal;
 
 
     void Start()
     {
+        GameObject slingshotObj = GameObject.Find("Slingshot");
+        script = slingshotObj.GetComponent<Slingshot>();
         if(countVal != null){
            countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 3";
         }
