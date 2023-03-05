@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }else if(Camera.transform.position.x-1>=transform.position.x){ // moving backward
             var diff = Camera.transform.position.x - transform.position.x;
             if(Camera.transform.position.x>=0) // Initial position of camera aprox 0
-                Camera.transform.position = new Vector3(Camera.transform.position.x - Time.deltaTime*diff, Camera.transform.position.y, Camera.transform.position.z);
+                Camera.transform.position = new Vector3(Camera.transform.position.x - 1.2f*Time.deltaTime*diff, Camera.transform.position.y, Camera.transform.position.z);
         }
         if(Camera.transform.position.y+0.3<transform.position.y){
             var diff = transform.position.y - Camera.transform.position.y;
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            // @author: Chirag
+            // @author:  Chirag
             if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
                 if(other.transform.position.y+1.1>transform.position.y && other.transform.position.y-0.1<=transform.position.y){
                     Slingshot.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+2f, 0);
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(other.gameObject);
         if (other.gameObject.CompareTag("Ground"))
         {
-            isJumping = true;
+            // isJumping = true;
         }
     }
     
@@ -126,10 +126,10 @@ public class PlayerMovement : MonoBehaviour
             GameObject flag = GameObject.FindGameObjectWithTag("Flag Color");
             SpriteRenderer flagRendered = flag.GetComponent<SpriteRenderer>();
             flagRendered.color = Color.green;
-            isJumping = false;
+            // isJumping = false;
             var flagbox = collision.gameObject.GetComponent<BoxCollider2D>();
             flagbox.enabled = false;
-            isJumping = false;
+            // isJumping = false;
             ps.clearKeysArray();
 
         }

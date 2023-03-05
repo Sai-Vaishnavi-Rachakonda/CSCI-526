@@ -7,7 +7,16 @@ public class ReplayButton : MonoBehaviour
     public TextMeshProUGUI Timer;
     public void OnClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        string currentSceneName = SceneManager.GetActiveScene().name;    //Get current scene name
+        if (currentSceneName == "Final Scene")        
+        {
+            SceneManager.LoadScene("firstPage");       //load game from the beginning if finished
+        }
+        else
+        {
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);       //load from the same level
+        }
+        
         Buttonscript.timePerParse.Stop();
         Buttonscript.timePerParse.Reset();
         Buttonscript.timePerParse.Start();
