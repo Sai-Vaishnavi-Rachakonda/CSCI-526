@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.2
+  m_fontSize: 23.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.8
+  m_fontSize: 26.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1967,6 +1967,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6573885209674867287}
     m_Modifications:
+    - target: {fileID: 1650094627042897889, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
+      propertyPath: m_fontSize
+      value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650094627042897889, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
+      propertyPath: m_fontSize
+      value: 19.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1650094627803451712, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_Name
       value: SelectPlatform
