@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 1974054790608611348, guid: 29bf891c149f94197a83ca4df82dbf79, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1080224601}
     - target: {fileID: 1974054790608611348, guid: 29bf891c149f94197a83ca4df82dbf79, type: 3}
       propertyPath: MyscoreText
       value: 
@@ -985,8 +985,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.4039917
       objectReference: {fileID: 0}
+    - target: {fileID: 8960247085865233162, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: counter
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+--- !u!114 &1080224601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6573885210918520000, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+  m_PrefabInstance: {fileID: 1080224600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1654899995
 PrefabInstance:
   m_ObjectHideFlags: 0
