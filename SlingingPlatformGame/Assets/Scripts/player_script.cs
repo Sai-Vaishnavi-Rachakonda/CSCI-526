@@ -94,7 +94,7 @@ public class player_script : MonoBehaviour
             Destroy(collision.gameObject);
 
             //decrease count of the platform
-            GameObject deckObj = GameObject.Find("PlatformPanel");
+            GameObject deckObj = GameObject.Find("SelectPlatform");
             if (deckObj)
             {
                 GameObject parentObject = deckObj.transform.Find("default").gameObject;
@@ -107,7 +107,7 @@ public class player_script : MonoBehaviour
             Destroy(collision.gameObject);
 
             //decrease count of the platform
-            GameObject deckObj = GameObject.Find("PlatformPanel");
+            GameObject deckObj = GameObject.Find("SelectPlatform");
             if (deckObj)
             {
                 GameObject parentObject = deckObj.transform.Find("ice").gameObject;

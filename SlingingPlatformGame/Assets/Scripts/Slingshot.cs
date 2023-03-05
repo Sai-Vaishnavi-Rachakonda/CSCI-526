@@ -68,10 +68,13 @@ public class Slingshot : MonoBehaviour
 
     public void CreatePlatformFromIndex()
     {
-        platform.gameObject.SetActive(false);
-        platform = null;
-        platformCollider = null;
-        platform = new Rigidbody2D();
+        if(platform)
+        {
+            platform.gameObject.SetActive(false);
+            platform = null;
+            platformCollider = null;
+            platform = new Rigidbody2D();
+        }
         CreatePlatform();
     }
 

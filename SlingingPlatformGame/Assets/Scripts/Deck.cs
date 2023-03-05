@@ -7,9 +7,9 @@ public class Deck : MonoBehaviour
     private TextMesh textMesh;
     // public Color highlightColor = Color.black;  // Color to use for highlight
     private Color originalColor;  // Original color of the game object
-    private Renderer renderer;  // Renderer component of the game object
+    // private Renderer renderer;  // Renderer component of the game object
     public Slingshot script;
-    public string platformType="default";
+    public string platformType;
     public TextMeshProUGUI countVal;
 
 
