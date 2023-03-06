@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Slingshot : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class Slingshot : MonoBehaviour
     public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
 
     public float targetTimeAfterPlatformIsOver=10f,waitForMessage=5f;
+    public static long timeLine;
+    public TextMeshProUGUI Timer;
 
 
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
@@ -222,8 +225,27 @@ public class Slingshot : MonoBehaviour
             if (targetTimeAfterPlatformIsOver<=0.0f){
                 if(waitForMessage==5f)
                     openRestartPannel();
-                else if(waitForMessage<=0.0f)
+                else if(waitForMessage<=0.0f){
+                    Buttonscript.timePerParse.Stop();
+                    timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
+                    Buttonscript.timePerParse.Reset();
+                    Buttonscript.dbObj.setTimeLine(timeLine);
+                    Buttonscript.dbObj.setOutcome(0);
+                    Buttonscript.dbObj.setReasonOfLevelEnd("out of platforms");
+                    Buttonscript.dbObj.setOrbsCollected();
+                    FinishLine.postToDatabase(Buttonscript.dbObj);
+                    Buttonscript.dbObj.resetPlatformCords();
+                    Buttonscript.dbObj.resetPlatformCount();
+                    Buttonscript.dbObj.resetPlatformShoot();
+                    Buttonscript.dbObj.resetreasonOfLevelEnd();
+                    Buttonscript.dbObj.resetOrbsCollected();
+                    Buttonscript.dbObj.resetCheckpoint();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    Buttonscript.timePerParse.Start();
+                    if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
+                        Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+                    }
+                }
                 waitForMessage-=Time.deltaTime;
             }
         }

@@ -30,9 +30,15 @@ public class ReloadScene : MonoBehaviour
             }
             Buttonscript.dbObj.setTimeLine(timeLine);
             Buttonscript.dbObj.setOutcome(0);
+            Buttonscript.dbObj.setReasonOfLevelEnd("Lava");
+            Buttonscript.dbObj.setOrbsCollected();
             FinishLine.postToDatabase(Buttonscript.dbObj);
             Buttonscript.dbObj.resetPlatformCords();
             Buttonscript.dbObj.resetPlatformCount();
+            Buttonscript.dbObj.resetPlatformShoot();
+            Buttonscript.dbObj.resetreasonOfLevelEnd();
+            Buttonscript.dbObj.resetOrbsCollected();
+            Buttonscript.dbObj.resetCheckpoint();
         }
     }
 }
