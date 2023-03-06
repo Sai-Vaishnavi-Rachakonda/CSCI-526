@@ -11,8 +11,10 @@ public class KeyDirectionIndicator : MonoBehaviour
     void Update()
     {
         var keys = GameObject.FindGameObjectsWithTag("Key");
+        // Debug.Log(keys.Length);
         if(keys.Length>0)
         {
+            // Debug.Log("Keys are left");
             var key = FindClosestKey(keys);
             var dir = key.position - transform.position;
 
@@ -26,6 +28,11 @@ public class KeyDirectionIndicator : MonoBehaviour
                 var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
+
+        }
+        else{
+            // Debug.Log("No Keyyyyyys");
+            SetChildrenActive(false);
         }
 
     }
