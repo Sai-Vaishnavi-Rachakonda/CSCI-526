@@ -22,6 +22,8 @@ public class Deck : MonoBehaviour
         }
         if(counter <=0 ){
             script.StopPlatform(platformType);
+        } else {
+            script.AddPlatform(platformType);
         }
     }
 
@@ -58,7 +60,7 @@ public class Deck : MonoBehaviour
     public void IncreaseCount(){
             counter++;
             countVal.text = counter.ToString();
-
+            script.AddPlatform(platformType);
     }
 
 
