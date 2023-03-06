@@ -889,6 +889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas2
       objectReference: {fileID: 0}
+    - target: {fileID: 5631614093904774671, guid: 81ec9e0a972194ec18fe8f20e6014f07, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.1062927
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ec9e0a972194ec18fe8f20e6014f07, type: 3}
 --- !u!1001 &958843261
@@ -1226,6 +1230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.77601624
+      objectReference: {fileID: 0}
     - target: {fileID: 4339111077697544578, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: script
       value: 
@@ -1322,9 +1330,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final_canvas 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6573885209730189786, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.33139038
+      objectReference: {fileID: 0}
     - target: {fileID: 6573885210365860024, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.30000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573885210631429463, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9434052
       objectReference: {fileID: 0}
     - target: {fileID: 8960247085865233162, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: script

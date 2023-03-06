@@ -11,6 +11,7 @@ public class Deck : MonoBehaviour
     public Slingshot script;
     public string platformType;
     public TextMeshProUGUI countVal;
+    public Animator animator;
 
 
     void Start()
@@ -60,7 +61,9 @@ public class Deck : MonoBehaviour
     public void IncreaseCount(){
             counter++;
             countVal.text = counter.ToString();
+            animator.SetTrigger("Change");
             script.AddPlatform(platformType);
+            
     }
 
 
