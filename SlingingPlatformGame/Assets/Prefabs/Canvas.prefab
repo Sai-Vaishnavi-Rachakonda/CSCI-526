@@ -1786,12 +1786,28 @@ PrefabInstance:
       value: 4278519045
       objectReference: {fileID: 0}
     - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
       propertyPath: m_SizeDelta.y
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020783896069521928, guid: 98957633833c641acacb0573938d110e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9020783896069521935, guid: 98957633833c641acacb0573938d110e, type: 3}
       propertyPath: m_fontSize

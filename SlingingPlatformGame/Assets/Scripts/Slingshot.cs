@@ -68,14 +68,18 @@ public class Slingshot : MonoBehaviour
 
     public void CreatePlatformFromIndex()
     {
-        platform.gameObject.SetActive(false);
-        platform = null;
-        platformCollider = null;
-        platform = new Rigidbody2D();
+        if(platform)
+        {
+            platform.gameObject.SetActive(false);
+            platform = null;
+            platformCollider = null;
+            platform = new Rigidbody2D();
+        }
         CreatePlatform();
     }
 
     public void StopPlatform(string PlatformName){
+        Debug.Log("Inside StopPlatform function");
         if (!StoppedPlatforms.Contains(PlatformName))
         {
             StoppedPlatforms.Add(PlatformName);
@@ -259,9 +263,10 @@ public class Slingshot : MonoBehaviour
         platform = new Rigidbody2D();
         Invoke("CreatePlatform", 2);
 
-        GameObject deckObj = GameObject.Find("PlatformPanel");
+        GameObject deckObj = GameObject.Find("SelectPlatform");
         if (deckObj)
         {
+            Debug.Log("Selected SelectPlatform panel.......................**************************");
             GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
             Deck scriptObj = parentObject.GetComponent<Deck>();
             scriptObj.DecreaseCount();
