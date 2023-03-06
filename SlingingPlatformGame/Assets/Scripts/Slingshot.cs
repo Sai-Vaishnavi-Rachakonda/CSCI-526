@@ -239,7 +239,7 @@ public class Slingshot : MonoBehaviour
                     Buttonscript.dbObj.resetPlatformShoot();
                     Buttonscript.dbObj.resetreasonOfLevelEnd();
                     Buttonscript.dbObj.resetOrbsCollected();
-                    ButtonScript.dbObj.resetCheckpoint();
+                    Buttonscript.dbObj.resetCheckpoint();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     Buttonscript.timePerParse.Start();
                     if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){

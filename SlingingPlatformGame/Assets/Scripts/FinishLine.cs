@@ -51,7 +51,7 @@ public class FinishLine : MonoBehaviour
                 Buttonscript.dbObj.resetPlatformShoot();
                 Buttonscript.dbObj.resetOrbsCollected();
                 Buttonscript.dbObj.resetreasonOfLevelEnd();
-        ButtonScript.dbObj.resetCheckpoint();
+                Buttonscript.dbObj.resetCheckpoint();
                 Buttonscript.timePerParse.Start();
                 
             }
