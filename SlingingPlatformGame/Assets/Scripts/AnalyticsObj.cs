@@ -68,7 +68,7 @@ public class AnalyticsObj : MonoBehaviour
         this.reasonOfLevelEnd = "";
     }
     public void setOrbsCollected (){
-        this.orbsCollected = "[{ default: "+this.defaultCount.ToString()+", ice: "+this.iceCount.ToString()+"}]";
+        this.orbsCollected = "[orbs: { default: "+this.defaultCount.ToString()+", ice: "+this.iceCount.ToString()+"}]";
     }
 
     public void resetOrbsCollected(){

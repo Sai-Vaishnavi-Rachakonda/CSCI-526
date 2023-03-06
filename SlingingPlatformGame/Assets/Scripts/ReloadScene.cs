@@ -21,24 +21,27 @@ public class ReloadScene : MonoBehaviour
             
             // SceneManager.LoadScene(SceneManager.GetActiveScene().name);// reloads the scene from the start
             //TODO: change the analytics code to sync the addition of a checkpoint.
-            Buttonscript.timePerParse.Stop();
-            timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
-            Buttonscript.timePerParse.Reset();
-            Buttonscript.timePerParse.Start();
+            if(Buttonscript.dbObj.checkpoint != 1){
+                Buttonscript.timePerParse.Stop();
+                timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
+                Buttonscript.timePerParse.Reset();
+                Buttonscript.timePerParse.Start();    
+            }
             if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
                 Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
             }
+            timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
             Buttonscript.dbObj.setTimeLine(timeLine);
             Buttonscript.dbObj.setOutcome(0);
             Buttonscript.dbObj.setReasonOfLevelEnd("Lava");
             Buttonscript.dbObj.setOrbsCollected();
             FinishLine.postToDatabase(Buttonscript.dbObj);
-            Buttonscript.dbObj.resetPlatformCords();
-            Buttonscript.dbObj.resetPlatformCount();
-            Buttonscript.dbObj.resetPlatformShoot();
+            // Buttonscript.dbObj.resetPlatformCords();
+            // Buttonscript.dbObj.resetPlatformCount();
+            // Buttonscript.dbObj.resetPlatformShoot();
             Buttonscript.dbObj.resetreasonOfLevelEnd();
-            Buttonscript.dbObj.resetOrbsCollected();
-            Buttonscript.dbObj.resetCheckpoint();
+            // Buttonscript.dbObj.resetOrbsCollected();
+            // Buttonscript.dbObj.resetCheckpoint();
         }
     }
 }
