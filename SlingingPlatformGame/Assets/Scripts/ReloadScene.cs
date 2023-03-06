@@ -38,7 +38,7 @@ public class ReloadScene : MonoBehaviour
             Buttonscript.dbObj.resetPlatformShoot();
             Buttonscript.dbObj.resetreasonOfLevelEnd();
             Buttonscript.dbObj.resetOrbsCollected();
-            ButtonScript.dbObj.resetCheckpoint();
+            Buttonscript.dbObj.resetCheckpoint();
         }
     }
 }

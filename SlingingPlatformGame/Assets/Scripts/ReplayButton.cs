@@ -21,7 +21,7 @@ public class ReplayButton : MonoBehaviour
         Buttonscript.dbObj.resetPlatformCount();
         Buttonscript.dbObj.resetPlatformShoot();
         Buttonscript.dbObj.resetreasonOfLevelEnd();
-        ButtonScript.dbObj.resetCheckpoint();
+        Buttonscript.dbObj.resetCheckpoint();
         Buttonscript.dbObj.resetOrbsCollected();
 
         string currentSceneName = SceneManager.GetActiveScene().name;    //Get current scene name
