@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Deck : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Deck : MonoBehaviour
     public string platformType;
     public TextMeshProUGUI countVal;
     public Animator animator;
+    
 
 
     void Start()
@@ -26,6 +28,10 @@ public class Deck : MonoBehaviour
         } else {
             script.AddPlatform(platformType);
         }
+
+        
+
+
     }
 
     // void OnMouseDown()

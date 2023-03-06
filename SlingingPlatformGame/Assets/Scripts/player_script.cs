@@ -7,6 +7,7 @@ using TMPro;
 public class player_script : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI levelText;
     public static float ScoreNum;
     public static float maxScore;
     public List<float> keysArray = new List<float>();
@@ -27,6 +28,7 @@ public class player_script : MonoBehaviour
  
          if (sceneName == "Level 0") 
          {
+            levelText.text = "Level: 0";
             maxScore = 1;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
@@ -37,6 +39,7 @@ public class player_script : MonoBehaviour
          }
          else if(sceneName == "Level 1")
          {
+            levelText.text = "Level: 1";
             maxScore = 2;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
@@ -46,6 +49,7 @@ public class player_script : MonoBehaviour
          }
          else if(sceneName == "Level 2")
          {
+            levelText.text = "Level: 2";
             maxScore = 3;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
@@ -55,6 +59,7 @@ public class player_script : MonoBehaviour
          }
          else if(sceneName == "Level 3")
          {
+            levelText.text = "Level: 3";
              maxScore = 2;
              // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
              if (scoreText != null){
@@ -64,6 +69,7 @@ public class player_script : MonoBehaviour
          }
          else if(sceneName == "Level 4")
          {
+            levelText.text = "Level: 4";
              maxScore = 3;
              // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
              if (scoreText != null){
