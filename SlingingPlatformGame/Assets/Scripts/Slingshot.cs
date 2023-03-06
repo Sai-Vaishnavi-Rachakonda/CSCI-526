@@ -33,8 +33,7 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList StoppedPlatforms = new ArrayList();
-    public ArrayList PlatformNames = new ArrayList {"default", "ice"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
 
     public float targetTimeAfterPlatformIsOver=10f,waitForMessage=5f;
 
@@ -68,58 +67,66 @@ public class Slingshot : MonoBehaviour
 
     public void CreatePlatformFromIndex()
     {
-        if(platform)
-        {
-            platform.gameObject.SetActive(false);
-            platform = null;
-            platformCollider = null;
-            platform = new Rigidbody2D();
-        }
+        platform.gameObject.SetActive(false);
+        platform = null;
+        platformCollider = null;
+        platform = new Rigidbody2D();
         CreatePlatform();
     }
 
     public void StopPlatform(string PlatformName){
-        Debug.Log("Inside StopPlatform function");
-        if (!StoppedPlatforms.Contains(PlatformName))
+        if (remainingPlatforms.Contains(PlatformName))
         {
-            StoppedPlatforms.Add(PlatformName);
+            remainingPlatforms.Remove(PlatformName);
+        }
+    }
+
+    public void AddPlatform(string PlatformName){
+        if (!remainingPlatforms.Contains(PlatformName))
+        {
+            remainingPlatforms.Add(PlatformName);
+            if(selectedPlatform == "")
+            {
+                selectedPlatform = PlatformName;
+                CreatePlatform();
+            }
         }
     }
 
 
     void CreatePlatform()
     {
+        if (!remainingPlatforms.Contains(selectedPlatform))
+        {
+            if (remainingPlatforms.Count != 0) {
+                selectedPlatform = (string)remainingPlatforms[0];
+            }
+            else {
+                selectedPlatform = "";
+            }
+        }
         switch (selectedPlatform)
         {
             case "default":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
                 break;
             }
         
             case "ice":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
                 break;
             }
         
             case "weightedPlatform":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
             }
             default:
             {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                platform = null;
                 break;
             }
         }
@@ -209,7 +216,7 @@ public class Slingshot : MonoBehaviour
         }
 
         //when all platforms are used
-        if (StoppedPlatforms.Count == PlatformNames.Count) //is this working??
+        if (remainingPlatforms.Count == 0) 
         {
             targetTimeAfterPlatformIsOver -= Time.deltaTime;
             if (targetTimeAfterPlatformIsOver<=0.0f){
@@ -256,20 +263,19 @@ public class Slingshot : MonoBehaviour
             platform.velocity = platformForce;    
 
             platform.GetComponent<Platform>().Release(selectedPlatform);
-        }
 
-        platform = null;
-        platformCollider = null;
-        platform = new Rigidbody2D();
-        Invoke("CreatePlatform", 2);
+            platform = null;
+            platformCollider = null;
+            platform = new Rigidbody2D();
+            Invoke("CreatePlatform", 2);
 
-        GameObject deckObj = GameObject.Find("SelectPlatform");
-        if (deckObj)
-        {
-            Debug.Log("Selected SelectPlatform panel.......................**************************");
-            GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
-            Deck scriptObj = parentObject.GetComponent<Deck>();
-            scriptObj.DecreaseCount();
+            GameObject deckObj = GameObject.Find("SelectPlatform");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.DecreaseCount();
+            }
         }
     }
 
