@@ -36,9 +36,11 @@ public class FinishLine : MonoBehaviour
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
             Buttonscript.dbObj.setTimeLine(timeLine);
             Buttonscript.dbObj.setOutcome(1);
+
+            Buttonscript.dbObj.setReasonOfLevelEnd("level completed");
+            Buttonscript.dbObj.setOrbsCollected();
             postToDatabase(Buttonscript.dbObj);
             // if (player_script.ScoreNum >= score)
-            
             if(player_script.ScoreNum ==  player_script.maxScore)
             {
                 Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
@@ -46,6 +48,10 @@ public class FinishLine : MonoBehaviour
                 Buttonscript.timePerParse.Reset();
                 Buttonscript.dbObj.resetPlatformCords();
                 Buttonscript.dbObj.resetPlatformCount();
+                Buttonscript.dbObj.resetPlatformShoot();
+                Buttonscript.dbObj.resetOrbsCollected();
+                Buttonscript.dbObj.resetreasonOfLevelEnd();
+        ButtonScript.dbObj.resetCheckpoint();
                 Buttonscript.timePerParse.Start();
                 
             }
@@ -59,6 +65,6 @@ public class FinishLine : MonoBehaviour
     
 
     public static void postToDatabase(AnalyticsObj dbObj){
-        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/week8/"+dt.Month+".json", dbObj);
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/midterm-test/"+dt.Month+"/"+dt.Day+".json", dbObj);
     }
 }

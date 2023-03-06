@@ -118,6 +118,7 @@ public class player_script : MonoBehaviour
                 GameObject parentObject = deckObj.transform.Find("default").gameObject;
                 Deck scriptObj = parentObject.GetComponent<Deck>();
                 scriptObj.IncreaseCount();
+                Buttonscript.dbObj.defaultCount++;
             }
         }
 
@@ -131,6 +132,7 @@ public class player_script : MonoBehaviour
                 GameObject parentObject = deckObj.transform.Find("ice").gameObject;
                 Deck scriptObj = parentObject.GetComponent<Deck>();
                 scriptObj.IncreaseCount();
+                Buttonscript.dbObj.iceCount++;
             }
         }
     }

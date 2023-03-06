@@ -129,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
             // isJumping = false;
             var flagbox = collision.gameObject.GetComponent<BoxCollider2D>();
             flagbox.enabled = false;
+            Buttonscript.dbObj.setCheckpoint();
             // isJumping = false;
             ps.clearKeysArray();
 
