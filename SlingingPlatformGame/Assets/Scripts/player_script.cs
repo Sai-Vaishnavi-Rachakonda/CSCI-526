@@ -37,7 +37,7 @@ public class player_script : MonoBehaviour
          }
          else if(sceneName == "Level 1")
          {
-            maxScore = 3;
+            maxScore = 2;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;
@@ -51,6 +51,24 @@ public class player_script : MonoBehaviour
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;
             }
+            
+         }
+         else if(sceneName == "Level 3")
+         {
+             maxScore = 2;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+            
+         }
+         else if(sceneName == "Level 4")
+         {
+             maxScore = 3;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
             
          }
         // currentHealth = 0;
