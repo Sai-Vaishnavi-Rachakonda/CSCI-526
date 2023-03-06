@@ -1510,6 +1510,10 @@ PrefabInstance:
       value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
+      propertyPath: waitForMessage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
       propertyPath: platformPrefab.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1521,6 +1525,10 @@ PrefabInstance:
       propertyPath: platformPrefab.Array.data[2]
       value: 
       objectReference: {fileID: 9208262240435130192, guid: a57041df4ff4f3048b7efddbb8b350df, type: 3}
+    - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
+      propertyPath: targetTimeAfterPlatformIsOver
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
 --- !u!114 &2044801402 stripped

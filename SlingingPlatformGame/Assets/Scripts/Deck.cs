@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class Deck : MonoBehaviour
 {
     public int counter = 10;  // Initial value of counter
-    private TextMesh textMesh;
     // public Color highlightColor = Color.black;  // Color to use for highlight
     private Color originalColor;  // Original color of the game object
     // private Renderer renderer;  // Renderer component of the game object
@@ -44,6 +43,15 @@ public class Deck : MonoBehaviour
     //     }
     // }
 
+    void ColorChange(){
+        Debug.Log("updating color");
+        if(counter == 0) {
+            countVal.color = Color.red;
+        } else {
+            countVal.color = Color.black;
+        }
+    }
+
     public void checking(){
         if(counter > 0)
         {   
@@ -54,22 +62,23 @@ public class Deck : MonoBehaviour
     }
 
     public void DecreaseCount(){
-            if(counter > 0){
-                counter--;
-                countVal.text = counter.ToString();
-            }
-            if (counter == 0){
-                countVal.text = "0";
-                script.StopPlatform(platformType);
-            }
+        if(counter > 0){
+            counter--;
+            countVal.text = counter.ToString();
+        }
+        if (counter == 0){
+            countVal.text = "0";
+            script.StopPlatform(platformType);
+        }
+        ColorChange();
     }
 
     public void IncreaseCount(){
-            counter++;
-            countVal.text = counter.ToString();
-            animator.SetTrigger("Change");
-            script.AddPlatform(platformType);
-            
+        counter++;
+        countVal.text = counter.ToString();
+        animator.SetTrigger("Change");
+        script.AddPlatform(platformType);
+        ColorChange();
     }
 
 
