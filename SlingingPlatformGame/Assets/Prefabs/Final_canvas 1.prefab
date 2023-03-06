@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 23
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -384,7 +384,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2210222232535247145}
         m_TargetAssemblyTypeName: TutorialPannelOpener, Assembly-CSharp
-        m_MethodName: openPannel
+        m_MethodName: closePannel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 21.15
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2026,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 19.1
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627803451712, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_Name
@@ -2154,7 +2154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650094628674540716, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.30000305
+      value: 0.30000353
       objectReference: {fileID: 0}
     - target: {fileID: 3568048096432219934, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: animator
