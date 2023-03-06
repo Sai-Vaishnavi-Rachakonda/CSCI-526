@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.15
+  m_fontSize: 18
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2171,7 +2171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_fontSize
-      value: 19.1
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627803451712, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_Name
@@ -2320,7 +2320,7 @@ PrefabInstance:
     - target: {fileID: 3568048096432219934, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 5404579508460013755}
+      objectReference: {fileID: 8546270289387409}
     - target: {fileID: 8208636190329400726, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: animator
       value: 
@@ -2346,7 +2346,7 @@ Animator:
   m_GameObject: {fileID: 6573885209849897971}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 227bc60b224ad4bf2bbc3c47f1d783f5, type: 2}
+  m_Controller: {fileID: 9100000, guid: c3dff46f61fbc4fdcb462c7d5edb7837, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
