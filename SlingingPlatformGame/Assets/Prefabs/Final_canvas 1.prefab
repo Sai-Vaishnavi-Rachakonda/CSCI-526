@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.05
+  m_fontSize: 26
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.453, y: 0.033}
   m_AnchorMax: {x: 0.9662559, y: 0.80100006}
-  m_AnchoredPosition: {x: -0.1697998, y: -0.776001}
+  m_AnchoredPosition: {x: -0.1697998, y: -0.7760086}
   m_SizeDelta: {x: -0.52189636, y: -0.08999634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1105643357761869255
@@ -657,8 +657,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.0147, y: 0.000046968}
-  m_SizeDelta: {x: 106.0295, y: 43.867}
+  m_AnchoredPosition: {x: 83.0147, y: -0.5509}
+  m_SizeDelta: {x: 106.0295, y: 49.377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6573885209202404156
 CanvasRenderer:
@@ -1711,8 +1711,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.8618, y: -0.000005722046}
-  m_SizeDelta: {x: 99.5931, y: 56.453}
+  m_AnchoredPosition: {x: 83.0698, y: 1.7075}
+  m_SizeDelta: {x: 100.0091, y: 52.169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6573885210918520003
 CanvasRenderer:
@@ -1769,8 +1769,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.1
+  m_fontSize: 29.6
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1977,7 +1977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_fontSize
-      value: 19.15
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627803451712, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_Name
