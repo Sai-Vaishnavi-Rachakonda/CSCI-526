@@ -27,10 +27,6 @@ public class KeyDirectionIndicator : MonoBehaviour
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
         }
-        else
-        {
-            SetChildrenActive(false);
-        }
 
     }
 
