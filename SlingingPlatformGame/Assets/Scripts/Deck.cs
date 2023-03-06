@@ -18,7 +18,7 @@ public class Deck : MonoBehaviour
         GameObject slingshotObj = GameObject.Find("Slingshot");
         script = slingshotObj.GetComponent<Slingshot>();
         if(countVal != null){
-           countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 3";
+           countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 4";
         }
         if(counter <=0 ){
             script.StopPlatform(platformType);

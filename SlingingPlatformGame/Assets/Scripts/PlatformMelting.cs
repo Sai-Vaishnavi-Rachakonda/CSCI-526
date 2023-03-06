@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlatformMelting : MonoBehaviour
 {
-    public float duration = 10f;  // the duration in seconds for the scaling effect
+    public float duration = 8f;  // the duration in seconds for the scaling effect
     private float timer = 0f;   // the timer to keep track of the elapsed time
 
     private void Update()
