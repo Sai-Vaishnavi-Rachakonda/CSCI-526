@@ -65,6 +65,6 @@ public class FinishLine : MonoBehaviour
     
 
     public static void postToDatabase(AnalyticsObj dbObj){
-        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/midterm-test/"+dt.Month+"/"+dt.Day+".json", dbObj);
+        RestClient.Post("https://demodemo-96d74-default-rtdb.firebaseio.com/midterm/"+dt.Month+"/"+dt.Day+".json", dbObj);
     }
 }
