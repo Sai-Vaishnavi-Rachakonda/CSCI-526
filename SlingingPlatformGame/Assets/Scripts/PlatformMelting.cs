@@ -8,7 +8,7 @@ public class PlatformMelting : MonoBehaviour
     private void Update()
     {
         // Check if the timer has reached the duration
-        if (timer < duration)
+        if (timer <= duration)
         {
             // Calculate the new scale value based on the elapsed time
             float scale = Mathf.Lerp(0.5f, 0f, timer / duration);
