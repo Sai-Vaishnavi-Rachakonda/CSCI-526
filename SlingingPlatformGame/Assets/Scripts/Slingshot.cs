@@ -36,7 +36,7 @@ public class Slingshot : MonoBehaviour
     public string selectedPlatform = "default";
     public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
 
-    public float targetTimeAfterPlatformIsOver=10f,waitForMessage=5f;
+    public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
     public TextMeshProUGUI Timer;
 
@@ -223,7 +223,7 @@ public class Slingshot : MonoBehaviour
         {
             targetTimeAfterPlatformIsOver -= Time.deltaTime;
             if (targetTimeAfterPlatformIsOver<=0.0f){
-                if(waitForMessage==5f)
+                if(waitForMessage==2f)
                     openRestartPannel();
                 else if(waitForMessage<=0.0f){
                     Buttonscript.timePerParse.Stop();
@@ -245,6 +245,8 @@ public class Slingshot : MonoBehaviour
                     if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
                         Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
                     }
+                    targetTimeAfterPlatformIsOver=45f;
+                    waitForMessage=2f;
                 }
                 waitForMessage-=Time.deltaTime;
             }
