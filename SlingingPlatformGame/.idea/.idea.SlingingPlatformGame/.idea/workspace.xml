@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="" />
+    <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Build/Week 9 git v2.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Build/Week 9 git v2.framework.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Build/Week 9 git v2.loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Build/Week 9 git v2.wasm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/fullscreen-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/progress-bar-empty-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/progress-bar-empty-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/progress-bar-full-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/progress-bar-full-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/unity-logo-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/unity-logo-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TemplateData/webgl-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
