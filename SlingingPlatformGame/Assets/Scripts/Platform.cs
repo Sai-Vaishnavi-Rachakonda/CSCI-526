@@ -47,9 +47,9 @@ public class Platform : MonoBehaviour
     {
         while (true)
         {
-            //  if (timer >= 0.012f ) //for runtime in unity
+            // if (timer >= 0.012f ) //for runtime in unity
              if (timer >= 0.15f ) // for webGl
-            // if (timer >= 0.05f ) //for runtime in unity (Pratik's PC)
+            //if (timer >= 0.05f ) //for runtime in unity (Pratik's PC)
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
                 newPlatform.transform.rotation= Quaternion.identity; // make rotation zero.
@@ -60,8 +60,8 @@ public class Platform : MonoBehaviour
                 pos += "x:"+transform.position.x.ToString();
                 pos += ",y:"+transform.position.y.ToString();
                 Debug.Log(""+pos);
-                Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformCords(pos);
+                Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformsShoot(selectedPlatform);
                 Destroy(newPlatform);
                 gameObject.SetActive(false);

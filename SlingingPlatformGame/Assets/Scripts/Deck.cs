@@ -1,26 +1,36 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Deck : MonoBehaviour
 {
     public int counter = 10;  // Initial value of counter
-    private TextMesh textMesh;
     // public Color highlightColor = Color.black;  // Color to use for highlight
     private Color originalColor;  // Original color of the game object
-    private Renderer renderer;  // Renderer component of the game object
+    // private Renderer renderer;  // Renderer component of the game object
     public Slingshot script;
     public string platformType;
     public TextMeshProUGUI countVal;
+    public Animator animator;
+    
 
 
     void Start()
     {
+        GameObject slingshotObj = GameObject.Find("Slingshot");
+        script = slingshotObj.GetComponent<Slingshot>();
         if(countVal != null){
-           countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 3";
+           countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 4";
         }
         if(counter <=0 ){
             script.StopPlatform(platformType);
+        } else {
+            script.AddPlatform(platformType);
         }
+
+        
+
+
     }
 
     // void OnMouseDown()
@@ -33,6 +43,15 @@ public class Deck : MonoBehaviour
     //     }
     // }
 
+    void ColorChange(){
+        Debug.Log("updating color");
+        if(counter == 0) {
+            countVal.color = Color.red;
+        } else {
+            countVal.color = Color.black;
+        }
+    }
+
     public void checking(){
         if(counter > 0)
         {   
@@ -43,20 +62,23 @@ public class Deck : MonoBehaviour
     }
 
     public void DecreaseCount(){
-            if(counter > 0){
-                counter--;
-                countVal.text = counter.ToString();
-            }
-            if (counter == 0){
-                countVal.text = "0";
-                script.StopPlatform(platformType);
-            }
+        if(counter > 0){
+            counter--;
+            countVal.text = counter.ToString();
+        }
+        if (counter == 0){
+            countVal.text = "0";
+            script.StopPlatform(platformType);
+        }
+        ColorChange();
     }
 
     public void IncreaseCount(){
-            counter++;
-            countVal.text = counter.ToString();
-
+        counter++;
+        countVal.text = counter.ToString();
+        animator.SetTrigger("Change");
+        script.AddPlatform(platformType);
+        ColorChange();
     }
 
 

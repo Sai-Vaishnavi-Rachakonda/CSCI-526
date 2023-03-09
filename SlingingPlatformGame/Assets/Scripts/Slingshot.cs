@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Slingshot : MonoBehaviour
 {
@@ -33,10 +34,11 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList StoppedPlatforms = new ArrayList();
-    public ArrayList PlatformNames = new ArrayList {"default", "ice"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
 
-    public float targetTimeAfterPlatformIsOver=10f,waitForMessage=5f;
+    public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
+    public static long timeLine;
+    public TextMeshProUGUI Timer;
 
 
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
@@ -58,7 +60,7 @@ public class Slingshot : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 3")
         {
             selectedPlatform = "ice";
         }
@@ -76,46 +78,58 @@ public class Slingshot : MonoBehaviour
     }
 
     public void StopPlatform(string PlatformName){
-        if (!StoppedPlatforms.Contains(PlatformName))
+        if (remainingPlatforms.Contains(PlatformName))
         {
-            StoppedPlatforms.Add(PlatformName);
+            remainingPlatforms.Remove(PlatformName);
+        }
+    }
+
+    public void AddPlatform(string PlatformName){
+        if (!remainingPlatforms.Contains(PlatformName))
+        {
+            remainingPlatforms.Add(PlatformName);
+            if(selectedPlatform == "")
+            {
+                selectedPlatform = PlatformName;
+                CreatePlatform();
+            }
         }
     }
 
 
     void CreatePlatform()
     {
+        if (!remainingPlatforms.Contains(selectedPlatform))
+        {
+            if (remainingPlatforms.Count != 0) {
+                selectedPlatform = (string)remainingPlatforms[0];
+            }
+            else {
+                selectedPlatform = "";
+            }
+        }
         switch (selectedPlatform)
         {
             case "default":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
                 break;
             }
         
             case "ice":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
                 break;
             }
         
             case "weightedPlatform":
             {
-                if (!StoppedPlatforms.Contains(selectedPlatform))
-                {
-                    platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
-                }
+                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
             }
             default:
             {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                platform = null;
                 break;
             }
         }
@@ -133,28 +147,31 @@ public class Slingshot : MonoBehaviour
 
     void Update()
     {
+        // @author: Chirag
+        lineRenderers[0].SetPosition(0,new Vector3(center.position.x+0.4f,center.position.y-0.06f,center.position.z));
+        lineRenderers[1].SetPosition(0,new Vector3(center.position.x-0.4f,center.position.y-0.06f,center.position.z));
+        lineRenderers[0].SetPosition(1,idlePosition.position);
+        lineRenderers[1].SetPosition(1,idlePosition.position);
+        // var lineRendererPosition = lineRenderers[0].GetPosition(0);
+        // var lineRendererPosition1 = lineRenderers[1].GetPosition(0);
         
 
-        var lineRendererPosition = lineRenderers[0].GetPosition(0);
-        var lineRendererPosition1 = lineRenderers[1].GetPosition(0);
+        // var nposSling = transform.position;
+        // var change = nposSling - lr0;
         
-
-        var nposSling = transform.position;
-        var change = nposSling - lr0;
-        
-        if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
+        // if(!(transform.position.x-0.5<lineRendererPosition.x && transform.position.x+0.5>lineRendererPosition.x)){
             
-            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
-            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
-        }
+        //     lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+        //     lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
+        // }
 
-        else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
+        // else if(!(transform.position.y-0.5<lineRendererPosition.y && transform.position.y+0.5>lineRendererPosition.y)){
             
-            lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
-            lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
-        }
+        //     lineRenderers[0].SetPosition(0, new Vector3(lineRendererPosition.x+change.x,lineRendererPosition.y+change.y,lineRendererPosition.z+change.z));
+        //     lineRenderers[1].SetPosition(0, new Vector3(lineRendererPosition1.x+change.x,lineRendererPosition1.y+change.y,lineRendererPosition1.z-change.z));
+        // }
 
-        lr0 = transform.position;
+        // lr0 = transform.position;
 
         if (isMouseDown)
         {
@@ -202,14 +219,35 @@ public class Slingshot : MonoBehaviour
         }
 
         //when all platforms are used
-        if (StoppedPlatforms.Count == PlatformNames.Count)
+        if (remainingPlatforms.Count == 0) 
         {
             targetTimeAfterPlatformIsOver -= Time.deltaTime;
             if (targetTimeAfterPlatformIsOver<=0.0f){
-                if(waitForMessage==5f)
+                if(waitForMessage==2f)
                     openRestartPannel();
-                else if(waitForMessage<=0.0f)
+                else if(waitForMessage<=0.0f){
+                    Buttonscript.timePerParse.Stop();
+                    timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
+                    Buttonscript.timePerParse.Reset();
+                    Buttonscript.dbObj.setTimeLine(timeLine);
+                    Buttonscript.dbObj.setOutcome(0);
+                    Buttonscript.dbObj.setReasonOfLevelEnd("out of platforms");
+                    Buttonscript.dbObj.setOrbsCollected();
+                    FinishLine.postToDatabase(Buttonscript.dbObj);
+                    Buttonscript.dbObj.resetPlatformCords();
+                    Buttonscript.dbObj.resetPlatformCount();
+                    Buttonscript.dbObj.resetPlatformShoot();
+                    Buttonscript.dbObj.resetreasonOfLevelEnd();
+                    Buttonscript.dbObj.resetOrbsCollected();
+                    Buttonscript.dbObj.resetCheckpoint();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    Buttonscript.timePerParse.Start();
+                    if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
+                        Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+                    }
+                    targetTimeAfterPlatformIsOver=45f;
+                    waitForMessage=2f;
+                }
                 waitForMessage-=Time.deltaTime;
             }
         }
@@ -249,19 +287,19 @@ public class Slingshot : MonoBehaviour
             platform.velocity = platformForce;    
 
             platform.GetComponent<Platform>().Release(selectedPlatform);
-        }
 
-        platform = null;
-        platformCollider = null;
-        platform = new Rigidbody2D();
-        Invoke("CreatePlatform", 2);
+            platform = null;
+            platformCollider = null;
+            platform = new Rigidbody2D();
+            Invoke("CreatePlatform", 2);
 
-        GameObject deckObj = GameObject.Find("PlatformPanel");
-        if (deckObj)
-        {
-            GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
-            Deck scriptObj = parentObject.GetComponent<Deck>();
-            scriptObj.DecreaseCount();
+            GameObject deckObj = GameObject.Find("SelectPlatform");
+            if (deckObj)
+            {
+                GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
+                Deck scriptObj = parentObject.GetComponent<Deck>();
+                scriptObj.DecreaseCount();
+            }
         }
     }
 
