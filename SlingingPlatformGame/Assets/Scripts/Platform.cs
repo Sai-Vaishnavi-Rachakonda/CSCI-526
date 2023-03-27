@@ -10,7 +10,8 @@ public class Platform : MonoBehaviour
     // private Rigidbody2D newPlatform;
     private Rigidbody2D newPlatform; //create a new variable to access the new platform
     public Rigidbody2D platformShape;// get the variable to create the new platform.
-    public float timer;
+    public double timer=0;
+    public double oldTimer=0;
     GameObject Slingshot;
 
     
@@ -45,10 +46,11 @@ public class Platform : MonoBehaviour
     
     IEnumerator CreatePathPoints(string selectedPlatform)
     {
+        oldTimer = Time.unscaledTimeAsDouble;
         while (true)
         {
-            // if (timer >= 0.012f ) //for runtime in unity
-             if (timer >= 0.15f ) // for webGl
+            if (timer >= 0.8f) //for runtime in unity
+             // if (timer >= 0.15f ) // for webGl
             //if (timer >= 0.05f ) //for runtime in unity (Pratik's PC)
             {
                 newPlatform.constraints = RigidbodyConstraints2D.FreezeAll; // freeze all the varaibles of the platform
@@ -59,7 +61,6 @@ public class Platform : MonoBehaviour
                 var pos = "";
                 pos += "x:"+transform.position.x.ToString();
                 pos += ",y:"+transform.position.y.ToString();
-                Debug.Log(""+pos);
                 Buttonscript.dbObj.setPlatformCords(pos);
                 Buttonscript.dbObj.platformCount +=1;
                 Buttonscript.dbObj.setPlatformsShoot(selectedPlatform);
@@ -70,7 +71,8 @@ public class Platform : MonoBehaviour
                 platformShape.constraints= RigidbodyConstraints2D.FreezeRotation;
                 break;
             }
-            timer += 0.87f * Time.deltaTime;
+            
+            timer = Time.unscaledTimeAsDouble-oldTimer;
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
         }
