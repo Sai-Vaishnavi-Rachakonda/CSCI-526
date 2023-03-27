@@ -129,6 +129,7 @@ MonoBehaviour:
   collided: 0
   platformShape: {fileID: 8892281177357756097}
   timer: 0
+  oldTimer: 0
 --- !u!50 &8892281177357756097
 Rigidbody2D:
   serializedVersion: 4
