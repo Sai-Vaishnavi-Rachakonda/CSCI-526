@@ -15,6 +15,7 @@ TagManager:
   - door color
   - default-powerup
   - ice-powerup
+  - Enemy
   layers:
   - Default
   - TransparentFX
