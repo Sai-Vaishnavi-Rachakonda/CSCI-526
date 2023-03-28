@@ -90,6 +90,19 @@ public class player_script : MonoBehaviour
              }
             
          }
+         else if(sceneName == "Level 5")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 6";
+            }
+             maxScore = 8;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+            
+         }
         // currentHealth = 0;
         // _slide.maxValue = MaxHealth;
         // _slide.value = 0;
