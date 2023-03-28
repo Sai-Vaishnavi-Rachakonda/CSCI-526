@@ -941,6 +941,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: scoreText
       objectReference: {fileID: 0}
+    - target: {fileID: 7021009092445214343, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: -96.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021009092445214343, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 228.7687
     - target: {fileID: 7502136420284318186, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Enabled
       value: 0
