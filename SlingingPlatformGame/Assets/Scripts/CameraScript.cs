@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     // public GameObject target;
 
     private Camera Camera;
-    private float zoomOut = 10;
+    private float zoomOut = 13;
     private const float zoomIn=8.634074f; // Const do not change it
 
     void Start()
