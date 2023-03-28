@@ -38,24 +38,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
-
-            if (platformCollider != null && platformCollider.gameObject.name == "Platform 3")
-            {
-                // The platform is a bouncy platform
-                // Set the player's jump height accordingly
-                // float jumpVelocity = Mathf.Sqrt((float)(1.5 * jump));
-                rb.AddForce(new Vector2(rb.velocity.x, jump*1.5f));
-                isJumping=true;
-            }
-            else
-            {
-                // The platform is not a bouncy platform
-                // Use the default jump height
-                rb.AddForce(new Vector2(rb.velocity.x, jump));
-                isJumping=true;
-            }
-            
+            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            isJumping=true;
         }
 
 
@@ -76,7 +60,15 @@ public class PlayerMovement : MonoBehaviour
             Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y + Time.deltaTime*diff, Camera.transform.position.z);
         }else if(Camera.transform.position.y-0.1>=transform.position.y){ // moving backward
             var diff = Camera.transform.position.y - transform.position.y;
-            //  if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
+
+            if(SceneManager.GetActiveScene().name=="Level 5"){
+                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=57)  
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                else if(Camera.transform.position.y>=1.1)
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            }
+            else 
+            if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
                 Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
         }
         if(currentPlatform!=null){
