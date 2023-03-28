@@ -78,8 +78,10 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             if(SceneManager.GetActiveScene().name=="Level 5"){
-                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=61)  
+                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=64.25958){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                }
+                    
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
             }
