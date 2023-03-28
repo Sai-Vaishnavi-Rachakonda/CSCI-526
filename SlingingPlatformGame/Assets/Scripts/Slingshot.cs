@@ -332,6 +332,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
+        bottomBoundary = -100000000000000; //temporarty CHANGE
         vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
         
         return vector;
