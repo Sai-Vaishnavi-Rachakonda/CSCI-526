@@ -660,6 +660,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 1.9434052
       objectReference: {fileID: 0}
+    - target: {fileID: 7502136420284318188, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: counter
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 7519519047521983022, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Enabled
       value: 0
