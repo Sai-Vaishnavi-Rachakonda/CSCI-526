@@ -105,6 +105,21 @@ public class PlayerMovement : MonoBehaviour
             ps.updateScore();
               
         }
+
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            isJumping = false;
+            transform.position = respawnPosition;
+            transform.rotation = Quaternion.identity;
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0); 
+            var list = ps.keysArray.ToArray();
+            for (int i = 0; i < list.Length; i+=2)
+            {
+                Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
+            }
+            ps.updateScore();
+              
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
