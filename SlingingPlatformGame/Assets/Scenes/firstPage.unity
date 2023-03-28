@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.1
+  m_fontSize: 23.35
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.15
+  m_fontSize: 28.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 28.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.4
+  m_fontSize: 28.65
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 28.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -927,7 +927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4e716cc96c14d4a83bca8c05df8b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartScene: 1
   Timer: {fileID: 0}
 --- !u!114 &787378471
 MonoBehaviour:
@@ -1169,6 +1168,7 @@ GameObject:
   - component: {fileID: 958326092}
   - component: {fileID: 958326091}
   - component: {fileID: 958326090}
+  - component: {fileID: 958326093}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1242,6 +1242,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &958326093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958326089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28f70c56794341d0947c827e968597b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1296051678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24812499, y: 0.5093813}
   m_AnchorMax: {x: 0.45612493, y: 0.62815726}
-  m_AnchoredPosition: {x: 0.21896362, y: 1.1121788}
+  m_AnchoredPosition: {x: 0.21899414, y: 1.1121788}
   m_SizeDelta: {x: 0.7535, y: -0.22440004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398362142

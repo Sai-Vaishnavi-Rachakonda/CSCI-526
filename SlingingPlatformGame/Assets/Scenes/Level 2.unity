@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.21299934
       objectReference: {fileID: 0}
+    - target: {fileID: 2771885811439729522, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.6199341
+      objectReference: {fileID: 0}
     - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.77601624
@@ -1209,6 +1213,7 @@ GameObject:
   - component: {fileID: 1357116020}
   - component: {fileID: 1357116019}
   - component: {fileID: 1357116018}
+  - component: {fileID: 1357116021}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1282,6 +1287,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357116021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357116017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28f70c56794341d0947c827e968597b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1687847272
 PrefabInstance:
   m_ObjectHideFlags: 0
