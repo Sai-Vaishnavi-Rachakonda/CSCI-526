@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9208262240435130028}
   - component: {fileID: 7318848877859278332}
   - component: {fileID: 3576949679068175739}
-  - component: {fileID: 1957857574912250710}
   m_Layer: 0
   m_Name: Platform 3
   m_TagString: Ground
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: d919a4638f2db4fc5b12ae0632975e46, type: 3}
-  m_Color: {r: 0.5801165, g: 0.23104309, b: 0.8301887, a: 1}
+  m_Color: {r: 0.46938646, g: 0.033241354, b: 0.7830189, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,6 +128,7 @@ MonoBehaviour:
   collided: 0
   platformShape: {fileID: 3576949679068175739}
   timer: 0
+  oldTimer: 0
 --- !u!50 &3576949679068175739
 Rigidbody2D:
   serializedVersion: 4
@@ -150,15 +150,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1957857574912250710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9208262240435130192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908bf72a7a7b66144a0012f01b4eba69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

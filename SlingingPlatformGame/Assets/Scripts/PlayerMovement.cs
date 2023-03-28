@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
-
-            if (platformCollider != null && platformCollider.gameObject.name == "Platform 3")
+            Debug.Log(platformCollider.gameObject.name);
+            if (platformCollider != null && platformCollider.gameObject.name == "Platform 3(Clone)")
             {
                 // The platform is a bouncy platform
                 // Set the player's jump height accordingly
