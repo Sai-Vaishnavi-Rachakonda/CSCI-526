@@ -148,6 +148,7 @@ public class Slingshot : MonoBehaviour
     void Update()
     {
         // @author: Chirag
+
         lineRenderers[0].SetPosition(0,new Vector3(center.position.x+0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[1].SetPosition(0,new Vector3(center.position.x-0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[0].SetPosition(1,idlePosition.position);
@@ -175,6 +176,8 @@ public class Slingshot : MonoBehaviour
 
         if (isMouseDown)
         {
+
+            //Strip issue is coming due to this code
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 10;
 
@@ -183,6 +186,11 @@ public class Slingshot : MonoBehaviour
                 - center.position, maxLength);
 
             currentPosition = ClampBoundary(currentPosition);
+
+        
+            Debug.Log("Current: "+currentPosition);
+            Debug.Log("Mouse: "+mousePosition);
+            Debug.Log("Max: "+maxLength);
 
             SetStrips(currentPosition);
 
