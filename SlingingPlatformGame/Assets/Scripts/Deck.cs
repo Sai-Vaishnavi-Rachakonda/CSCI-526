@@ -24,7 +24,7 @@ public class Deck : MonoBehaviour
                 countVal.text =  "Unlock in Level 4";
             }
             else if(counter==-2){
-                countVal.text =  "Unlock in Level 5";
+                countVal.text =  "Unlock in Level 6";
             }
             else{
                 countVal.text = counter.ToString();
