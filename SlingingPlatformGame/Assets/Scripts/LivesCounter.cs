@@ -46,22 +46,17 @@ public class LivesCounter : MonoBehaviour
         	    heart2.SetActive(false);
         	    heart3.SetActive(false);
         	    break;
-        	case 0:
-        	    heart1.SetActive(false);
-        	    heart2.SetActive(false);
-        	    heart3.SetActive(false);
-        	    ResetTheGame();
-                if(targetTime == 3f)
-                    OpenGameOver(true);
-                else if(targetTime <= 0.0f){
-                	SceneManager.LoadScene("firstPage");
-                }
-                targetTime -= Time.deltaTime;
-        	    break;
         	default:
         	    heart1.SetActive(false);
         	    heart2.SetActive(false);
         	    heart3.SetActive(false);
+                if(targetTime == 3f)
+                    OpenGameOver(true);
+                else if(targetTime <= 0.0f){
+                	PushStats();
+                	SceneManager.LoadScene("levelSelection");
+                }
+                targetTime -= Time.deltaTime;
         	    break;
         }
     }
@@ -82,7 +77,7 @@ public class LivesCounter : MonoBehaviour
     }
 
 
-    void ResetTheGame() 
+    void PushStats() 
     {
         Buttonscript.timePerParse.Stop();
         timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
