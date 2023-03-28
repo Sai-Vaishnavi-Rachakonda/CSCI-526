@@ -12,12 +12,18 @@ public class PlatformMelting : MonoBehaviour
         {
             // Calculate the new scale value based on the elapsed time
             float scale = Mathf.Lerp(0.5f, 0f, timer / duration);
-
-            // Update the scale of the cube object
-            transform.localScale = new Vector3(3f, scale, 1f);
-
-            // Increase the timer by the delta time
-            timer += Time.deltaTime;
+            if(scale>0.0005)
+            {
+                // Update the scale of the cube object
+                transform.localScale = new Vector3(3f, scale, 1f);
+                // Increase the timer by the delta time
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                gameObject.SetActive(false);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

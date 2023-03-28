@@ -34,7 +34,7 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bounce"};
 
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
@@ -110,6 +110,7 @@ public class Slingshot : MonoBehaviour
         }
         switch (selectedPlatform)
         {
+            
             case "default":
             {
                 platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
@@ -122,7 +123,7 @@ public class Slingshot : MonoBehaviour
                 break;
             }
         
-            case "weightedPlatform":
+            case "bounce":
             {
                 platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
@@ -148,6 +149,7 @@ public class Slingshot : MonoBehaviour
     void Update()
     {
         // @author: Chirag
+
         lineRenderers[0].SetPosition(0,new Vector3(center.position.x+0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[1].SetPosition(0,new Vector3(center.position.x-0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[0].SetPosition(1,idlePosition.position);
@@ -175,6 +177,8 @@ public class Slingshot : MonoBehaviour
 
         if (isMouseDown)
         {
+
+            //Strip issue is coming due to this code
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 10;
 
@@ -183,6 +187,11 @@ public class Slingshot : MonoBehaviour
                 - center.position, maxLength);
 
             currentPosition = ClampBoundary(currentPosition);
+
+        
+            Debug.Log("Current: "+currentPosition);
+            Debug.Log("Mouse: "+mousePosition);
+            Debug.Log("Max: "+maxLength);
 
             SetStrips(currentPosition);
 
@@ -324,6 +333,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
+        bottomBoundary = -100000000000000; //temporarty CHANGE
         vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
         
         return vector;
