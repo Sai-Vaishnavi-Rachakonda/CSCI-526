@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collided: 0
-  platformShape: {fileID: 3576949679068175739, guid: 9f22270a3b5620d49993d7b970a9fef4, type: 3}
+  platformShape: {fileID: 3576949679068175739, guid: 45af8dd0a0d044ad0bfc933ea8ba4b10, type: 3}
   timer: 0
+  oldTimer: 0
 --- !u!50 &-6665534934248732921
 Rigidbody2D:
   serializedVersion: 4
@@ -136,14 +137,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9208262240435130192}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

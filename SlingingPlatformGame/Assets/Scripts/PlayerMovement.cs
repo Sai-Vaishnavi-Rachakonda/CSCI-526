@@ -38,8 +38,24 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            isJumping=true;
+            Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
+            Debug.Log(platformCollider.gameObject.name);
+            if (platformCollider != null && platformCollider.gameObject.name == "Platform 3(Clone)")
+            {
+                // The platform is a bouncy platform
+                // Set the player's jump height accordingly
+                // float jumpVelocity = Mathf.Sqrt((float)(1.5 * jump));
+                rb.AddForce(new Vector2(rb.velocity.x, jump*1.5f));
+                isJumping=true;
+            }
+            else
+            {
+                // The platform is not a bouncy platform
+                // Use the default jump height
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+                isJumping=true;
+            }
+            
         }
 
 
@@ -111,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
             }
             ps.updateScore();
-              
+            LivesCounter.health -= 1;
         }
 
         else if (other.gameObject.CompareTag("Enemy"))
