@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
             }
             ps.updateScore();
-              
+            LivesCounter.health -= 1;
         }
     }
 
