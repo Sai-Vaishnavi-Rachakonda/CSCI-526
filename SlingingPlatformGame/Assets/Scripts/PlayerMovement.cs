@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             isJumping=true;
