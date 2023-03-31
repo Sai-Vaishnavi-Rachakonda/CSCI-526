@@ -34,7 +34,7 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bounce"};
 
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
@@ -110,6 +110,7 @@ public class Slingshot : MonoBehaviour
         }
         switch (selectedPlatform)
         {
+            
             case "default":
             {
                 platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
@@ -122,7 +123,7 @@ public class Slingshot : MonoBehaviour
                 break;
             }
         
-            case "weightedPlatform":
+            case "bounce":
             {
                 platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
@@ -332,7 +333,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
-        bottomBoundary = -100000;
+        bottomBoundary = -100000000000000; //temporarty CHANGE
         vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
         
         return vector;

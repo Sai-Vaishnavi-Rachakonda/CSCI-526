@@ -38,8 +38,24 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            isJumping=true;
+            Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
+            Debug.Log(platformCollider.gameObject.name);
+            if (platformCollider != null && platformCollider.gameObject.name == "Platform 3(Clone)")
+            {
+                // The platform is a bouncy platform
+                // Set the player's jump height accordingly
+                // float jumpVelocity = Mathf.Sqrt((float)(1.5 * jump));
+                rb.AddForce(new Vector2(rb.velocity.x, jump*1.5f));
+                isJumping=true;
+            }
+            else
+            {
+                // The platform is not a bouncy platform
+                // Use the default jump height
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+                isJumping=true;
+            }
+            
         }
 
 
@@ -62,8 +78,10 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             if(SceneManager.GetActiveScene().name=="Level 5"){
-                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=61)  
+                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=64.25958){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                }
+                    
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
             }
@@ -100,6 +118,21 @@ public class PlayerMovement : MonoBehaviour
         }
         
         else if (other.gameObject.CompareTag("Lava"))
+        {
+            isJumping = false;
+            transform.position = respawnPosition;
+            transform.rotation = Quaternion.identity;
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0); 
+            var list = ps.keysArray.ToArray();
+            for (int i = 0; i < list.Length; i+=2)
+            {
+                Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
+            }
+            ps.updateScore();
+            LivesCounter.health -= 1;
+        }
+
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             isJumping = false;
             transform.position = respawnPosition;
