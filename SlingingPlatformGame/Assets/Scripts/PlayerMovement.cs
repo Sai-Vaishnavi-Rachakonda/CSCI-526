@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public player_script ps;
     public GameObject key;
 
+    Vector3 playerPosition;
+    int count=0;
+
     
 
     void Start()
@@ -31,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         FinishLine = GameObject.Find("Finish");
         respawnPosition = transform.position;
 
-
+        playerPosition = respawnPosition;
     }
 
     // Update is called once per frame
@@ -39,7 +42,20 @@ public class PlayerMovement : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
-        
+
+        if(move>0){
+            if(playerPosition.x==transform.position.x)
+                count++;
+            else
+                count=0;
+            if(count>200) // Why 200? its temp
+                rb.velocity = new Vector2(speed * 0, rb.velocity.y);
+            
+        }else{
+            count=0;
+            
+        }
+        playerPosition=transform.position;
         
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
@@ -111,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
                 if(other.transform.position.y+1.1>transform.position.y && other.transform.position.y-0.1<=transform.position.y){
                     Slingshot.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+2f, 0);
-                    currentPlatform = other;            
+                    currentPlatform = other;
                 }
             }
         }
