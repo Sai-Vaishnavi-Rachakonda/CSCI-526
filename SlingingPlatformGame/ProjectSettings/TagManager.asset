@@ -16,6 +16,8 @@ TagManager:
   - default-powerup
   - ice-powerup
   - Enemy
+  - powerUpShield
+  - LavaRain
   layers:
   - Default
   - TransparentFX

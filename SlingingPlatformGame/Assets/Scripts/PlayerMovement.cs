@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 respawnPosition;
     public player_script ps;
     public GameObject key;
+
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
+        
+        
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
             Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
@@ -130,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
             }
             ps.updateScore();
             LivesCounter.health -= 1;
+            
         }
 
         else if (other.gameObject.CompareTag("Enemy"))
@@ -144,9 +150,27 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
             }
             ps.updateScore();
-              
+            LivesCounter.health -= 1; 
         }
     }
+
+    private void OnParticleCollision(GameObject other) {
+        
+        if (other.gameObject.CompareTag("LavaRain") && !ps.shieldBoolean){
+            isJumping = false;
+            transform.position = respawnPosition;
+            transform.rotation = Quaternion.identity;
+            Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1.2f, 0); 
+            var list = ps.keysArray.ToArray();
+            for (int i = 0; i < list.Length; i+=2)
+            {
+                Instantiate(key, new Vector3(list[i],list[i+1],0), Quaternion.identity);
+            }
+            ps.updateScore();
+            LivesCounter.health -= 1;
+        }
+    }
+    
 
     private void OnCollisionExit2D(Collision2D other)
     {
