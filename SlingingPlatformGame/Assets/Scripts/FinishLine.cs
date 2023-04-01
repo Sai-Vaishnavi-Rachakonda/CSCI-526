@@ -15,6 +15,7 @@ public class FinishLine : MonoBehaviour
     public string nextScene;
     public int score;
     public TextMeshProUGUI Timer;
+    public GameObject level;
     void Start()
     {
         
@@ -31,7 +32,7 @@ public class FinishLine : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))  //once the player reached the finish block
-        {
+        {   
             Buttonscript.timePerParse.Stop();
             timeLine = Buttonscript.timePerParse.ElapsedTicks/10000000;
             Buttonscript.dbObj.setTimeLine(timeLine);
@@ -44,6 +45,8 @@ public class FinishLine : MonoBehaviour
             if(player_script.ScoreNum ==  player_script.maxScore)
             {
                 Buttonscript.dbObj.setLevel(++Buttonscript.dbObj.level);
+                LevelSelection.levelCleared = Buttonscript.dbObj.level;
+                Debug.Log("The level is "+ LevelSelection.levelCleared.ToString());
                 SceneManager.LoadScene(nextScene); //send the player to the next level.
                 Buttonscript.timePerParse.Reset();
                 Buttonscript.dbObj.resetPlatformCords();

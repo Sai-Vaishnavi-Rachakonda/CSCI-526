@@ -12,6 +12,7 @@ public class LevelSelection : MonoBehaviour
     private System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
     // Start is called before the first frame update
     public TextMeshProUGUI Timer;
+    public static int levelCleared = 0;
 
     void Start()
     {
@@ -30,35 +31,43 @@ public class LevelSelection : MonoBehaviour
     public void selectLevel(){
        switch(this.gameObject.name.ToString())
        {
-            case "level1":
+            case "level0":
                 // Debug.Log("Level1");
                 SceneManager.LoadScene("Level 0");
                 Buttonscript.timePerParse = Stopwatch.StartNew();
                 Buttonscript.dbObj.setLevel(0);
                 break;
+            case "level1":
+                if(levelCleared >= 1){
+                    // Debug.Log("Level2");
+                    SceneManager.LoadScene("Level 1"); 
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(1);
+                }
+                break;
             case "level2":
-                // Debug.Log("Level2");
-                SceneManager.LoadScene("Level 1"); 
-                Buttonscript.timePerParse = Stopwatch.StartNew();
-                Buttonscript.dbObj.setLevel(1);
+                if(levelCleared >= 2){
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("Level 2");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(2);
+                }
                 break;
             case "level3":
-                // Debug.Log("Level3");
-                SceneManager.LoadScene("Level 2");
-                Buttonscript.timePerParse = Stopwatch.StartNew();
-                Buttonscript.dbObj.setLevel(2);
+                if(levelCleared >= 3){
+                    // Debug.Log("Level4");
+                    SceneManager.LoadScene("Level 3");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(3);
+                }
                 break;
             case "level4":
-                // Debug.Log("Level4");
-                SceneManager.LoadScene("Level 3");
-                Buttonscript.timePerParse = Stopwatch.StartNew();
-                Buttonscript.dbObj.setLevel(3);
-                break;
-            case "level5":
-                // Debug.Log("Level5");
-                SceneManager.LoadScene("Level 4");
-                Buttonscript.timePerParse = Stopwatch.StartNew(); 
-                Buttonscript.dbObj.setLevel(4);
+                if(levelCleared >= 4){
+                    // Debug.Log("Level5");
+                    SceneManager.LoadScene("Level 4");
+                    Buttonscript.timePerParse = Stopwatch.StartNew(); 
+                    Buttonscript.dbObj.setLevel(4);
+                }
                 break;
             case "level6":
                 // Debug.Log("Level6");
