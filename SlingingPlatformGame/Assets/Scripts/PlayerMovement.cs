@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
 
-        if(move>0){
+        if(move!=0){
             if(playerPosition.x==transform.position.x)
                 count++;
             else

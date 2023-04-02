@@ -13,6 +13,7 @@ public class player_script : MonoBehaviour
     public List<float> keysArray = new List<float>();
     public bool shieldBoolean=false;
     
+    
     //public static float MaxHealth;
     // public Slider _slide;
     // public static float currentHealth;
