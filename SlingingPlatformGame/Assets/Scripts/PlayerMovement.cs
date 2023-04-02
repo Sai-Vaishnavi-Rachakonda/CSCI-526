@@ -201,12 +201,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Checkpoint Flag"))
         {
-            Debug.Log("entred");
+            Debug.Log("Checkpoint entred");
             respawnPosition = transform.position;
             Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1f, 0);
-            GameObject flag = GameObject.FindGameObjectWithTag("Flag Color");
-            SpriteRenderer flagRendered = flag.GetComponent<SpriteRenderer>();
-            flagRendered.color = Color.green;
+            GameObject[] flags = GameObject.FindGameObjectsWithTag("Flag Color");
+
+            foreach (GameObject flag in flags){
+                if(Math.Abs(flag.transform.position.x-transform.position.x)<10){
+                    SpriteRenderer flagRendered = flag.GetComponent<SpriteRenderer>();
+                    flagRendered.color = Color.green;
+                }
+                
+            }
+
+            
+            
             // isJumping = false;
             var flagbox = collision.gameObject.GetComponent<BoxCollider2D>();
             flagbox.enabled = false;
