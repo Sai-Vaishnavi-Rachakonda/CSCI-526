@@ -34,7 +34,7 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bounce"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bounce","bomb"};
 
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
@@ -99,6 +99,7 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
+        Debug.Log("lets "+selectedPlatform);
         if (!remainingPlatforms.Contains(selectedPlatform))
         {
             if (remainingPlatforms.Count != 0) {
@@ -128,6 +129,11 @@ public class Slingshot : MonoBehaviour
                 platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
                 break;
             }
+            case "bomb":
+            {
+                platform = Instantiate(platformPrefab[3]).GetComponent<Rigidbody2D>();
+                break;
+            }
             default:
             {
                 platform = null;
@@ -138,10 +144,16 @@ public class Slingshot : MonoBehaviour
         //platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         if(platform) {
             platformCollider = platform.GetComponent<Collider2D>();
-            platformCollider.enabled = false;
+            if (platformCollider && selectedPlatform=="bomb")
+            {
+                platformCollider.enabled = true;  // @author: Chirag
+            }else if(platformCollider){
+                platformCollider.enabled = false;  // @author: Chirag
+            }
 
             platform.isKinematic = true;
         }
+        
 
         ResetStrips();
     }
@@ -296,7 +308,6 @@ public class Slingshot : MonoBehaviour
             platform.isKinematic = false;
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
             platform.velocity = platformForce;    
-
             platform.GetComponent<Platform>().Release(selectedPlatform);
 
             platform = null;
