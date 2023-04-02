@@ -106,7 +106,7 @@ public class player_script : MonoBehaviour
          }
 
         //Temp level
-        else if(sceneName=="Level 61"){
+        else if(sceneName=="Level 6"){
             if(levelText!=null)
                 levelText.text="Level: 7";
 
