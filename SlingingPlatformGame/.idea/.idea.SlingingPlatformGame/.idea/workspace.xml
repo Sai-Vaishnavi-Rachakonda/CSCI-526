@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PowerUp.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PowerUp.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,12 @@
     <setting file="file://$USER_HOME$/Downloads/Slingshot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/player_script.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2dbdf6782bae4f02951185671ecebbe312c600/97/9946e615/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CageAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DownAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LIneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Platform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulleyEnemyCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulleyLines.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReloadScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/player_script.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -113,6 +117,9 @@
       <workItem from="1676850516384" duration="11972000" />
       <workItem from="1677115177002" duration="7806000" />
       <workItem from="1677712457914" duration="2161000" />
+      <workItem from="1680158987838" duration="3175000" />
+      <workItem from="1680206941907" duration="12906000" />
+      <workItem from="1680318523520" duration="3356000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6539972740384751596}
   - component: {fileID: 6539972740384751599}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: Bomb
   m_TagString: powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.8266258, b: 0.051886797, a: 1}
+  m_Color: {r: 0.047169805, g: 0.042942323, b: 0.042942323, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
