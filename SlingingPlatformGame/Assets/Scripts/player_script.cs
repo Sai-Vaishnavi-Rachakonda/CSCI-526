@@ -143,7 +143,7 @@ public class player_script : MonoBehaviour
         if(collision.CompareTag("default-powerup")){
             Destroy(collision.gameObject);
 
-            //decrease count of the platform
+            //Increase count of the platform
             GameObject deckObj = GameObject.Find("SelectPlatform");
             if (deckObj)
             {
@@ -157,7 +157,7 @@ public class player_script : MonoBehaviour
         if(collision.CompareTag("ice-powerup")){
             Destroy(collision.gameObject);
 
-            //decrease count of the platform
+            //Increase count of the platform
             GameObject deckObj = GameObject.Find("SelectPlatform");
             if (deckObj)
             {
@@ -167,6 +167,9 @@ public class player_script : MonoBehaviour
                 Buttonscript.dbObj.iceCount++;
             }
         }
+        // if(collision.CompareTag("ice-powerup")){
+        //     Destroy(collision.gameObject);
+        // }
     }
     public void clearKeysArray()
     {

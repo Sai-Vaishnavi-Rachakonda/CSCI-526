@@ -8,9 +8,16 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
-    public float jump;
+    public float jump = 500f;
+    private float powerupJump = 750f;
+    private float initialJump;
     private float move;
     public bool isJumping;
+
+    private bool isJumpPowerupActive = false;
+    private float jumpPowerupEndTime = 0f;
+    private float jumpPowerupDuration = 15f;
+
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
@@ -27,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         Camera = GameObject.Find("Main Camera");  
         FinishLine = GameObject.Find("Finish");
         respawnPosition = transform.position;
+        initialJump = jump;
 
 
     }
@@ -36,6 +44,15 @@ public class PlayerMovement : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
+        if (isJumpPowerupActive && Time.time < jumpPowerupEndTime)
+        {
+            jump=powerupJump;
+        }
+        else
+        {
+            jump=initialJump;
+        }
+
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
@@ -144,6 +161,22 @@ public class PlayerMovement : MonoBehaviour
             ps.updateScore();
               
         }
+        else if(other.gameObject.CompareTag("bounce-powerup"))
+        {
+            Destroy(other.gameObject);
+            CollectJumpPowerup();
+        }
+    }
+
+    // This function is called when the player collects the jump power-up
+    public void CollectJumpPowerup()
+    {
+        // Set the power-up to active and set the end time
+        isJumpPowerupActive = true;
+        jumpPowerupEndTime = Time.time + jumpPowerupDuration;
+
+        // Play a sound effect or show a message to indicate that the power-up has been collected
+        Debug.Log("Jump Power-up collected!");
     }
 
     private void OnCollisionExit2D(Collision2D other)
