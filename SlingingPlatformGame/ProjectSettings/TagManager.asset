@@ -3,23 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - PlatformPrefab
-  - powerup
-  - Lava
-  - Checkpoint
-  - Checkpoint Flag
-  - Flag Color
-  - Key
-  - door color
-  - default-powerup
-  - ice-powerup
-  - Enemy
-  - bomb
-  - Cage
-  - WeightedPulley
-  - Bomb
+  tags: []
   layers:
   - Default
   - TransparentFX
