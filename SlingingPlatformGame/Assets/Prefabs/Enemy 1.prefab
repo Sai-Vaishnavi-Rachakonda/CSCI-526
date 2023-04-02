@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3692694176664353333}
   - component: {fileID: 6362070192992135708}
   - component: {fileID: 1550349505331333121}
+  - component: {fileID: -8300115698768274163}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690873882415161013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cbfeb06a3349204ab0fd6382243dd94, type: 3}
   m_Name: 
@@ -128,3 +129,25 @@ MonoBehaviour:
   leftLimit: 1.5
   rightLimit: 4.5
   initial_position_x: 4.2
+  range: 6
+--- !u!50 &-8300115698768274163
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690873882415161013}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
