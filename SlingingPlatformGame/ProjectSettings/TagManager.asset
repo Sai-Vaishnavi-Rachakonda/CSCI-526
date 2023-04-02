@@ -17,6 +17,9 @@ TagManager:
   - ice-powerup
   - Enemy
   - bomb
+  - Cage
+  - WeightedPulley
+  - Bomb
   layers:
   - Default
   - TransparentFX
