@@ -16,6 +16,7 @@ TagManager:
   - default-powerup
   - ice-powerup
   - Enemy
+  - bomb
   layers:
   - Default
   - TransparentFX
