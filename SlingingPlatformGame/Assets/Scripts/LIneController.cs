@@ -23,7 +23,7 @@ public class LIneController : MonoBehaviour
         target = newTarget;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         lineRenderer.SetPosition(1,target.position);
     }

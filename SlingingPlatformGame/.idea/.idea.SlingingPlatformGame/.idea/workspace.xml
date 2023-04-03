@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bomb11.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bomb11.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PulleySystem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PulleySystem.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BombCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DownAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DownAnimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LIneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LIneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PulleyEnemyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PulleyEnemyCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slingshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slingshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/bombscript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/bombscript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player_script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player_script.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
