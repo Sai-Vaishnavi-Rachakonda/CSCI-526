@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
-    public float jump = 500f;
+    public float jump=500f ;
     private float powerupJump = 750f;
     private float initialJump;
     private float move;
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             jump = initialJump;
         }
 
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        
         if(move!=0){
             if(playerPosition.x==transform.position.x)
                 count++;
@@ -117,15 +117,16 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             if(SceneManager.GetActiveScene().name=="Level 5"){
-                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=64.25958){
+                if(Camera.transform.position.x>=45){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
                     
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-            }
-            else 
-            if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
+            }else if(SceneManager.GetActiveScene().name=="Level 7"){    
+                Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                
+            }else if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
                 Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
         }
         if(currentPlatform!=null){
@@ -136,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
             ps.shieldBoolean=false;
+            // TODO if player is in lava and time expires?
         }else if(ps.shieldBoolean){
             ps.shieldTimeLeft-=Time.deltaTime;
         }
@@ -177,6 +179,8 @@ public class PlayerMovement : MonoBehaviour
             ps.updateScore();
             LivesCounter.health -= 1;
             
+        }else if (other.gameObject.CompareTag("Lava")){
+            isJumping=false;
         }
 
         else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
