@@ -8,16 +8,9 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
-    public float jump = 500f;
-    private float powerupJump = 750f;
-    private float initialJump;
+    public float jump;
     private float move;
     public bool isJumping;
-
-    private bool isJumpPowerupActive = false;
-    private float jumpPowerupEndTime = 0f;
-    private float jumpPowerupDuration = 15f;
-
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
@@ -40,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Camera = GameObject.Find("Main Camera");  
         FinishLine = GameObject.Find("Finish");
         respawnPosition = transform.position;
-        initialJump = jump;
 
         playerPosition = respawnPosition;
     }
@@ -51,16 +43,6 @@ public class PlayerMovement : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
 
-        if(isJumpPowerupActive && Time.time < jumpPowerupEndTime)
-        {
-            jump = powerupJump;
-        }
-        else
-        {
-            jump = initialJump;
-        }
-
-        if (Input.GetButtonDown("Jump") && !isJumping)
         if(move!=0){
             if(playerPosition.x==transform.position.x)
                 count++;
@@ -132,6 +114,13 @@ public class PlayerMovement : MonoBehaviour
             if(SceneManager.GetActiveScene().name!="Level 0"){}
                 //Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
         }
+
+
+        if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
+            ps.shieldBoolean=false;
+        }else if(ps.shieldBoolean){
+            ps.shieldTimeLeft-=Time.deltaTime;
+        }
         
 
     }
@@ -156,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
             respawnPosition = transform.position;
         }
         
-        else if (other.gameObject.CompareTag("Lava"))
+        else if (other.gameObject.CompareTag("Lava")  && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
@@ -172,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        else if (other.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
@@ -185,11 +174,6 @@ public class PlayerMovement : MonoBehaviour
             }
             ps.updateScore();
             LivesCounter.health -= 1; 
-        }
-        else if(other.gameObject.CompareTag("bounce-powerup"))
-        {
-            Destroy(other.gameObject);
-            CollectJumpPowerup();
         }
     }
 
@@ -220,17 +204,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    // This function is called when the player collects the jump power-up
-    public void CollectJumpPowerup()
-    {
-        // Set the power-up to active and set the end time
-        isJumpPowerupActive = true;
-        jumpPowerupEndTime = Time.time + jumpPowerupDuration;
-
-        // Play a sound effect or show a message to indicate that the power-up has been collected
-        Debug.Log("Jump Power-up collected!");
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Checkpoint Flag"))

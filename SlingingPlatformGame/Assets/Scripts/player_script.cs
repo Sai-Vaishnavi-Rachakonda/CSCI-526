@@ -12,6 +12,7 @@ public class player_script : MonoBehaviour
     public static float maxScore;
     public List<float> keysArray = new List<float>();
     public bool shieldBoolean=false;
+    public double shieldTimeLeft=0f;
     
     
     //public static float MaxHealth;
@@ -158,7 +159,6 @@ public class player_script : MonoBehaviour
 
         if(collision.CompareTag("default-powerup")){
             Destroy(collision.gameObject);
-
             //decrease count of the platform
             GameObject deckObj = GameObject.Find("SelectPlatform");
             if (deckObj)
@@ -186,6 +186,7 @@ public class player_script : MonoBehaviour
 
         if(collision.CompareTag("powerUpShield")){
             Destroy(collision.gameObject);
+            shieldTimeLeft=15f;
             shieldBoolean=true;
             GameObject Panel = GameObject.Find("Panel");
             if (Panel){
