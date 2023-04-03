@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
             Collider2D platformCollider = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.6f), new Vector2(0.8f, 0.1f), 0);
-            Debug.Log(platformCollider.gameObject.name);
+            // Debug.Log(platformCollider.gameObject.name);
             if (platformCollider != null && platformCollider.gameObject.name == "Platform 3(Clone)")
             {
                 // The platform is a bouncy platform
@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (other.gameObject.CompareTag("Checkpoint Flag"))
         {
-            Debug.Log("entred");
+            // Debug.Log("entred");
             respawnPosition = transform.position;
         }
         
@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        Debug.Log(other.gameObject);
+        // Debug.Log(other.gameObject);
         if (other.gameObject.CompareTag("Ground"))
         {
             // isJumping = true;
@@ -209,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Checkpoint Flag"))
         {
             Debug.Log("Checkpoint entred");
+            // Debug.Log("entred");
             respawnPosition = transform.position;
             Slingshot.transform.position = new Vector3(respawnPosition.x+1f, respawnPosition.y+1f, 0);
             GameObject[] flags = GameObject.FindGameObjectsWithTag("Flag Color");

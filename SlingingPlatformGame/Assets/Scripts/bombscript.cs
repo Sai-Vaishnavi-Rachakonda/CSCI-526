@@ -30,7 +30,6 @@ public class bombscript : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("here!!!!!");
         newPlatform = GetComponent<Rigidbody2D>(); // assign the platform to the var
     }
 
@@ -40,7 +39,6 @@ public class bombscript : MonoBehaviour
 
     public void Release(string selectedPlatform)
     {
-        Debug.Log("JIp");
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints(selectedPlatform)); //create the points traveled by the platform
     }
