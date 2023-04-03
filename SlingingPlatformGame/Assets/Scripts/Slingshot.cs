@@ -99,7 +99,7 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
-        Debug.Log("lets "+selectedPlatform);
+        // Debug.Log("lets "+selectedPlatform);
         if (!remainingPlatforms.Contains(selectedPlatform))
         {
             if (remainingPlatforms.Count != 0) {
@@ -201,9 +201,9 @@ public class Slingshot : MonoBehaviour
             currentPosition = ClampBoundary(currentPosition);
 
         
-            Debug.Log("Current: "+currentPosition);
-            Debug.Log("Mouse: "+mousePosition);
-            Debug.Log("Max: "+maxLength);
+            // Debug.Log("Current: "+currentPosition);
+            // Debug.Log("Mouse: "+mousePosition);
+            // Debug.Log("Max: "+maxLength);
 
             SetStrips(currentPosition);
 

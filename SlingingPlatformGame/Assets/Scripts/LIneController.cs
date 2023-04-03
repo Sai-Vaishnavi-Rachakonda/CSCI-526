@@ -18,14 +18,12 @@ public class LIneController : MonoBehaviour
 
     public void AssignTarget(Vector3 startPos, Transform newTarget)
     {
-        Debug.Log(startPos);
-        Debug.Log(newTarget.position);
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0,startPos);
         target = newTarget;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         lineRenderer.SetPosition(1,target.position);
     }

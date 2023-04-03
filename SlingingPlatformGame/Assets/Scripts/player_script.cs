@@ -152,9 +152,9 @@ public class player_script : MonoBehaviour
             keysArray.Add(collision.gameObject.transform.position.y);
             Destroy(collision.gameObject);
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
-            Debug.Log(scoreText.text);
+            // Debug.Log(scoreText.text);
             scoreText.text = ScoreNum + "/" + maxScore;
-            Debug.Log(scoreText.text);
+            // Debug.Log(scoreText.text);
         }
 
         if(collision.CompareTag("default-powerup")){
@@ -199,17 +199,17 @@ public class player_script : MonoBehaviour
     public void clearKeysArray()
     {
         keysArray = new List<float>();
-        Debug.Log("cleared arr"+keysArray.Count);
+        // Debug.Log("cleared arr"+keysArray.Count);
     }
 
     public void updateScore()
     {
         ScoreNum -= keysArray.Count/2;
         // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
-        Debug.Log("changingn gthe etecdtnvvrn");
+        // Debug.Log("changingn gthe etecdtnvvrn");
         scoreText.text = ScoreNum + "/" + maxScore;
         clearKeysArray();
-        Debug.Log("in lava"+keysArray.Count+ScoreNum);
+        // Debug.Log("in lava"+keysArray.Count+ScoreNum);
 
     }
 }
