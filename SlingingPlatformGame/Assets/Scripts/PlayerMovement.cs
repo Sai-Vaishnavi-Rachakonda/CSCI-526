@@ -8,9 +8,16 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
-    public float jump;
+    public float jump=500f ;
+    private float powerupJump = 750f;
+    private float initialJump;
     private float move;
     public bool isJumping;
+
+    private bool isJumpPowerupActive = false;
+    private float jumpPowerupEndTime = 0f;
+    private float jumpPowerupDuration = 15f;
+
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
 
@@ -33,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         Camera = GameObject.Find("Main Camera");  
         FinishLine = GameObject.Find("Finish");
         respawnPosition = transform.position;
+        initialJump = jump;
 
         playerPosition = respawnPosition;
     }
@@ -43,6 +51,16 @@ public class PlayerMovement : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
 
+        if(isJumpPowerupActive && Time.time < jumpPowerupEndTime)
+        {
+            jump = powerupJump;
+        }
+        else
+        {
+            jump = initialJump;
+        }
+
+        
         if(move!=0){
             if(playerPosition.x==transform.position.x)
                 count++;
@@ -99,15 +117,16 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             if(SceneManager.GetActiveScene().name=="Level 5"){
-                if(Camera.transform.position.x>=45 && Camera.transform.position.x<=64.25958){
+                if(Camera.transform.position.x>=45){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
                     
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-            }
-            else 
-            if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
+            }else if(SceneManager.GetActiveScene().name=="Level 7"){    
+                Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                
+            }else if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
                 Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
         }
         if(currentPlatform!=null){
@@ -118,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
             ps.shieldBoolean=false;
+            // TODO if player is in lava and time expires?
         }else if(ps.shieldBoolean){
             ps.shieldTimeLeft-=Time.deltaTime;
         }
@@ -159,6 +179,8 @@ public class PlayerMovement : MonoBehaviour
             ps.updateScore();
             LivesCounter.health -= 1;
             
+        }else if (other.gameObject.CompareTag("Lava")){
+            isJumping=false;
         }
 
         else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
@@ -174,6 +196,11 @@ public class PlayerMovement : MonoBehaviour
             }
             ps.updateScore();
             LivesCounter.health -= 1; 
+        }
+        else if(other.gameObject.CompareTag("bounce-powerup"))
+        {
+            Destroy(other.gameObject);
+            CollectJumpPowerup();
         }
     }
 
@@ -204,6 +231,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    // This function is called when the player collects the jump power-up
+    public void CollectJumpPowerup()
+    {
+        // Set the power-up to active and set the end time
+        isJumpPowerupActive = true;
+        jumpPowerupEndTime = Time.time + jumpPowerupDuration;
+
+        // Play a sound effect or show a message to indicate that the power-up has been collected
+        Debug.Log("Jump Power-up collected!");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Checkpoint Flag"))
