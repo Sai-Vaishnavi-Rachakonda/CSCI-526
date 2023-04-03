@@ -85,6 +85,7 @@ public class Platform : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         Transform collidedObject = collision.gameObject.transform;
         Transform otherObject = transform;
         int otherObjectZIndex = otherObject.GetSiblingIndex();

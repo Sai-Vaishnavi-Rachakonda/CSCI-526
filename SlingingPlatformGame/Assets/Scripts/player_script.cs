@@ -11,6 +11,8 @@ public class player_script : MonoBehaviour
     public static float ScoreNum;
     public static float maxScore;
     public List<float> keysArray = new List<float>();
+    public bool shieldBoolean=false;
+    
     
     //public static float MaxHealth;
     // public Slider _slide;
@@ -103,10 +105,24 @@ public class player_script : MonoBehaviour
              }
             
          }
+
+        //Temp level
+        else if(sceneName=="Level 6"){
+            if(levelText!=null)
+                levelText.text="Level: 7";
+
+            GameObject shield = GameObject.Find("Shield");
+            if(shield){
+                shield.SetActive(false); 
+            }
+        }
+
         // currentHealth = 0;
         // _slide.maxValue = MaxHealth;
         // _slide.value = 0;
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -165,6 +181,16 @@ public class player_script : MonoBehaviour
                 Deck scriptObj = parentObject.GetComponent<Deck>();
                 scriptObj.IncreaseCount();
                 Buttonscript.dbObj.iceCount++;
+            }
+        }
+
+        if(collision.CompareTag("powerUpShield")){
+            Destroy(collision.gameObject);
+            shieldBoolean=true;
+            GameObject Panel = GameObject.Find("Panel");
+            if (Panel){
+                GameObject shield = Panel.transform.Find("Shield").gameObject;
+                shield.SetActive(true);
             }
         }
     }
