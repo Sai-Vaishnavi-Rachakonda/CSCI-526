@@ -207,7 +207,7 @@ public class Slingshot : MonoBehaviour
 
             SetStrips(currentPosition);
 
-            if (platformCollider && selectedPlatform=="Bomb")
+            if (platformCollider && selectedPlatform=="bomb")
             {
                 platformCollider.enabled = true;  // @author: Chirag
             }else if(platformCollider){
