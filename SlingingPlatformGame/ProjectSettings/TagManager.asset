@@ -20,6 +20,7 @@ TagManager:
   - Cage
   - WeightedPulley
   - Bomb
+  - bounce-powerup
   layers:
   - Default
   - TransparentFX
