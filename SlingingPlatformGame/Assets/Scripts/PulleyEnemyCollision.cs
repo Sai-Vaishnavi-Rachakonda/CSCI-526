@@ -9,6 +9,7 @@ public class PulleyEnemyCollision : MonoBehaviour
     {
         if (col.gameObject.CompareTag("bomb"))
         {
+            Debug.Log("Called1");
             DownAnimation.startAnimation();
         }
     }

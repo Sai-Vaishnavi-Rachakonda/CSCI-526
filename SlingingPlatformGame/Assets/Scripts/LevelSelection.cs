@@ -17,7 +17,6 @@ public class LevelSelection : MonoBehaviour
     {
         if(Buttonscript.dbObj.level > 0){
             GameObject obj = GameObject.Find("level"+Buttonscript.dbObj.level);
-            UnityEngine.Debug.Log(obj);
             switch(obj.name.ToString())
             {
                 case "level1":

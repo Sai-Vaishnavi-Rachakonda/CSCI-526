@@ -54,7 +54,6 @@ public class Deck : MonoBehaviour
     // }
 
     void ColorChange(){
-        Debug.Log("updating color");
         if(counter == 0) {
             countVal.color = Color.red;
         } else {
@@ -65,7 +64,6 @@ public class Deck : MonoBehaviour
     public void checking(){
         if(counter > 0)
         {   
-            Debug.Log(platformType.ToString());
             script.selectedPlatform = platformType;
             script.CreatePlatformFromIndex();
         }
