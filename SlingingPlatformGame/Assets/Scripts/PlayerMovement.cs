@@ -114,6 +114,13 @@ public class PlayerMovement : MonoBehaviour
             if(SceneManager.GetActiveScene().name!="Level 0"){}
                 //Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
         }
+
+
+        if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
+            ps.shieldBoolean=false;
+        }else if(ps.shieldBoolean){
+            ps.shieldTimeLeft-=Time.deltaTime;
+        }
         
 
     }
@@ -138,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
             respawnPosition = transform.position;
         }
         
-        else if (other.gameObject.CompareTag("Lava"))
+        else if (other.gameObject.CompareTag("Lava")  && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
@@ -154,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        else if (other.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
