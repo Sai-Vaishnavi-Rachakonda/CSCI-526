@@ -183,8 +183,9 @@ public class player_script : MonoBehaviour
                 Buttonscript.dbObj.iceCount++;
             }
         }
-
+        
         if(collision.CompareTag("powerUpShield")){
+            
             Destroy(collision.gameObject);
             shieldTimeLeft=15f;
             shieldBoolean=true;
