@@ -13,6 +13,8 @@ public class PulleyEnemyBombCOllision : MonoBehaviour
             Debug.Log("collided with enemy");
             Destroy(collision.gameObject);
             gameObject.GetComponent<SpriteRenderer>().sprite = weight.gameObject.GetComponent<SpriteRenderer>().sprite;
+            gameObject.tag = "Bombed Weight";
+            gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.5f, 0.2f);
         }
 
     }
