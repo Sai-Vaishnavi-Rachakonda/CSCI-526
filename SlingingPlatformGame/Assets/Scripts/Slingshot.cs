@@ -34,7 +34,7 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bounce","bomb"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bomb"};
 
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
@@ -124,11 +124,11 @@ public class Slingshot : MonoBehaviour
                 break;
             }
         
-            case "bounce":
-            {
-                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
-                break;
-            }
+            // case "bounce":
+            // {
+            //     platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+            //     break;
+            // }
             case "bomb":
             {
                 platform = Instantiate(platformPrefab[3]).GetComponent<Rigidbody2D>();

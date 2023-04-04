@@ -32,6 +32,7 @@ public class Deck : MonoBehaviour
 
         //    countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 4";
         }
+        Debug.Log("platform: " + platformType + "counter: " + counter);
         if(counter <=0 ){
             script.StopPlatform(platformType);
         } else {
