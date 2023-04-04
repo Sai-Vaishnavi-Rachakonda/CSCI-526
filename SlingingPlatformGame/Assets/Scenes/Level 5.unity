@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44601268, g: 0.62494797, b: 0.7225996, a: 1}
+  m_IndirectSpecularColor: {r: 0.58919656, g: 0.5750338, b: 0.77819395, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2018,7 +2018,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 21.35
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4090,7 +4090,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.47058827
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7774554007322081015, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+    - {fileID: 1327060670108677190, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
 --- !u!114 &1525126660 stripped
 MonoBehaviour:

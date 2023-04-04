@@ -68,7 +68,7 @@ public class LevelSelection : MonoBehaviour
                 if(Buttonscript.dbObj.level >= 1){
 
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
-                    SceneManager.LoadScene("Level 6"); 
+                    SceneManager.LoadScene("Level 5"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
                 }
