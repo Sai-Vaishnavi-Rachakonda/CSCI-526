@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44601268, g: 0.62494797, b: 0.7225996, a: 1}
+  m_IndirectSpecularColor: {r: 0.58919656, g: 0.5750338, b: 0.77819395, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.35
+  m_fontSize: 21.35
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3280,7 +3280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210183987038, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.1857529
+      value: 1.1857605
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210183987038, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4475,7 +4475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
       propertyPath: platformPrefab.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5759482106721870510, guid: e1e64a11c87e4403e97265f8082e4f0c, type: 3}
       propertyPath: platformPrefab.Array.data[1]
