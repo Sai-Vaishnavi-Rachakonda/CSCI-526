@@ -5,54 +5,72 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 1.0f; // the speed at which the enemy moves
-    public float leftLimit = 1.5f; // the left limit of the enemy's movement
-    public float rightLimit = 4.5f; // the right limit of the enemy's movement
-    public float initial_position_x;
-    public float initial_position_y;
-    public float range = 6.0f;
+    private float initial_position_x;
+    private float initial_position_y;
+    public float range = 3.0f;
     public bool vertical=false;
+    private bool initial_move_direction = true;
 
     void start()
     {
         initial_position_x = transform.position.x;
-        Debug.Log("initial position - "+ initial_position_x);
+        Debug.Log("ENEMY initial position from start function - "+ initial_position_x);
     }
     // Update is called once per frame
     void Update()
     {
-        // move the enemy horizontally
-        // Debug.Log("Update section - initial position - "+ initial_position_x);
-        // Debug.Log("X value:"+ transform.position.x);
-        if(vertical)
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
-        else
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-        // float initial_position_x = transform.position.x;
-        // check if the enemy has gone past the right limit
+        if(Time.time < 0.1)
+        {
+            initial_position_x = transform.position.x;
+            initial_position_y = transform.position.y;
+            Debug.Log("Initial X position: "+ initial_position_x);
+            if(vertical)
+                transform.Translate(Vector2.up * speed * Time.deltaTime);
+            else
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
 
-        if(vertical){
+        if(vertical)
+        {
             if (transform.position.y > initial_position_y + range)
             {
-                // move the enemy to the left limit
-                transform.position = new Vector2(initial_position_y + 2.0f, transform.position.y);
-                transform.Translate(Vector2.up * speed * Time.deltaTime);
+                // move the enemy downwards
+                initial_move_direction = false;
             }
-            if (transform.position.y < initial_position_y - range)
+            else if (transform.position.y < initial_position_y - range)
             {
-                transform.position = new Vector2(initial_position_y - 2.0f, transform.position.y);
+                initial_move_direction = true;
+            }
+
+            if(initial_move_direction)
+            {
                 transform.Translate(Vector2.up * speed * Time.deltaTime);
             }
-        }else{
+            else
+            {
+                transform.Translate(Vector2.down * speed * Time.deltaTime);
+            }
+        }
+        else
+        {
             if (transform.position.x > initial_position_x + range)
             {
-                // move the enemy to the left limit
-                transform.position = new Vector2(initial_position_x + 2.0f, transform.position.y);
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                // move the enemy in left direction
+                initial_move_direction = false;
             }
-            if (transform.position.x < initial_position_x - range)
+            else if (transform.position.x < initial_position_x - range)
             {
-                transform.position = new Vector2(initial_position_x - 2.0f, transform.position.y);
+                //move the enemy in the right direction
+                initial_move_direction = true;
+            }
+
+            if(initial_move_direction)
+            {
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
             }
         }
 
