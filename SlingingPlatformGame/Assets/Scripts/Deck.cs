@@ -35,7 +35,11 @@ public class Deck : MonoBehaviour
         Debug.Log("platform: " + platformType + "counter: " + counter);
         if(counter <=0 ){
             script.StopPlatform(platformType);
-        } else {
+        }
+        else if(platformType == "bomb"){
+            script.bombsCount = counter;
+        }
+        else {
             script.AddPlatform(platformType);
         }
 
