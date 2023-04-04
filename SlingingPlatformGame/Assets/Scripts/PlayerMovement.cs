@@ -139,6 +139,10 @@ public class PlayerMovement : MonoBehaviour
 
         if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
             ps.shieldBoolean=false;
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false);
+            }
             // TODO if player is in lava and time expires?
         }else if(ps.shieldBoolean){
             ps.shieldTimeLeft-=Time.deltaTime;
