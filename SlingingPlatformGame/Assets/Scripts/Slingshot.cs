@@ -34,11 +34,12 @@ public class Slingshot : MonoBehaviour
     private GameObject player;
 
     public string selectedPlatform = "default";
-    public ArrayList remainingPlatforms = new ArrayList {"default", "ice", "bomb"};
+    public ArrayList remainingPlatforms = new ArrayList {"default", "ice"};
 
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
     public TextMeshProUGUI Timer;
+    public int bombsCount = 0;
 
 
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
@@ -100,46 +101,53 @@ public class Slingshot : MonoBehaviour
     void CreatePlatform()
     {
         // Debug.Log("lets "+selectedPlatform);
-        if (!remainingPlatforms.Contains(selectedPlatform))
-        {
-            if (remainingPlatforms.Count != 0) {
-                selectedPlatform = (string)remainingPlatforms[0];
-            }
-            else {
-                selectedPlatform = "";
-            }
+        Debug.Log("remainingPlatforms: "+string.Join(" ", remainingPlatforms.ToArray()));
+        if(selectedPlatform == "bomb" && bombsCount > 0) {
+            platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
         }
-        switch (selectedPlatform)
-        {
+        else {
+            if (!remainingPlatforms.Contains(selectedPlatform))
+            {
+                if (remainingPlatforms.Count != 0) {
+                    selectedPlatform = (string)remainingPlatforms[0];
+                }
+                else {
+                    selectedPlatform = "";
+                }
+            }
+            switch (selectedPlatform)
+            {
+                
+                case "default":
+                {
+                    platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                    break;
+                }
             
-            case "default":
-            {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
-                break;
-            }
-        
-            case "ice":
-            {
-                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
-                break;
-            }
-        
-            // case "bounce":
-            // {
-            //     platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
-            //     break;
-            // }
-            case "bomb":
-            {
-                platform = Instantiate(platformPrefab[3]).GetComponent<Rigidbody2D>();
-                break;
-            }
-            default:
-            {
-                platform = null;
-                break;
+                case "ice":
+                {
+                    platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
+                    break;
+                }
+            
+                // case "bounce":
+                // {
+                //     platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+                //     break;
+                // }
+                // case "bomb":
+                // {
+                //     platform = Instantiate(platformPrefab[3]).GetComponent<Rigidbody2D>();
+                //     break;
+                // }
+                default:
+                {
+                    platform = null;
+                    break;
+                }
             }
         }
+
         //var platformPrefabLen = platformPrefab.Length;
         //platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         if(platform) {
@@ -321,6 +329,10 @@ public class Slingshot : MonoBehaviour
                 GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
                 Deck scriptObj = parentObject.GetComponent<Deck>();
                 scriptObj.DecreaseCount();
+            }
+            if(selectedPlatform == "bomb"){
+                bombsCount -= 1;
+                selectedPlatform = "";
             }
         }
     }

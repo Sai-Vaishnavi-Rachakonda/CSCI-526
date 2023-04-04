@@ -117,14 +117,16 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             if(SceneManager.GetActiveScene().name=="Level 5"){
-                if(Camera.transform.position.x>=45){
+                if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
-                    
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
             }else if(SceneManager.GetActiveScene().name=="Level 7"){    
-                Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                if(transform.position.x>=45)
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                else if(Camera.transform.position.y>=1.1)
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
                 
             }else if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
                 Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
@@ -137,6 +139,10 @@ public class PlayerMovement : MonoBehaviour
 
         if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
             ps.shieldBoolean=false;
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false);
+            }
             // TODO if player is in lava and time expires?
         }else if(ps.shieldBoolean){
             ps.shieldTimeLeft-=Time.deltaTime;
