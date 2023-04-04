@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.2
+  m_fontSize: 22
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2546,7 +2546,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.25
+  m_fontSize: 20.25
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3322,8 +3322,12 @@ PrefabInstance:
       value: -8.900002
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
+      propertyPath: m_text
+      value: Selection Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_fontSize
-      value: 21
+      value: 19.35
       objectReference: {fileID: 0}
     - target: {fileID: 1650094627674597835, guid: f725dcc33483a2d4288c6a97c6f4b55c, type: 3}
       propertyPath: m_fontSizeMax
