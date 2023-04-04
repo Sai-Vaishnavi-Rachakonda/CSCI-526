@@ -104,6 +104,11 @@ public class player_script : MonoBehaviour
              if (scoreText != null){
                  scoreText.text = ScoreNum + "/" + maxScore;
              }
+
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
             
          }
           else if(sceneName=="Level 7"){
@@ -123,10 +128,6 @@ public class player_script : MonoBehaviour
             if(levelText!=null)
                 levelText.text="Level: 7";
 
-            GameObject shield = GameObject.Find("Shield");
-            if(shield){
-                shield.SetActive(false); 
-            }
         }
 
         // currentHealth = 0;
@@ -200,10 +201,13 @@ public class player_script : MonoBehaviour
             Destroy(collision.gameObject);
             shieldTimeLeft=15f;
             shieldBoolean=true;
-            GameObject Panel = GameObject.Find("Panel");
+            GameObject Panel = GameObject.Find("Head");
             if (Panel){
+                Debug.Log("Nahi bhai ho gaya");
                 GameObject shield = Panel.transform.Find("Shield").gameObject;
                 shield.SetActive(true);
+            }else{
+                Debug.Log("Fucker");
             }
         }
     }
