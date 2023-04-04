@@ -25,9 +25,13 @@ public class ReplayButton : MonoBehaviour
         Buttonscript.dbObj.resetOrbsCollected();
 
         string currentSceneName = SceneManager.GetActiveScene().name;    //Get current scene name
-        if (currentSceneName == "Final Scene")        
+        if (currentSceneName == "Level 0")        
         {
-            SceneManager.LoadScene("firstPage");       //load game from the beginning if finished
+            SceneManager.LoadScene("Level 0");       //load game from the beginning if finished
+        }
+        else if (currentSceneName == "Final Scene")        
+        {
+            SceneManager.LoadScene("levelSelection");       //load game from the beginning if finished
         }
         else
         {
