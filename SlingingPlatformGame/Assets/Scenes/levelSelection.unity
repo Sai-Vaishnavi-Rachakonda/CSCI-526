@@ -672,7 +672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mechanics
+  m_text: Level 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1927,10 +1927,10 @@ RectTransform:
   m_Father: {fileID: 1243812633}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.127, y: 0}
-  m_AnchorMax: {x: 0.37363046, y: 0.24200001}
-  m_AnchoredPosition: {x: -11.208008, y: 12.409088}
-  m_SizeDelta: {x: -0.67527, y: -12.9702}
+  m_AnchorMin: {x: 0.37363046, y: 0.041425675}
+  m_AnchorMax: {x: 0.6204336, y: 0.24200001}
+  m_AnchoredPosition: {x: 0.34799957, y: 0.98509216}
+  m_SizeDelta: {x: -0.6752701, y: -1.9701996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1564186012
 BoxCollider:

@@ -59,8 +59,8 @@ public class LevelSelection : MonoBehaviour
        switch(this.gameObject.name.ToString())
        {
             case "level0":
-                // Debug.Log("Level1");
-                SceneManager.LoadScene("Level 0");
+                UnityEngine.Debug.Log("Level1");
+                SceneManager.LoadScene("Level 7");
                 Buttonscript.timePerParse = Stopwatch.StartNew();
                 Buttonscript.dbObj.setLevel(0);
                 break;
@@ -68,7 +68,7 @@ public class LevelSelection : MonoBehaviour
                 if(Buttonscript.dbObj.level >= 1){
 
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
-                    SceneManager.LoadScene("Level 1"); 
+                    SceneManager.LoadScene("Level 6"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
                 }
@@ -108,37 +108,38 @@ public class LevelSelection : MonoBehaviour
     }
 
     public void selectTutorial(){
+        UnityEngine.Debug.Log(this.gameObject.name.ToString());
        switch(this.gameObject.name.ToString())
        {
-            case "Slingshot":
-                // Debug.Log("Level1");
+            case "tLevel0":
+                UnityEngine.Debug.Log("Level1");
                 SceneManager.LoadScene("Level 0");
                 Buttonscript.timePerParse = Stopwatch.StartNew();
                 Buttonscript.dbObj.setLevel(0);
                 break;
-            case "orbs":
+            case "tLevel1":
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
                     SceneManager.LoadScene("Level 1"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
 
                 break;
-            case "Checkpoint":
+            case "tLevel2":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("Level 2");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(2);
                 break;
             
-            case "Ice Platform":
+            case "tLevel3":
                     // Debug.Log("Level3");
-                    SceneManager.LoadScene("Level 2");
+                    SceneManager.LoadScene("Level 3");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(2);
                 break;
-            case "Mechanics":
+            case "tLevel4":
                     // Debug.Log("Level3");
-                    SceneManager.LoadScene("Level 2");
+                    SceneManager.LoadScene("Level 4");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(2);
                 break;

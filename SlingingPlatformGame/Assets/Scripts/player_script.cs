@@ -97,7 +97,7 @@ public class player_script : MonoBehaviour
          {
 
             if (levelText != null){
-                levelText.text = "Level: 6";
+                levelText.text = "Level: 2";
             }
              maxScore = 8;
              // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
@@ -106,6 +106,17 @@ public class player_script : MonoBehaviour
              }
             
          }
+          else if(sceneName=="Level 7"){
+            if(levelText!=null){
+                levelText.text="Level: 1";
+            }
+
+            maxScore = 3;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+        }
 
         //Temp level
         else if(sceneName=="Level 6"){
