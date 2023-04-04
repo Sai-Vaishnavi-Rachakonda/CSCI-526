@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 count++;
             else
                 count=0;
-            if(count>200) // Why 200? its temp
+            if(count>100) // Why 200? its temp
                 rb.velocity = new Vector2(speed * 0, rb.velocity.y);
             
         }else{
