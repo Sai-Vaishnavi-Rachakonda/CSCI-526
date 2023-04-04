@@ -21,6 +21,8 @@ TagManager:
   - WeightedPulley
   - Bomb
   - bounce-powerup
+  - powerUpShield
+  - shieldIndication
   layers:
   - Default
   - TransparentFX
