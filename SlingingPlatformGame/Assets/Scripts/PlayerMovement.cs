@@ -189,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping=false;
         }
 
-        else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
+        else if ((other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("WeightedPulley")) && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
