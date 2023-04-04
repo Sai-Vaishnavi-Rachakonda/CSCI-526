@@ -203,11 +203,8 @@ public class player_script : MonoBehaviour
             shieldBoolean=true;
             GameObject Panel = GameObject.Find("Head");
             if (Panel){
-                Debug.Log("Nahi bhai ho gaya");
                 GameObject shield = Panel.transform.Find("Shield").gameObject;
                 shield.SetActive(true);
-            }else{
-                Debug.Log("Fucker");
             }
         }
     }
