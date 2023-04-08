@@ -93,6 +93,20 @@ public class player_script : MonoBehaviour
              }
             
          }
+         // For level 2 - Shreeya
+         else if(sceneName == "Level 8")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 2";
+            }
+             maxScore = 3;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+            
+         }
          else if(sceneName == "Level 5")
          {
 
@@ -207,6 +221,11 @@ public class player_script : MonoBehaviour
                 shield.SetActive(true);
             }
         }
+
+
+
+        
+        
     }
     public void clearKeysArray()
     {
