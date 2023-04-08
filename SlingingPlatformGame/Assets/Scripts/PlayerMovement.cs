@@ -207,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             CollectJumpPowerup();
+            
         }
     }
 
