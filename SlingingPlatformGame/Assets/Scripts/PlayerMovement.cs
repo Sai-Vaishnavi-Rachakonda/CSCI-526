@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy")){
             if(transform.position.y>other.gameObject.transform.position.y){
                 Destroy(other.gameObject);
-            }else{
+            }else if(!ps.shieldBoolean){
                 isJumping = false;
                 transform.position = respawnPosition;
                 transform.rotation = Quaternion.identity;
