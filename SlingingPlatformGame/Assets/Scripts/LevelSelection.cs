@@ -13,37 +13,8 @@ public class LevelSelection : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI Timer;
 
-    void Start()
-    {
-        if(Buttonscript.dbObj.level > 0){
-            GameObject obj = GameObject.Find("level"+Buttonscript.dbObj.level);
-            switch(obj.name.ToString())
-            {
-                case "level1":
-                    if(Buttonscript.dbObj.level >= 1){
-                        updateLevel(Buttonscript.dbObj.level);
-                    }
-                    break;
-                case "level2":
-                    if(Buttonscript.dbObj.level >= 2){
-                        updateLevel(Buttonscript.dbObj.level);
-                    }
-                    break;
-                case "level3":
-                    if(Buttonscript.dbObj.level >= 3){
-                        updateLevel(Buttonscript.dbObj.level);
-                    }
-                    break;
-                case "level4":
-                    if(Buttonscript.dbObj.level >= 4){
-                        updateLevel(Buttonscript.dbObj.level);
-                    }
-                    break;
-                case "level6":
-                    break;
-
-            }
-        }
+    void Start(){
+        
     }
 
     // Update is called once per frame
@@ -65,21 +36,16 @@ public class LevelSelection : MonoBehaviour
                 Buttonscript.dbObj.setLevel(0);
                 break;
             case "level1":
-                if(Buttonscript.dbObj.level >= 1){
-
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
-                    SceneManager.LoadScene("Level 5"); 
+                    SceneManager.LoadScene("Level 8"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
-                }
                 break;
             case "level2":
-                if(Buttonscript.dbObj.level >= 2){
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("Level 2");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(2);
-                }
                 break;
             // case "level3":
             //     if(Buttonscript.dbObj.level >= 3){
@@ -146,15 +112,15 @@ public class LevelSelection : MonoBehaviour
        }
     }
 
-    public static void updateLevel(int level){
+    // public static void updateLevel(int level){
 
-        for(int i = 1;i<=level;i++){
-            string levelObject = "level"+ i.ToString();
-            GameObject obj = GameObject.Find(levelObject);
-            obj.GetComponent<Slingshot>();
-            obj.GetComponent<Image>().color = new Color(255,255,255);
-            GameObject child = obj.transform.Find("lock").gameObject;
-            child.GetComponent<Image>().enabled =false;
-        }
-    }
+    //     for(int i = 1;i<=level;i++){
+    //         string levelObject = "level"+ i.ToString();
+    //         GameObject obj = GameObject.Find(levelObject);
+    //         obj.GetComponent<Slingshot>();
+    //         obj.GetComponent<Image>().color = new Color(255,255,255);
+    //         GameObject child = obj.transform.Find("lock").gameObject;
+    //         child.GetComponent<Image>().enabled =false;
+    //     }
+    // }
 }

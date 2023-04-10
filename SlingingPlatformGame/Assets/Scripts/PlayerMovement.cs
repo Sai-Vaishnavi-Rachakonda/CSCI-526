@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             jump = initialJump;
+            GameObject Panel = GameObject.Find("Head");
+            if (Panel){
+                GameObject bounce = Panel.transform.Find("bounce").gameObject;
+                bounce.SetActive(false);
+            }
         }
 
         
@@ -194,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping=false;
         }
 
-        else if (other.gameObject.CompareTag("Enemy") && !ps.shieldBoolean)
+        else if ((other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("WeightedPulley")) && !ps.shieldBoolean)
         {
             isJumping = false;
             transform.position = respawnPosition;
@@ -211,7 +216,15 @@ public class PlayerMovement : MonoBehaviour
         else if(other.gameObject.CompareTag("bounce-powerup"))
         {
             Destroy(other.gameObject);
+            Debug.Log("Called active");
+            GameObject Panel = GameObject.Find("Head");
+            if (Panel){
+                GameObject bounce = Panel.transform.Find("bounce").gameObject;
+                bounce.SetActive(true);
+            }
             CollectJumpPowerup();
+
+            
         }
     }
 
