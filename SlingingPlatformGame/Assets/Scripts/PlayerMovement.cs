@@ -60,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
             jump = initialJump;
             GameObject Panel = GameObject.Find("Head");
             if (Panel){
-                GameObject bounce = Panel.transform.Find("bounce").gameObject;
-                bounce.SetActive(false);
+                GameObject bounce = Panel.transform.Find("bounce")?.gameObject;
+                bounce?.SetActive(false);
             }
         }
 
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             else
                 count=0;
             if(count>100) // Why 200? its temp
-                rb.velocity = new Vector2(speed * 0, rb.velocity.y);
+                rb.velocity = new Vector2(speed * move, -12f);
             
         }else{
             count=0;
