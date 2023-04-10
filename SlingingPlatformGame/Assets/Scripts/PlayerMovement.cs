@@ -123,20 +123,23 @@ public class PlayerMovement : MonoBehaviour
         }else if(Camera.transform.position.y-0.1>=transform.position.y){ // moving backward
             var diff = Camera.transform.position.y - transform.position.y;
 
-            if(SceneManager.GetActiveScene().name=="Level 5"){
-                if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
-                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
-                }
-                else if(Camera.transform.position.y>=1.1)
-                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-            }else if(SceneManager.GetActiveScene().name=="Level 7"){    
-                if(transform.position.x>=45)
-                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
-                else if(Camera.transform.position.y>=1.1)
-                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            // Testing camera movement
+            Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+
+            // if(SceneManager.GetActiveScene().name=="Level 5"){
+            //     if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
+            //         Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+            //     }
+            //     else if(Camera.transform.position.y>=1.1)
+            //         Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            // }else if(SceneManager.GetActiveScene().name=="Level 7"){    
+            //     if(transform.position.x>=45)
+            //         Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+            //     else if(Camera.transform.position.y>=1.1)
+            //         Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
                 
-            }else if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
-                Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            // }else if(Camera.transform.position.y>=1.1) // Initial position of camera aprox 0
+            //     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
         }
         if(currentPlatform!=null){
             if(SceneManager.GetActiveScene().name!="Level 0"){}
