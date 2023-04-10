@@ -62,12 +62,16 @@ public class PlayerMovement : MonoBehaviour
 
         
         if(move!=0){
+            
             if(playerPosition.x==transform.position.x)
                 count++;
             else
                 count=0;
-            if(count>100) // Why 200? its temp
-                rb.velocity = new Vector2(speed * 0, rb.velocity.y);
+            if(count>100){
+                rb.velocity = new Vector2(speed*move, -12f);
+                
+            } // Why 100? its temp
+                
             
         }else{
             count=0;
@@ -155,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            
             isJumping = false;
             // @author:  Chirag
             if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
