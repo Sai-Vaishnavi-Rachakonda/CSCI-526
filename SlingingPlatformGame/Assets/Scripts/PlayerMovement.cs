@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
                 isJumping=true;
             }
             
+        }else if(Input.GetKeyDown(KeyCode.DownArrow)){
+            rb.AddForce(new Vector2(rb.velocity.x, jump*-0.5f));
         }
 
 
