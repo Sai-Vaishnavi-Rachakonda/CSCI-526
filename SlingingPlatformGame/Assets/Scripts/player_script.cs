@@ -13,6 +13,8 @@ public class player_script : MonoBehaviour
     public List<float> keysArray = new List<float>();
     public bool shieldBoolean=false;
     public double shieldTimeLeft=0f;
+
+    
     
     
     //public static float MaxHealth;
@@ -93,6 +95,26 @@ public class player_script : MonoBehaviour
              }
             
          }
+         // For level 2 - Shreeya
+         else if(sceneName == "Level 8")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 2";
+            }
+             maxScore = 3;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+
+             //Bounce
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+            
+         }
          else if(sceneName == "Level 5")
          {
 
@@ -109,6 +131,11 @@ public class player_script : MonoBehaviour
             if(shield){
                 shield.SetActive(false); 
             }
+            //Bounce
+            GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
             
          }
           else if(sceneName=="Level 7"){
@@ -121,6 +148,11 @@ public class player_script : MonoBehaviour
              if (scoreText != null){
                  scoreText.text = ScoreNum + "/" + maxScore;
              }
+            //Bounce
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
         }
 
         //Temp level
@@ -207,6 +239,11 @@ public class player_script : MonoBehaviour
                 shield.SetActive(true);
             }
         }
+
+
+
+        
+        
     }
     public void clearKeysArray()
     {

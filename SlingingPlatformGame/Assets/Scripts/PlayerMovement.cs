@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             jump = initialJump;
+            GameObject Panel = GameObject.Find("Head");
+            if (Panel){
+                GameObject bounce = Panel.transform.Find("bounce").gameObject;
+                bounce.SetActive(false);
+            }
         }
 
         
@@ -206,7 +211,15 @@ public class PlayerMovement : MonoBehaviour
         else if(other.gameObject.CompareTag("bounce-powerup"))
         {
             Destroy(other.gameObject);
+            Debug.Log("Called active");
+            GameObject Panel = GameObject.Find("Head");
+            if (Panel){
+                GameObject bounce = Panel.transform.Find("bounce").gameObject;
+                bounce.SetActive(true);
+            }
             CollectJumpPowerup();
+
+            
         }
     }
 
