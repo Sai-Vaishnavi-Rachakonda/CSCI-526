@@ -218,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027916908, y: 0.025554419}
+  m_Offset: {x: -0.08245468, y: 0.011919737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1725068, y: 2.1499438}
+  m_Size: {x: 2.5542698, y: 2.504438}
   m_EdgeRadius: 0
 --- !u!95 &7067390768351924629
 Animator:
@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dba6dbbed414056b297ec545b82d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cage: {fileID: 0}
 --- !u!1 &7067390770070492255
 GameObject:
   m_ObjectHideFlags: 0
