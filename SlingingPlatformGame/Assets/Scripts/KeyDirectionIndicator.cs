@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,8 +11,10 @@ public class KeyDirectionIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var keys = GameObject.FindGameObjectsWithTag("Key");
-        if(keys.Length>0)
+        var keys = new List<GameObject>();
+            keys.AddRange(GameObject.FindGameObjectsWithTag("Key").ToList());
+            keys.AddRange(GameObject.FindGameObjectsWithTag("door color").ToList());
+        if(keys.Count>0)
         {
             var key = FindClosestKey(keys);
             var dir = key.position - transform.position;
@@ -42,7 +45,7 @@ public class KeyDirectionIndicator : MonoBehaviour
         }
     }
 
-    Transform FindClosestKey(GameObject[] Keys)
+    Transform FindClosestKey(List<GameObject> Keys)
     {
         Transform tMin = null;
         float minDist = Mathf.Infinity;
