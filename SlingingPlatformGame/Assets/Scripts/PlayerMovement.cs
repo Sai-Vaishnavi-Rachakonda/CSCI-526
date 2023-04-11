@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     Vector3 playerPosition;
     int count=0;
 
+    private List<GameObject> BounceToRespawn = new List<GameObject>();
+    private List<Vector3> BouncePositions = new List<Vector3>();
+    private List<bool> isBounceRespawning = new List<bool>();
+
     
 
     void Start()
@@ -43,6 +47,13 @@ public class PlayerMovement : MonoBehaviour
         initialJump = jump;
 
         playerPosition = respawnPosition;
+
+        GameObject[] respawnableBounce = GameObject.FindGameObjectsWithTag("bounce-powerup");
+        foreach (GameObject obj in respawnableBounce) {
+            BounceToRespawn.Add(obj);
+            BouncePositions.Add(obj.transform.position);
+            isBounceRespawning.Add(false);
+        }
     }
 
     // Update is called once per frame
@@ -236,7 +247,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("bounce-powerup"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            for (int i = 0; i < BounceToRespawn.Count; i++) {
+                if(other.gameObject.name == BounceToRespawn[i].name) {
+                    BounceToRespawn[i].SetActive(false);
+                    isBounceRespawning[i] = true;
+                }
+            }
             Debug.Log("Called active");
             GameObject Panel = GameObject.Find("Head");
             if (Panel){
@@ -244,9 +261,24 @@ public class PlayerMovement : MonoBehaviour
                 bounce.SetActive(true);
             }
             CollectJumpPowerup();
-
+            StartCoroutine(RespawnBouncePowerUps());
             
         }
+    }
+
+
+    IEnumerator RespawnBouncePowerUps() {
+        // Wait for 15 seconds
+        yield return new WaitForSeconds(15);
+        // Reset the positions of the objects to their original positions and set them active again
+        for (int i = 0; i < BounceToRespawn.Count; i++) {
+            if (isBounceRespawning[i]) {
+                isBounceRespawning[i] = false;
+                BounceToRespawn[i].transform.position = BouncePositions[i];
+                BounceToRespawn[i].SetActive(true);
+            }
+        }
+
     }
 
     private void OnParticleCollision(GameObject other) {

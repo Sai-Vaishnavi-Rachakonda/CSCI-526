@@ -20,6 +20,10 @@ public class player_script : MonoBehaviour
     //public static float MaxHealth;
     // public Slider _slide;
     // public static float currentHealth;
+
+    private List<GameObject> ShieldPwrToRespawn = new List<GameObject>();
+    private List<Vector3> ShieldPwrPositions = new List<Vector3>();
+    private List<bool> isShieldPwrRespawning = new List<bool>();
     
 
     void Start()
@@ -214,6 +218,14 @@ public class player_script : MonoBehaviour
         // currentHealth = 0;
         // _slide.maxValue = MaxHealth;
         // _slide.value = 0;
+
+        GameObject[] respawnableShieldPwr = GameObject.FindGameObjectsWithTag("powerUpShield");
+        foreach (GameObject obj in respawnableShieldPwr) {
+            ShieldPwrToRespawn.Add(obj);
+            ShieldPwrPositions.Add(obj.transform.position);
+            isShieldPwrRespawning.Add(false);
+        }
+
     }
 
 
@@ -279,7 +291,13 @@ public class player_script : MonoBehaviour
         
         if(collision.CompareTag("powerUpShield")){
             
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
+                if(collision.gameObject.name == ShieldPwrToRespawn[i].name) {
+                    ShieldPwrToRespawn[i].SetActive(false);
+                    isShieldPwrRespawning[i] = true;
+                }
+            }
             shieldTimeLeft=15f;
             shieldBoolean=true;
             GameObject Panel = GameObject.Find("Head");
@@ -287,13 +305,25 @@ public class player_script : MonoBehaviour
                 GameObject shield = Panel.transform.Find("Shield").gameObject;
                 shield.SetActive(true);
             }
+            StartCoroutine(RespawnPowerUpShield());
         }
-
-
-
-        
-        
     }
+
+
+    IEnumerator RespawnPowerUpShield() {
+        // Wait for 15 seconds
+        yield return new WaitForSeconds(15);
+        // Reset the positions of the objects to their original positions and set them active again
+        for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
+            if (isShieldPwrRespawning[i]) {
+                isShieldPwrRespawning[i] = false;
+                ShieldPwrToRespawn[i].transform.position = ShieldPwrPositions[i];
+                ShieldPwrToRespawn[i].SetActive(true);
+            }
+        }
+    }
+
+
     public void clearKeysArray()
     {
         keysArray = new List<float>();
