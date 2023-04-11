@@ -170,6 +170,18 @@ public class player_script : MonoBehaviour
             }
             
          }
+         else if(sceneName == "FinalLevel3")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 3";
+            }
+            maxScore = 3;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+            
+         }
 
          else if(sceneName == "FinalLevel4")
          {
