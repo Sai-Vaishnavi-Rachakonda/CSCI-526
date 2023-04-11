@@ -100,7 +100,7 @@ public class player_script : MonoBehaviour
             
          }
          // For level 2 - Shreeya
-         else if(sceneName == "Level 8")
+         else if(sceneName == "FinalLevel2")
          {
 
             if (levelText != null){
