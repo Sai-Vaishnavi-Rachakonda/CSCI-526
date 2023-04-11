@@ -25,5 +25,16 @@ public class CameraScript : MonoBehaviour
             Camera.orthographicSize=zoomIn;
         }
 
+        // Renderer[] sceneRenderers = FindObjectsOfType<Renderer>();
+        //  for (int i = 0; i < sceneRenderers.Length; i++)
+        //      if (IsVisible(sceneRenderers[i]))
+        //          Debug.Log(sceneRenderers[i].name);
+
+
     }
+
+    bool IsVisible(Renderer renderer) {
+         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+         return (GeometryUtility.TestPlanesAABB(planes, renderer.bounds)) ? true : false;
+     }
 }
