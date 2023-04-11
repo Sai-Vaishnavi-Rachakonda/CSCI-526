@@ -37,7 +37,7 @@ public class LevelSelection : MonoBehaviour
                 break;
             case "level1":
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
-                    SceneManager.LoadScene("finalLevel2"); 
+                    SceneManager.LoadScene("FinalLevel2"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
                 break;
