@@ -74,7 +74,7 @@ public class LeaderBoard : MonoBehaviour
     public void continueLevel(){
         // Debug.Log(Buttonscript.dbObj.level);
         int newLevel = Buttonscript.dbObj.level + 1;
-        nextScene = "Level "+newLevel.ToString();
+        nextScene = "FinalLevel"+newLevel.ToString();
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
         Buttonscript.timePerParse.Reset();
