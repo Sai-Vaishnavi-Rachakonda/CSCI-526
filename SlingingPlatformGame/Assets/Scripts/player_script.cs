@@ -154,6 +154,18 @@ public class player_script : MonoBehaviour
                 bounce.SetActive(false); 
             }
         }
+        else if(sceneName == "FinalLevel1")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 1";
+            }
+            maxScore = 4;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+            
+         }
 
         //Temp level
         else if(sceneName=="Level 6"){
