@@ -7,7 +7,6 @@ public class BombCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // collided = true;
-        Debug.Log("Here123"+ collision.gameObject.tag);        
         if(collision.gameObject.CompareTag("bomb")){
             Destroy(collision.gameObject);
             Destroy(gameObject); 
