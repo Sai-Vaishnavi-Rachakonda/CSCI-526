@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(currentPlatform!=null){
             if(SceneManager.GetActiveScene().name!="Level 0"){}
-                Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
+                //Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
         }
 
         if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
