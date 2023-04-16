@@ -15,17 +15,28 @@ public class FinishLine : MonoBehaviour
     public string nextScene;
     public int score;
     public TextMeshProUGUI Timer;
+
+    public GameObject Pannel;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
-            Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
-        } 
+       if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null && Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
+            //check if panel is open and pause the timer
+            if(Pannel != null && Pannel.activeSelf){
+                Buttonscript.timePerParse.Stop();
+                
+            }
+            //if panel is closed start timer
+            else if(Pannel != null && !Pannel.activeSelf){
+                Buttonscript.timePerParse.Start();
+                Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+            }
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
