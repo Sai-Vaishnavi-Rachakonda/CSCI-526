@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -213,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Testing features
-        else if (other.gameObject.CompareTag("Enemy")){
+        else if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("bomb")){
             if(transform.position.y>other.gameObject.transform.position.y){
                 Destroy(other.gameObject);
             }else if(!ps.shieldBoolean){

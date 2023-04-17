@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="" />
+    <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalLevel5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BombCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +125,7 @@
       <workItem from="1680579960735" duration="1982000" />
       <workItem from="1681088279679" duration="2722000" />
       <workItem from="1681349289277" duration="727000" />
+      <workItem from="1681433638055" duration="4922000" />
     </task>
     <servers />
   </component>
@@ -165,5 +172,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Platform.cs</url>
+          <line>43</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Platform.cs" initialLine="43" containingFunctionPresentation="method 'Release'">
+            <startOffsets>
+              <option value="1116" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1117" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
