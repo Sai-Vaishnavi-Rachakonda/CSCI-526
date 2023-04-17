@@ -10,8 +10,8 @@ public class CameraScript : MonoBehaviour
     private Camera Camera;
     private float zoomOut = 13;
     private const float zoomIn=8.634074f; // Const do not change it
-    private float zoomTimeLeft=0f;
-    private const float zoomTime = 5f;
+    private  float zoomTimeLeft=0f;
+    private const float zoomTime = 3f;
 
 
     void Start()
@@ -34,10 +34,6 @@ public class CameraScript : MonoBehaviour
             zoomTimeLeft-=Time.deltaTime;
         }else{
             Camera.orthographicSize=zoomIn;
-            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
-            if(zoom){
-                zoom.SetActive(false); 
-            }
         }
 
         Renderer[] sceneRenderers = FindObjectsOfType<Renderer>();
