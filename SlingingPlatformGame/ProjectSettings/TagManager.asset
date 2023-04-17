@@ -24,6 +24,8 @@ TagManager:
   - powerUpShield
   - shieldIndication
   - bounceIndication
+  - zoomIndication
+  - powerUpZoom
   layers:
   - Default
   - TransparentFX

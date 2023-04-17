@@ -13,6 +13,7 @@ public class player_script : MonoBehaviour
     public List<float> keysArray = new List<float>();
     public bool shieldBoolean=false;
     public double shieldTimeLeft=0f;
+    
 
     
     
@@ -202,6 +203,12 @@ public class player_script : MonoBehaviour
             if(shield){
                 shield.SetActive(false); 
             }
+
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
             
          }
 
@@ -223,6 +230,11 @@ public class player_script : MonoBehaviour
             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
             if(shield){
                 shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
             }
             
          }
@@ -246,6 +258,11 @@ public class player_script : MonoBehaviour
             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
             if(shield){
                 shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
             }
             
             
@@ -347,6 +364,31 @@ public class player_script : MonoBehaviour
             if (Panel){
                 GameObject shield = Panel.transform.Find("Shield").gameObject;
                 shield.SetActive(true);
+            }
+            StartCoroutine(RespawnPowerUpShield());
+        }
+
+        Debug.Log(collision.tag);
+        if(collision.CompareTag("powerUpZoom")){
+            
+            Destroy(collision.gameObject);
+            for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
+                if(collision.gameObject.name == ShieldPwrToRespawn[i].name) {
+                    ShieldPwrToRespawn[i].SetActive(false);
+                    isShieldPwrRespawning[i] = true;
+                }
+            }
+
+
+            GameObject deckObj = GameObject.Find("SelectPlatform");
+            if (deckObj)
+            {
+                
+                GameObject zoomIndication = deckObj.transform.Find("Zoom").gameObject;
+                if(zoomIndication){
+                    zoomIndication.SetActive(true);
+                }
+                
             }
             StartCoroutine(RespawnPowerUpShield());
         }
