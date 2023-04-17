@@ -87,4 +87,11 @@ public class LeaderBoard : MonoBehaviour
         Buttonscript.timePerParse.Start();
     }
 
+    public void replayLevel(){
+        // Debug.Log(Buttonscript.dbObj.level);
+        int sameLevel = Buttonscript.dbObj.level;
+        nextScene = "FinalLevel"+sameLevel.ToString();
+        Debug.Log(nextScene);
+        SceneManager.LoadScene(nextScene);
+    }
 }

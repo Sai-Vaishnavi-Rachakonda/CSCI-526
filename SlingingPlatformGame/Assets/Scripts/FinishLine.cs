@@ -15,17 +15,29 @@ public class FinishLine : MonoBehaviour
     public string nextScene;
     public int score;
     public TextMeshProUGUI Timer;
+
+    public GameObject Pannel;
+    public string levelType;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null &&  Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
-            Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
-        } 
+       if (Buttonscript.timePerParse!= null && Timer != null && Buttonscript.timePerParse.Elapsed != null && Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss")!= ""){
+            //check if panel is open and pause the timer
+            if(Pannel != null && Pannel.activeSelf){
+                Buttonscript.timePerParse.Stop();
+                
+            }
+            //if panel is closed start timer
+            else if(Pannel != null && !Pannel.activeSelf){
+                Buttonscript.timePerParse.Start();
+                Timer.text = Buttonscript.timePerParse.Elapsed.ToString("mm\\:ss"); 
+            }
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -43,20 +55,21 @@ public class FinishLine : MonoBehaviour
             // if (player_script.ScoreNum >= score)
             if(player_script.ScoreNum ==  player_script.maxScore)
             {
-                SceneManager.LoadScene("leaderBoard");
+                if(levelType == "real"){
+                    SceneManager.LoadScene("leaderBoard"); 
+                }else{
+                    SceneManager.LoadScene(nextScene);
+                    Buttonscript.timePerParse.Reset();
+                    Buttonscript.dbObj.resetPlatformCords();
+                    Buttonscript.dbObj.resetPlatformCount();
+                    Buttonscript.dbObj.resetPlatformShoot();
+                    Buttonscript.dbObj.resetOrbsCollected();
+                    Buttonscript.dbObj.resetreasonOfLevelEnd();
+                    Buttonscript.dbObj.resetCheckpoint();
+                    Buttonscript.timePerParse.Start();
+                }
                 int level = Buttonscript.dbObj.level;
                 Buttonscript.dbObj.setLevel(++level);
-                // SceneManager.LoadScene(nextScene); //send the player to the next level.
-                
-                // Buttonscript.timePerParse.Reset();
-                // Buttonscript.dbObj.resetPlatformCords();
-                // Buttonscript.dbObj.resetPlatformCount();
-                // Buttonscript.dbObj.resetPlatformShoot();
-                // Buttonscript.dbObj.resetOrbsCollected();
-                // Buttonscript.dbObj.resetreasonOfLevelEnd();
-                // Buttonscript.dbObj.resetCheckpoint();
-                // Buttonscript.timePerParse.Start();
-                
             }
             else
             {

@@ -1471,6 +1471,7 @@ MonoBehaviour:
   nextScene: 
   score: 0
   Timer: {fileID: 6573885209202404157}
+  Pannel: {fileID: 6413971666472593260}
 --- !u!1 &6573885209228321343
 GameObject:
   m_ObjectHideFlags: 0

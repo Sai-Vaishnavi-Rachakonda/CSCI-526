@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.59053785, g: 0.396132, b: 0.6245467, a: 1}
+  m_IndirectSpecularColor: {r: 0.5905446, g: 0.396132, b: 0.6245467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -438,6 +438,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.77601624
       objectReference: {fileID: 0}
+    - target: {fileID: 3965720309451586105, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4339111077697544578, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: script
       value: 
@@ -616,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210365860024, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.08280182
+      value: -0.08280945
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210365860024, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -640,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210631429463, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.9434204
+      value: 0.9433594
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210631429463, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -905,6 +909,10 @@ PrefabInstance:
     - target: {fileID: 6233770839758449338, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: m_Offset.y
       value: -1277.9785
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
+      propertyPath: levelType
+      value: tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: nextScene
