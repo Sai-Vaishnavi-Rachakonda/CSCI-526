@@ -10,6 +10,9 @@ public class CameraScript : MonoBehaviour
     private Camera Camera;
     private float zoomOut = 13;
     private const float zoomIn=8.634074f; // Const do not change it
+    private float zoomTimeLeft=0f;
+    private const float zoomTime = 5f;
+
 
     void Start()
     {
@@ -19,10 +22,22 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z)){
+        // if(Input.GetKeyDown(KeyCode.Z)){
+        //     Camera.orthographicSize=zoomOut;
+        // }else if(Input.GetKeyUp(KeyCode.Z)){
+        //     Camera.orthographicSize=zoomIn;
+        // }
+
+
+        if(zoomTimeLeft>0){
             Camera.orthographicSize=zoomOut;
-        }else if(Input.GetKeyUp(KeyCode.Z)){
+            zoomTimeLeft-=Time.deltaTime;
+        }else{
             Camera.orthographicSize=zoomIn;
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
         }
 
         Renderer[] sceneRenderers = FindObjectsOfType<Renderer>();
@@ -40,8 +55,16 @@ public class CameraScript : MonoBehaviour
 
     }
 
+    //Testing Function 
+    // @author:Chirag
     bool IsVisible(Renderer renderer) {
          Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
          return (GeometryUtility.TestPlanesAABB(planes, renderer.bounds)) ? true : false;
      }
+
+
+    public void zoomSelected(){
+        zoomTimeLeft+=zoomTime;
+    }
+
 }
