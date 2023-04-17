@@ -25,10 +25,17 @@ public class CameraScript : MonoBehaviour
             Camera.orthographicSize=zoomIn;
         }
 
-        // Renderer[] sceneRenderers = FindObjectsOfType<Renderer>();
-        //  for (int i = 0; i < sceneRenderers.Length; i++)
-        //      if (IsVisible(sceneRenderers[i]))
-        //          Debug.Log(sceneRenderers[i].name);
+        Renderer[] sceneRenderers = FindObjectsOfType<Renderer>();
+         for (int i = 0; i < sceneRenderers.Length; i++)
+             if (IsVisible(sceneRenderers[i]) && sceneRenderers[i].tag=="Lava" && sceneRenderers[i].name.StartsWith("Ground")){
+                
+                // var diff = transform.position.y - sceneRenderers[i].transform.position.y;
+                // if(diff>14){
+                //     transform.position = new Vector3(transform.position.x,transform.position.y +(diff - 13)* Time.deltaTime,transform.position.z);
+                // }
+                
+             }
+                 
 
 
     }
