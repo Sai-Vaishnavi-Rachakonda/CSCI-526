@@ -135,12 +135,24 @@ public class PlayerMovement : MonoBehaviour
             var diff = Camera.transform.position.y - transform.position.y;
 
             // Testing camera movement
-            // Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-
             
-
-
-            if(SceneManager.GetActiveScene().name=="Level 5"){
+            // if(rb.velocity.y>0){
+            //     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+            // }
+            
+            if(SceneManager.GetActiveScene().name=="FinalLevel4"){
+                if(transform.position.x>=95){
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                }
+                else if(Camera.transform.position.y>=1.1)
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            }else if(SceneManager.GetActiveScene().name=="FinalLevel5"){
+                if(transform.position.x>=48){
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
+                }
+                else if(Camera.transform.position.y>=1.1)
+                    Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
+            }else if(SceneManager.GetActiveScene().name=="Level 5"){
                 if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
