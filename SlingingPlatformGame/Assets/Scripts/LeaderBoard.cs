@@ -87,4 +87,23 @@ public class LeaderBoard : MonoBehaviour
         Buttonscript.timePerParse.Start();
     }
 
+    public void replayLevel(){
+        // Debug.Log(Buttonscript.dbObj.level);
+        nextScene = "FinalLevel"+Buttonscript.dbObj.level.ToString();
+        Debug.Log(nextScene);
+        SceneManager.LoadScene(nextScene);
+        Buttonscript.timePerParse.Reset();
+        Buttonscript.dbObj.resetPlatformCords();
+        Buttonscript.dbObj.resetPlatformCount();
+        Buttonscript.dbObj.resetPlatformShoot();
+        Buttonscript.dbObj.resetOrbsCollected();
+        Buttonscript.dbObj.resetreasonOfLevelEnd();
+        Buttonscript.dbObj.resetCheckpoint();
+        Buttonscript.timePerParse.Start();
+    }
+
+    public void homeButton(){
+        SceneManager.LoadScene("levelSelection");
+    }
+
 }
