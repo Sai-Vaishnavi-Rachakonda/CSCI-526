@@ -17,6 +17,7 @@ public class FinishLine : MonoBehaviour
     public TextMeshProUGUI Timer;
 
     public GameObject Pannel;
+    public string levelType;
     void Start()
     {
     }
@@ -54,20 +55,21 @@ public class FinishLine : MonoBehaviour
             // if (player_script.ScoreNum >= score)
             if(player_script.ScoreNum ==  player_script.maxScore)
             {
-                SceneManager.LoadScene("leaderBoard");
+                if(levelType == "real"){
+                    SceneManager.LoadScene("leaderBoard"); 
+                }else{
+                    SceneManager.LoadScene(nextScene);
+                    Buttonscript.timePerParse.Reset();
+                    Buttonscript.dbObj.resetPlatformCords();
+                    Buttonscript.dbObj.resetPlatformCount();
+                    Buttonscript.dbObj.resetPlatformShoot();
+                    Buttonscript.dbObj.resetOrbsCollected();
+                    Buttonscript.dbObj.resetreasonOfLevelEnd();
+                    Buttonscript.dbObj.resetCheckpoint();
+                    Buttonscript.timePerParse.Start();
+                }
                 int level = Buttonscript.dbObj.level;
                 Buttonscript.dbObj.setLevel(++level);
-                // SceneManager.LoadScene(nextScene); //send the player to the next level.
-                
-                // Buttonscript.timePerParse.Reset();
-                // Buttonscript.dbObj.resetPlatformCords();
-                // Buttonscript.dbObj.resetPlatformCount();
-                // Buttonscript.dbObj.resetPlatformShoot();
-                // Buttonscript.dbObj.resetOrbsCollected();
-                // Buttonscript.dbObj.resetreasonOfLevelEnd();
-                // Buttonscript.dbObj.resetCheckpoint();
-                // Buttonscript.timePerParse.Start();
-                
             }
             else
             {
