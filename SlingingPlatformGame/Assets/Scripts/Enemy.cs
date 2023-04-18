@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
             // initial_position_x = transform.position.x;
             // initial_position_y = transform.position.y;
             Debug.Log("Initial X position: "+ initial_position_x);
+            //Giving direction according to developer inspect element input
             if(vertical)
                 transform.Translate(Vector2.up * speed * Time.deltaTime);
             else
