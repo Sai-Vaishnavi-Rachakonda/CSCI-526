@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-            }else if(SceneManager.GetActiveScene().name=="Level 5"){
+            }else if(SceneManager.GetActiveScene().name=="FinalLevel6"){
                 if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
