@@ -550,7 +550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.164, y: 0.2262478}
   m_AnchorMax: {x: 0.85200006, y: 0.8285045}
-  m_AnchoredPosition: {x: -0.74389267, y: -0.2129972}
+  m_AnchoredPosition: {x: -0.74389267, y: -0.21299744}
   m_SizeDelta: {x: 2.4729004, y: 0.6330004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51281774
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5.05
+  m_fontSize: 5.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.95
+  m_fontSize: 21.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5655,7 +5655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: nextScene
-      value: Final Scene
+      value: FinalLevel6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
