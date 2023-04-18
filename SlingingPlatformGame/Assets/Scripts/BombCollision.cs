@@ -1,16 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BombCollision : MonoBehaviour
 {
+    public GameObject[] powerups;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // collided = true;
-        Debug.Log("Here123"+ collision.gameObject.tag);        
-        if(collision.gameObject.CompareTag("bomb")){
+        if (collision.gameObject.CompareTag("bomb"))
+        {
+            var pos = gameObject.transform;
             Destroy(collision.gameObject);
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            var index = Random.Range(0, powerups.Length);
+            // Debug.Log("here43566445:    " + index);
+            Instantiate(powerups[index], transform.position, transform.rotation);
         }
 
     }
