@@ -13,6 +13,7 @@ public class Deck : MonoBehaviour
     public TextMeshProUGUI countVal;
     public Animator animator;
     
+    public CameraScript cs;
 
 
     void Start()
@@ -67,7 +68,14 @@ public class Deck : MonoBehaviour
     }
 
     public void checking(){
-        if(counter > 0)
+        if(platformType=="zoom"){
+            cs.zoomSelected();
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
+        }
+        else if(counter > 0)
         {   
             script.selectedPlatform = platformType;
             script.CreatePlatformFromIndex();

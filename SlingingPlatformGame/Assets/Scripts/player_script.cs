@@ -231,6 +231,11 @@ public class player_script : MonoBehaviour
             if(shield){
                 shield.SetActive(false); 
             }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
             
          }
 
@@ -253,6 +258,11 @@ public class player_script : MonoBehaviour
             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
             if(shield){
                 shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
             }
             
             
@@ -358,10 +368,10 @@ public class player_script : MonoBehaviour
             StartCoroutine(RespawnPowerUpShield());
         }
 
-
+        Debug.Log(collision.tag);
         if(collision.CompareTag("powerUpZoom")){
             
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
             for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
                 if(collision.gameObject.name == ShieldPwrToRespawn[i].name) {
                     ShieldPwrToRespawn[i].SetActive(false);
@@ -369,9 +379,16 @@ public class player_script : MonoBehaviour
                 }
             }
 
-            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
-            if(zoom){
-                zoom.SetActive(true); 
+
+            GameObject deckObj = GameObject.Find("SelectPlatform");
+            if (deckObj)
+            {
+                
+                GameObject zoomIndication = deckObj.transform.Find("Zoom").gameObject;
+                if(zoomIndication){
+                    zoomIndication.SetActive(true);
+                }
+                
             }
             StartCoroutine(RespawnPowerUpShield());
         }
