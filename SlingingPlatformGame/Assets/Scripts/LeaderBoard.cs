@@ -13,6 +13,8 @@ public class LeaderBoard : MonoBehaviour
     public Sprite STAR3;
     public Image artworkImage;
     public string nextScene;
+
+    public Button buttonToRemove;
    
     void Start()
     {
@@ -42,6 +44,12 @@ public class LeaderBoard : MonoBehaviour
             }
 
         }
+        int sameLevel = Buttonscript.dbObj.level;
+        nextScene = "FinalLevel"+sameLevel.ToString();
+        if (nextScene == "FinalLevel5"){
+            buttonToRemove.gameObject.SetActive(false);
+        }
+        
     }
 
     // Update is called once per frame
@@ -94,4 +102,5 @@ public class LeaderBoard : MonoBehaviour
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
     }
+
 }
