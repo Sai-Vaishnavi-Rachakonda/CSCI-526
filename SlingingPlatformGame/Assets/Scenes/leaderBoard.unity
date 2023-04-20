@@ -370,6 +370,7 @@ MonoBehaviour:
   STAR3: {fileID: 0}
   artworkImage: {fileID: 0}
   nextScene: 
+  buttonToRemove: {fileID: 0}
 --- !u!1 &1075376104
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +631,7 @@ MonoBehaviour:
   STAR3: {fileID: 0}
   artworkImage: {fileID: 0}
   nextScene: 
+  buttonToRemove: {fileID: 1101519810}
 --- !u!114 &1094575905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +650,7 @@ MonoBehaviour:
   STAR3: {fileID: 0}
   artworkImage: {fileID: 0}
   nextScene: 
+  buttonToRemove: {fileID: 1101519810}
 --- !u!1 &1101519808
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,10 +687,10 @@ RectTransform:
   m_Father: {fileID: 1094575903}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.20717116}
-  m_AnchorMax: {x: 0.64641845, y: 0.27931723}
-  m_AnchoredPosition: {x: 2.5952997, y: 0}
-  m_SizeDelta: {x: -0.40950012, y: 6}
+  m_AnchorMin: {x: 0.44841605, y: 0.2407933}
+  m_AnchorMax: {x: 0.587292, y: 0.32679328}
+  m_AnchoredPosition: {x: -2.5999985, y: -2}
+  m_SizeDelta: {x: 5.5905, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101519810
 MonoBehaviour:
@@ -801,6 +804,7 @@ MonoBehaviour:
   STAR3: {fileID: 0}
   artworkImage: {fileID: 0}
   nextScene: 
+  buttonToRemove: {fileID: 0}
 --- !u!1 &1341184510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,27 +1029,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.47032624
+      value: 0.57441604
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.27931723
+      value: 0.17920671
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.3548048
+      value: 0.45875198
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.20717116
+      value: 0.089826815
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.78271484
+      value: -0.21728516
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1077,11 +1081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3
+      value: -0.30000305
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.76000977
+      value: -0.2999878
       objectReference: {fileID: 0}
     - target: {fileID: 6122305517656916283, guid: c1a590a4de14c4eb3ab050bcdf0f83ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1356,3 +1360,4 @@ MonoBehaviour:
   STAR3: {fileID: 21300000, guid: 13c39de0b430a4fc8833387fcbf3b3d9, type: 3}
   artworkImage: {fileID: 1949729911}
   nextScene: 
+  buttonToRemove: {fileID: 0}
