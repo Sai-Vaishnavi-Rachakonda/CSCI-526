@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if(Camera.transform.position.y>=1.1)
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff, Camera.transform.position.z);
-            }else if(SceneManager.GetActiveScene().name=="Level 5"){
+            }else if(SceneManager.GetActiveScene().name=="FinalLevel6"){
                 if((transform.position.x>=45 && transform.position.x<=65) || transform.position.x>76){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
@@ -222,10 +222,16 @@ public class PlayerMovement : MonoBehaviour
             
         }else if (other.gameObject.CompareTag("Lava")){
             isJumping=false;
+            if(other.transform.position.x+2.28>transform.position.x && other.transform.position.x-2.28<=transform.position.x){
+                if(other.transform.position.y+1.1>transform.position.y && other.transform.position.y-0.1<=transform.position.y){
+                    Slingshot.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+2f, 0);
+                    currentPlatform = other;
+                }
+            }
         }
 
         //Testing features
-        else if (other.gameObject.CompareTag("Enemy")){
+        else if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("bomb")){
             if(transform.position.y>other.gameObject.transform.position.y){
                 Destroy(other.gameObject);
             }else if(!ps.shieldBoolean){

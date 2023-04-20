@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 1.0f; // the speed at which the enemy moves
-    private float initial_position_x;
-    private float initial_position_y;
+    public float initial_position_x = 10.0f;
+    public float initial_position_y = 10.0f;
     public float range = 3.0f;
     public bool vertical=false;
     private bool initial_move_direction = true;
@@ -21,9 +21,10 @@ public class Enemy : MonoBehaviour
     {
         if(Time.time < 0.1)
         {
-            initial_position_x = transform.position.x;
-            initial_position_y = transform.position.y;
+            // initial_position_x = transform.position.x;
+            // initial_position_y = transform.position.y;
             Debug.Log("Initial X position: "+ initial_position_x);
+            //Giving direction according to developer inspect element input
             if(vertical)
                 transform.Translate(Vector2.up * speed * Time.deltaTime);
             else

@@ -61,6 +61,11 @@ public class Slingshot : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "FinalLevel1")
+        {
+            remainingPlatforms = new ArrayList {"default"};
+        }
+
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
             selectedPlatform = "ice";
