@@ -44,17 +44,21 @@ public class LeaderBoard : MonoBehaviour
             }
 
         }
-        int sameLevel = Buttonscript.dbObj.level;
-        nextScene = "FinalLevel"+sameLevel.ToString();
-        if (nextScene == "FinalLevel5"){
-            buttonToRemove.gameObject.SetActive(false);
-        }
+        
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        int sameLevel = Buttonscript.dbObj.level;
+        nextScene = "FinalLevel"+sameLevel.ToString();
+        // Debug.Log("Level andawnd"+nextScene);
+        if (nextScene == "FinalLevel6"){
+            // Debug.Log("just checking......................");
+            buttonToRemove.gameObject.SetActive(false);
+        }
         
     }
     public void rating(int zero, int one, int two, int three){
