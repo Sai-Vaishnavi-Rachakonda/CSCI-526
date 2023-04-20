@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8171920951591660732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 52.6371, y: -13.1571, z: 0}
-  m_LocalScale: {x: 2.8932974, y: 26.714212, z: 1}
+  m_LocalScale: {x: 1.4466487, y: 13.357106, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5c8bbf3ba70fda14faf9a03946917675, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2830189, g: 0.10012461, b: 0.10012461, a: 1}
+  m_Color: {r: 0.39916337, g: 0.735849, b: 0.56244344, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
+  m_Size: {x: 0.5, y: 0.5}
+  m_AdaptiveModeThreshold: 0.33
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
@@ -103,8 +103,8 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.33
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
