@@ -13,6 +13,8 @@ public class LeaderBoard : MonoBehaviour
     public Sprite STAR3;
     public Image artworkImage;
     public string nextScene;
+
+    public Button buttonToRemove;
    
     void Start()
     {
@@ -42,11 +44,21 @@ public class LeaderBoard : MonoBehaviour
             }
 
         }
+        
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        int sameLevel = Buttonscript.dbObj.level;
+        nextScene = "FinalLevel"+sameLevel.ToString();
+        // Debug.Log("Level andawnd"+nextScene);
+        if (nextScene == "FinalLevel6"){
+            // Debug.Log("just checking......................");
+            buttonToRemove.gameObject.SetActive(false);
+        }
         
     }
     public void rating(int zero, int one, int two, int three){
@@ -94,4 +106,5 @@ public class LeaderBoard : MonoBehaviour
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
     }
+
 }
