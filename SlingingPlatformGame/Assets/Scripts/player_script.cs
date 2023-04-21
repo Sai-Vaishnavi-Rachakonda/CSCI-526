@@ -12,7 +12,7 @@ public class player_script : MonoBehaviour
     public static float maxScore;
     public List<float> keysArray = new List<float>();
     public bool shieldBoolean=false;
-    public double shieldTimeLeft=0f;
+    public float shieldTimeLeft=0f;
     
 
     
