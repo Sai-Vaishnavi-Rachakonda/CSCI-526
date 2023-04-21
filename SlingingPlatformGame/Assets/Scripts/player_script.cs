@@ -446,6 +446,7 @@ public class player_script : MonoBehaviour
     public void updateScore()
     {
         ScoreNum -= keysArray.Count/2;
+        ScoreNum = ScoreNum >= 0 ? ScoreNum : 0;
         // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
         // Debug.Log("changingn gthe etecdtnvvrn");
         scoreText.text = ScoreNum + "/" + maxScore;
