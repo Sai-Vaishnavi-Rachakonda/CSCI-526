@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpPowerupActive = false;
     private float jumpPowerupEndTime = 0f;
     private float jumpPowerupDuration = 15f;
+    private float blinkDuration = 5f;
+    private float blinkInterval = 0.5f;
+    private float timeLeft;
 
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
@@ -65,6 +68,20 @@ public class PlayerMovement : MonoBehaviour
         if(isJumpPowerupActive && Time.time < jumpPowerupEndTime)
         {
             jump = powerupJump;
+            timeLeft  = jumpPowerupEndTime-Time.time;
+            // Debug.Log("TimeLeft:"+ timeLeft);
+            // timeLeft -= Time.deltaTime;
+            if (timeLeft <= blinkDuration)
+            {
+                float remainder = timeLeft % blinkInterval;
+                bool shouldBlink = remainder < blinkInterval / 3f;
+                // Debug.Log("shouldBlink:"+ shouldBlink);
+                GameObject Panel = GameObject.Find("Head");
+                if (Panel){
+                    GameObject bounce = Panel.transform.Find("bounce")?.gameObject;
+                    bounce?.SetActive(shouldBlink);
+                }
+            }
         }
         else
         {
@@ -172,16 +189,69 @@ public class PlayerMovement : MonoBehaviour
                 //Slingshot.transform.position = new Vector3(currentPlatform.transform.position.x, currentPlatform.transform.position.y+2f, 0); 
         }
 
-        if(ps.shieldBoolean && ps.shieldTimeLeft<=0){
+        
+        if(ps.shieldBoolean && ps.shieldTimeLeft>0){
+            ps.shieldTimeLeft-=Time.deltaTime;
+
+            // timeLeft  = jumpPowerupEndTime-Time.time;
+            Debug.Log("TimeLeft:"+ ps.shieldTimeLeft);
+            // timeLeft -= Time.deltaTime;
+            if (ps.shieldTimeLeft <= blinkDuration)
+            {
+                float remainder = ps.shieldTimeLeft % blinkInterval;
+                bool shouldBlink = remainder < blinkInterval / 2f;
+                Debug.Log("shouldBlink:"+ shouldBlink);
+                GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+                Debug.Log(shield);
+                if (shield){
+                    Debug.Log("Inside shield:"+ shouldBlink);
+                    shield.SetActive(shouldBlink);
+                }
+                GameObject Panel = GameObject.Find("Head");
+                if (Panel){
+                    GameObject Shield = Panel.transform.Find("Shield")?.gameObject;
+                    Shield?.SetActive(shouldBlink);
+                }
+            }
+
+        }
+        else{
             ps.shieldBoolean=false;
             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
             if(shield){
                 shield.SetActive(false);
             }
             // TODO if player is in lava and time expires?
-        }else if(ps.shieldBoolean){
-            ps.shieldTimeLeft-=Time.deltaTime;
         }
+
+
+        // if(isJumpPowerupActive && Time.time < jumpPowerupEndTime)
+        // {
+        //     jump = powerupJump;
+        //     timeLeft  = jumpPowerupEndTime-Time.time;
+        //     // Debug.Log("TimeLeft:"+ timeLeft);
+        //     // timeLeft -= Time.deltaTime;
+        //     if (timeLeft <= blinkDuration)
+        //     {
+        //         float remainder = timeLeft % blinkInterval;
+        //         bool shouldBlink = remainder < blinkInterval / 3f;
+        //         // Debug.Log("shouldBlink:"+ shouldBlink);
+        //         GameObject Panel = GameObject.Find("Head");
+        //         if (Panel){
+        //             GameObject bounce = Panel.transform.Find("bounce")?.gameObject;
+        //             bounce?.SetActive(shouldBlink);
+        //         }
+        //     }
+        // }
+        // else
+        // {
+        //     jump = initialJump;
+        //     GameObject Panel = GameObject.Find("Head");
+        //     if (Panel){
+        //         GameObject bounce = Panel.transform.Find("bounce")?.gameObject;
+        //         bounce?.SetActive(false);
+        //     }
+        // }
         
 
     }
