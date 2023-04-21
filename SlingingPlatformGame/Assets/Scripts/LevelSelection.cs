@@ -31,7 +31,7 @@ public class LevelSelection : MonoBehaviour
        {
             case "level0":
                 UnityEngine.Debug.Log("Level1");
-                SceneManager.LoadScene("finalLevel1");
+                SceneManager.LoadScene("FinalLevel1");
                 Buttonscript.timePerParse = Stopwatch.StartNew();
                 Buttonscript.dbObj.setLevel(0);
                 break;
