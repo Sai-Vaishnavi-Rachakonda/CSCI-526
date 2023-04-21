@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpPowerupActive = false;
     private float jumpPowerupEndTime = 0f;
     private float jumpPowerupDuration = 15f;
+    private float blinkDuration = 5f;
+    private float blinkInterval = 0.5f;
+    private float timeLeft;
 
     private Rigidbody2D rb;
     GameObject Slingshot,Camera, FinishLine; // @author: Chirag
@@ -65,6 +68,20 @@ public class PlayerMovement : MonoBehaviour
         if(isJumpPowerupActive && Time.time < jumpPowerupEndTime)
         {
             jump = powerupJump;
+            timeLeft  = jumpPowerupEndTime-Time.time;
+            Debug.Log("TimeLeft:"+ timeLeft);
+            // timeLeft -= Time.deltaTime;
+            if (timeLeft <= blinkDuration)
+            {
+                float remainder = timeLeft % blinkInterval;
+                bool shouldBlink = remainder < blinkInterval / 3f;
+                Debug.Log("shouldBlink:"+ shouldBlink);
+                GameObject Panel = GameObject.Find("Head");
+                if (Panel){
+                    GameObject bounce = Panel.transform.Find("bounce")?.gameObject;
+                    bounce?.SetActive(shouldBlink);
+                }
+            }
         }
         else
         {
