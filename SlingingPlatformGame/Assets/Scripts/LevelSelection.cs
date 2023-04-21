@@ -51,19 +51,19 @@ public class LevelSelection : MonoBehaviour
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("finalLevel4");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
+                    Buttonscript.dbObj.setLevel(3);
                 break;
             case "level4":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("finalLevel5");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
+                    Buttonscript.dbObj.setLevel(4);
                 break;
             case "level5":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("FinalLevel6");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
+                    Buttonscript.dbObj.setLevel(5);
                 break;
        }
     }

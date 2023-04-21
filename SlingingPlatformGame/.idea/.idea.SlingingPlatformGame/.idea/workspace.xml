@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Platform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Platform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlatformSling 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlatformSling 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerup-ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerup-ice.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
