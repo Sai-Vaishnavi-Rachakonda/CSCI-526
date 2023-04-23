@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d15c2cef-4ad7-4c97-b51f-061b2affe944" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingingPlatformGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalLevel1/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialPannelOpener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialPannelOpener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 0.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +122,7 @@
       <workItem from="1680318523520" duration="3356000" />
       <workItem from="1680579960735" duration="1982000" />
       <workItem from="1681088279679" duration="2722000" />
-      <workItem from="1682108973391" duration="1306000" />
+      <workItem from="1682108973391" duration="2519000" />
     </task>
     <servers />
   </component>
