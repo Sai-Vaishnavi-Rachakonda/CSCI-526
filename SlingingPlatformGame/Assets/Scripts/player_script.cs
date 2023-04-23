@@ -296,6 +296,34 @@ public class player_script : MonoBehaviour
             
          }
 
+         else if(sceneName == "FinalTutorialEnemyKilling")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 4";
+            }
+            maxScore = 7;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
+            
+            
+         }
+
         //Temp level
         else if(sceneName=="Level 6"){
             if(levelText!=null)
