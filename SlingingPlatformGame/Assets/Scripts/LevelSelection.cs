@@ -29,37 +29,68 @@ public class LevelSelection : MonoBehaviour
     public void selectLevel(){
        switch(this.gameObject.name.ToString())
        {
-            case "level0":
+            case "Level1":
                 UnityEngine.Debug.Log("Level1");
                 SceneManager.LoadScene("FinalLevel1");
                 Buttonscript.timePerParse = Stopwatch.StartNew();
                 Buttonscript.dbObj.setLevel(0);
                 break;
-            case "level1":
+            case "Level2":
+                    UnityEngine.Debug.Log("Level1");
                     this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
                     SceneManager.LoadScene("FinalLevel2"); 
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(1);
                 break;
-            case "level2":
+            case "Level3a":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("finalLevel3");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(2);
                 break;
-            case "level3":
+            case "Level3b":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("finalLevel4");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(3);
                 break;
-            case "level4":
+            case "Level4":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("finalLevel5");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
                     Buttonscript.dbObj.setLevel(4);
                 break;
-            case "level5":
+            case "Level5":
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("FinalLevel6");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(5);
+                break;
+            case "Level6a":
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("FinalLevel6");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(5);
+                break;
+            case "Level6b":
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("FinalLevel6");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(5);
+                break;
+            case "Level7":
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("FinalLevel6");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(5);
+                break;
+            case "Level8a":
+                    // Debug.Log("Level3");
+                    SceneManager.LoadScene("FinalLevel6");
+                    Buttonscript.timePerParse = Stopwatch.StartNew();
+                    Buttonscript.dbObj.setLevel(5);
+                break;
+            case "Level8b":
                     // Debug.Log("Level3");
                     SceneManager.LoadScene("FinalLevel6");
                     Buttonscript.timePerParse = Stopwatch.StartNew();
@@ -68,44 +99,6 @@ public class LevelSelection : MonoBehaviour
        }
     }
 
-    public void selectTutorial(){
-        UnityEngine.Debug.Log(this.gameObject.name.ToString());
-       switch(this.gameObject.name.ToString())
-       {
-            case "tLevel0":
-                UnityEngine.Debug.Log("Level1");
-                SceneManager.LoadScene("Level 0");
-                Buttonscript.timePerParse = Stopwatch.StartNew();
-                Buttonscript.dbObj.setLevel(0);
-                break;
-            case "tLevel1":
-                    this.gameObject.GetComponent<Image>().color = new Color(255,255,255);
-                    SceneManager.LoadScene("Level 1"); 
-                    Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(1);
-
-                break;
-            case "tLevel2":
-                    // Debug.Log("Level3");
-                    SceneManager.LoadScene("Level 2");
-                    Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
-                break;
-            
-            case "tLevel3":
-                    // Debug.Log("Level3");
-                    SceneManager.LoadScene("Level 3");
-                    Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
-                break;
-            case "tLevel4":
-                    // Debug.Log("Level3");
-                    SceneManager.LoadScene("Level 4");
-                    Buttonscript.timePerParse = Stopwatch.StartNew();
-                    Buttonscript.dbObj.setLevel(2);
-                break;
-       }
-    }
 
     // public static void updateLevel(int level){
 
