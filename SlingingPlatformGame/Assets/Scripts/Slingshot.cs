@@ -39,6 +39,7 @@ public class Slingshot : MonoBehaviour
     public float targetTimeAfterPlatformIsOver=45f,waitForMessage=2f;
     public static long timeLine;
     public TextMeshProUGUI Timer;
+    public int bombsCount = 0;
 
 
     LineRenderer lineRenderer;  //LineRenderer for projectile trajectory prediction
@@ -58,6 +59,11 @@ public class Slingshot : MonoBehaviour
             {
                 Pannel.SetActive(false);
             }
+        }
+
+        if (SceneManager.GetActiveScene().name == "FinalLevel1")
+        {
+            remainingPlatforms = new ArrayList {"default"};
         }
 
         if (SceneManager.GetActiveScene().name == "Level 3")
@@ -99,48 +105,68 @@ public class Slingshot : MonoBehaviour
 
     void CreatePlatform()
     {
-        if (!remainingPlatforms.Contains(selectedPlatform))
-        {
-            if (remainingPlatforms.Count != 0) {
-                selectedPlatform = (string)remainingPlatforms[0];
+        // Debug.Log("lets "+selectedPlatform);
+        Debug.Log("remainingPlatforms: "+string.Join(" ", remainingPlatforms.ToArray()));
+        if(selectedPlatform == "bomb" && bombsCount > 0) {
+            platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+        }
+        else {
+            if (!remainingPlatforms.Contains(selectedPlatform))
+            {
+                if (remainingPlatforms.Count != 0) {
+                    selectedPlatform = (string)remainingPlatforms[0];
+                }
+                else {
+                    selectedPlatform = "";
+                }
             }
-            else {
-                selectedPlatform = "";
+            switch (selectedPlatform)
+            {
+                
+                case "default":
+                {
+                    platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
+                    break;
+                }
+            
+                case "ice":
+                {
+                    platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
+                    break;
+                }
+            
+                // case "bounce":
+                // {
+                //     platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
+                //     break;
+                // }
+                // case "bomb":
+                // {
+                //     platform = Instantiate(platformPrefab[3]).GetComponent<Rigidbody2D>();
+                //     break;
+                // }
+                default:
+                {
+                    platform = null;
+                    break;
+                }
             }
         }
-        switch (selectedPlatform)
-        {
-            case "default":
-            {
-                platform = Instantiate(platformPrefab[0]).GetComponent<Rigidbody2D>();
-                break;
-            }
-        
-            case "ice":
-            {
-                platform = Instantiate(platformPrefab[1]).GetComponent<Rigidbody2D>();
-                break;
-            }
-        
-            case "weightedPlatform":
-            {
-                platform = Instantiate(platformPrefab[2]).GetComponent<Rigidbody2D>();
-                break;
-            }
-            default:
-            {
-                platform = null;
-                break;
-            }
-        }
+
         //var platformPrefabLen = platformPrefab.Length;
         //platform = Instantiate(platformPrefab[UnityEngine.Random.Range(0,platformPrefabLen)]).GetComponent<Rigidbody2D>();
         if(platform) {
             platformCollider = platform.GetComponent<Collider2D>();
-            platformCollider.enabled = false;
+            if (platformCollider && selectedPlatform=="bomb")
+            {
+                platformCollider.enabled = true;  // @author: Chirag
+            }else if(platformCollider){
+                platformCollider.enabled = false;  // @author: Chirag
+            }
 
             platform.isKinematic = true;
         }
+        
 
         ResetStrips();
     }
@@ -148,6 +174,7 @@ public class Slingshot : MonoBehaviour
     void Update()
     {
         // @author: Chirag
+
         lineRenderers[0].SetPosition(0,new Vector3(center.position.x+0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[1].SetPosition(0,new Vector3(center.position.x-0.4f,center.position.y-0.06f,center.position.z));
         lineRenderers[0].SetPosition(1,idlePosition.position);
@@ -175,6 +202,8 @@ public class Slingshot : MonoBehaviour
 
         if (isMouseDown)
         {
+
+            //Strip issue is coming due to this code
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 10;
 
@@ -184,10 +213,17 @@ public class Slingshot : MonoBehaviour
 
             currentPosition = ClampBoundary(currentPosition);
 
+        
+            // Debug.Log("Current: "+currentPosition);
+            // Debug.Log("Mouse: "+mousePosition);
+            // Debug.Log("Max: "+maxLength);
+
             SetStrips(currentPosition);
 
-            if (platformCollider)
+            if (platformCollider && selectedPlatform=="bomb")
             {
+                platformCollider.enabled = true;  // @author: Chirag
+            }else if(platformCollider){
                 platformCollider.enabled = false;  // @author: Chirag
             }
 
@@ -285,7 +321,6 @@ public class Slingshot : MonoBehaviour
             platform.isKinematic = false;
             Vector3 platformForce = (currentPosition - center.position) * force * -1;
             platform.velocity = platformForce;    
-
             platform.GetComponent<Platform>().Release(selectedPlatform);
 
             platform = null;
@@ -299,6 +334,10 @@ public class Slingshot : MonoBehaviour
                 GameObject parentObject = deckObj.transform.Find(selectedPlatform).gameObject;
                 Deck scriptObj = parentObject.GetComponent<Deck>();
                 scriptObj.DecreaseCount();
+            }
+            if(selectedPlatform == "bomb"){
+                bombsCount -= 1;
+                selectedPlatform = "";
             }
         }
     }
@@ -324,6 +363,7 @@ public class Slingshot : MonoBehaviour
 
     Vector3 ClampBoundary(Vector3 vector)
     {
+        bottomBoundary = -100000000000000; //temporarty CHANGE
         vector.y = Mathf.Clamp(vector.y, bottomBoundary, 1000);
         
         return vector;

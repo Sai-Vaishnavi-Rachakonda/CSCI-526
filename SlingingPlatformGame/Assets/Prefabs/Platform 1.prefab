@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7318848877859278332}
   - component: {fileID: 8892281177357756097}
   - component: {fileID: -7920045871850950596}
+  - component: {fileID: 6724179775065007627}
   m_Layer: 0
   m_Name: Platform 1
   m_TagString: Ground
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9208262240435130192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: -4.558304, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 3.25, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c4808a442c4429146b8036a0ed4b9f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: d919a4638f2db4fc5b12ae0632975e46, type: 3}
-  m_Color: {r: 0.09251513, g: 0.78727144, b: 0.9339623, a: 1}
+  m_Color: {r: 0.49777502, g: 0.8195325, b: 0.8867924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00324893, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96751165, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7318848877859278332
 MonoBehaviour:
@@ -129,6 +130,7 @@ MonoBehaviour:
   collided: 0
   platformShape: {fileID: 8892281177357756097}
   timer: 0
+  oldTimer: 0
 --- !u!50 &8892281177357756097
 Rigidbody2D:
   serializedVersion: 4
@@ -163,3 +165,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 10
+--- !u!114 &6724179775065007627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208262240435130192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee428ab424ca34310a6dcc2a5ccb81e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []

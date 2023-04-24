@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 47d234b6593cc064dbfdbf19b8edfa87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,9 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadd6e25e991c1c4cb4d7adb18e173f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collided: 0
+  collided: 1
   platformShape: {fileID: 3576949679068175739, guid: 261db434922dc4ae9bcd6a0bda36a143, type: 3}
   timer: 0
+  oldTimer: 0
 --- !u!50 &-6665534934248732921
 Rigidbody2D:
   serializedVersion: 4

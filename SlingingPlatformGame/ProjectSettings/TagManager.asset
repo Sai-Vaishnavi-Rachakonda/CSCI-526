@@ -15,6 +15,17 @@ TagManager:
   - door color
   - default-powerup
   - ice-powerup
+  - Enemy
+  - bomb
+  - Cage
+  - WeightedPulley
+  - Bomb
+  - bounce-powerup
+  - powerUpShield
+  - shieldIndication
+  - bounceIndication
+  - zoomIndication
+  - powerUpZoom
   layers:
   - Default
   - TransparentFX

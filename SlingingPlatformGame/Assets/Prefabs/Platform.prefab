@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9208262240435130028}
   - component: {fileID: 7318848877859278332}
   - component: {fileID: 3576949679068175739}
+  - component: {fileID: 1779146130041836082}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Ground
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 47d234b6593cc064dbfdbf19b8edfa87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000059604645, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9720613, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7318848877859278332
 MonoBehaviour:
@@ -128,6 +129,7 @@ MonoBehaviour:
   collided: 0
   platformShape: {fileID: 3576949679068175739}
   timer: 0
+  oldTimer: 0
 --- !u!50 &3576949679068175739
 Rigidbody2D:
   serializedVersion: 4
@@ -149,3 +151,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1779146130041836082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208262240435130192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee428ab424ca34310a6dcc2a5ccb81e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []

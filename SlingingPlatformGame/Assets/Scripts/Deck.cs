@@ -13,6 +13,7 @@ public class Deck : MonoBehaviour
     public TextMeshProUGUI countVal;
     public Animator animator;
     
+    public CameraScript cs;
 
 
     void Start()
@@ -20,11 +21,26 @@ public class Deck : MonoBehaviour
         GameObject slingshotObj = GameObject.Find("Slingshot");
         script = slingshotObj.GetComponent<Slingshot>();
         if(countVal != null){
-           countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 4";
+            if(counter==-1){
+                countVal.text =  "Unlock in Level 4";
+            }
+            else if(counter==-2){
+                countVal.text =  "Unlock in Level 6";
+            }
+            else{
+                countVal.text = counter.ToString();
+            }
+
+        //    countVal.text =  counter >-1? counter.ToString(): "Unlock in Level 4";
         }
+        Debug.Log("platform: " + platformType + "counter: " + counter);
         if(counter <=0 ){
             script.StopPlatform(platformType);
-        } else {
+        }
+        else if(platformType == "bomb"){
+            script.bombsCount = counter;
+        }
+        else {
             script.AddPlatform(platformType);
         }
 
@@ -44,7 +60,6 @@ public class Deck : MonoBehaviour
     // }
 
     void ColorChange(){
-        Debug.Log("updating color");
         if(counter == 0) {
             countVal.color = Color.red;
         } else {
@@ -53,9 +68,15 @@ public class Deck : MonoBehaviour
     }
 
     public void checking(){
-        if(counter > 0)
+        if(platformType=="zoom"){
+            cs.zoomSelected();
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
+        }
+        else if(counter > 0)
         {   
-            Debug.Log(platformType.ToString());
             script.selectedPlatform = platformType;
             script.CreatePlatformFromIndex();
         }
