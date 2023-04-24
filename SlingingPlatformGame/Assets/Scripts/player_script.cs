@@ -356,6 +356,7 @@ public class player_script : MonoBehaviour
             
             
          }
+         
 
          else if(sceneName == "FinalLevel8a")
          {
@@ -411,6 +412,58 @@ public class player_script : MonoBehaviour
             }
             
             
+         }
+
+         else if(sceneName == "FinalLevel6a")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 6A";
+            }
+            maxScore = 6;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
+         }
+
+         else if(sceneName == "FinalLevel6b")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 6B";
+            }
+            maxScore = 3;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+
+            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+            if(zoom){
+                zoom.SetActive(false); 
+            }
          }
 
         //Temp level
