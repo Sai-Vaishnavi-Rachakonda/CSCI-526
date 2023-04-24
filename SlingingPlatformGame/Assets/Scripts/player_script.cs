@@ -550,6 +550,7 @@ public class player_script : MonoBehaviour
         if(collision.CompareTag("powerUpShield")){
             
             //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
                 if(collision.gameObject.name == ShieldPwrToRespawn[i].name) {
                     ShieldPwrToRespawn[i].SetActive(false);
@@ -596,6 +597,7 @@ public class player_script : MonoBehaviour
     IEnumerator RespawnPowerUpShield() {
         // Wait for 15 seconds
         yield return new WaitForSeconds(15);
+
         // Reset the positions of the objects to their original positions and set them active again
         for (int i = 0; i < ShieldPwrToRespawn.Count; i++) {
             if (isShieldPwrRespawning[i]) {
