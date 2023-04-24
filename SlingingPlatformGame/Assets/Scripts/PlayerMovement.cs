@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
             //     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
             // }
             
-            if(SceneManager.GetActiveScene().name=="FinalLevel4"){
+            if(SceneManager.GetActiveScene().name=="FinalLevel5"){
                 if(transform.position.x>=95){
                     Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y - Time.deltaTime*diff*6, Camera.transform.position.z);
                 }
