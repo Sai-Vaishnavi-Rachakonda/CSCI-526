@@ -11,7 +11,7 @@ public class CameraScript : MonoBehaviour
     private float zoomOut = 13;
     private const float zoomIn=8.634074f; // Const do not change it
     private  float zoomTimeLeft=0f;
-    private const float zoomTime = 5f;
+    private const float zoomTime = 15f;
 
 
     void Start()
