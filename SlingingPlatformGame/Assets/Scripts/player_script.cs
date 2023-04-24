@@ -100,7 +100,29 @@ public class player_script : MonoBehaviour
              }
             
          }
-         // For level 2 - Shreeya
+         else if(sceneName == "FinalLevel3a")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 3A";
+            }
+             maxScore = 3;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+
+             //Bounce
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+            
+         }
          else if(sceneName == "FinalLevel3b")
          {
 
@@ -166,9 +188,30 @@ public class player_script : MonoBehaviour
         else if(sceneName == "FinalLevel1")
          {
             if (levelText != null){
-                levelText.text = "Level: 3";
+                levelText.text = "Level: 1";
             }
-            maxScore = 4;
+            maxScore = 2;
+            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+            if (scoreText != null){
+                scoreText.text = ScoreNum + "/" + maxScore;
+            }
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+
+            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+            
+         }
+         else if(sceneName == "FinalLevel2")
+         {
+            if (levelText != null){
+                levelText.text = "Level: 2";
+            }
+            maxScore = 2;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;

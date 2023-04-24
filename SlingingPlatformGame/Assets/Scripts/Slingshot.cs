@@ -66,9 +66,10 @@ public class Slingshot : MonoBehaviour
             remainingPlatforms = new ArrayList {"default"};
         }
 
-        if (SceneManager.GetActiveScene().name == "Level 3")
+        if (SceneManager.GetActiveScene().name == "FinalLevel2")
         {
             selectedPlatform = "ice";
+            remainingPlatforms = new ArrayList {"ice"};
         }
 
         CreatePlatform();
