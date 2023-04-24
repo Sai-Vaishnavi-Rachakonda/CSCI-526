@@ -127,9 +127,55 @@ public class player_script : MonoBehaviour
          {
 
             if (levelText != null){
-                levelText.text = "Level: 2";
+                levelText.text = "Level: 3B";
             }
-             maxScore = 3;
+             maxScore = 2;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+
+             //Bounce
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+            
+         }
+         else if(sceneName == "FinalLevel5")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 5";
+            }
+             maxScore = 5;
+             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+             if (scoreText != null){
+                 scoreText.text = ScoreNum + "/" + maxScore;
+             }
+
+             //Bounce
+             GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+            if(bounce){
+                bounce.SetActive(false); 
+            }
+             GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+            if(shield){
+                shield.SetActive(false); 
+            }
+            
+         }
+         else if(sceneName == "FinalLevel7")
+         {
+
+            if (levelText != null){
+                levelText.text = "Level: 7";
+            }
+             maxScore = 2;
              // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
              if (scoreText != null){
                  scoreText.text = ScoreNum + "/" + maxScore;
