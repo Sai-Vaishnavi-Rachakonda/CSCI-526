@@ -101,7 +101,7 @@ public class player_script : MonoBehaviour
             
          }
          // For level 2 - Shreeya
-         else if(sceneName == "FinalLevel2")
+         else if(sceneName == "FinalLevel3b")
          {
 
             if (levelText != null){
@@ -211,36 +211,36 @@ public class player_script : MonoBehaviour
             }
             
          }
+        //OLDDDDD
+        //  else if(sceneName == "FinalLevel4")
+        //  {
+        //     if (levelText != null){
+        //         levelText.text = "Level: 4";
+        //     }
+        //     maxScore = 5;
+        //     // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
+        //     if (scoreText != null){
+        //         scoreText.text = ScoreNum + "/" + maxScore;
+        //     }
+        //     GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
+        //     if(bounce){
+        //         bounce.SetActive(false); 
+        //     }
 
-         else if(sceneName == "FinalLevel4")
-         {
-            if (levelText != null){
-                levelText.text = "Level: 4";
-            }
-            maxScore = 5;
-            // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
-            if (scoreText != null){
-                scoreText.text = ScoreNum + "/" + maxScore;
-            }
-            GameObject bounce = GameObject.FindGameObjectWithTag("bounceIndication");
-            if(bounce){
-                bounce.SetActive(false); 
-            }
+        //     GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
+        //     if(shield){
+        //         shield.SetActive(false); 
+        //     }
 
-            GameObject shield = GameObject.FindGameObjectWithTag("shieldIndication");
-            if(shield){
-                shield.SetActive(false); 
-            }
-
-            GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
-            if(zoom){
-                zoom.SetActive(false); 
-            }
+        //     GameObject zoom = GameObject.FindGameObjectWithTag("zoomIndication");
+        //     if(zoom){
+        //         zoom.SetActive(false); 
+        //     }
             
-         }
+        //  }
 
 
-         else if(sceneName == "FinalLevel5")
+         else if(sceneName == "FinalLevel8b")
          {
             if (levelText != null){
                 levelText.text = "Level: 5";
@@ -268,7 +268,7 @@ public class player_script : MonoBehaviour
             
          }
 
-         else if(sceneName == "FinalLevel6")
+         else if(sceneName == "FinalLevel8a")
          {
             if (levelText != null){
                 levelText.text = "Level: 6";
@@ -296,7 +296,7 @@ public class player_script : MonoBehaviour
             
          }
 
-         else if(sceneName == "FinalTutorialEnemyKilling")
+         else if(sceneName == "FinalLevel4")
          {
             if (levelText != null){
                 levelText.text = "Level: 4";

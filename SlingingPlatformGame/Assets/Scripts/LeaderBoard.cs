@@ -55,7 +55,7 @@ public class LeaderBoard : MonoBehaviour
         int sameLevel = Buttonscript.dbObj.level;
         nextScene = "FinalLevel"+sameLevel.ToString();
         // Debug.Log("Level andawnd"+nextScene);
-        if (nextScene == "FinalLevel6"){
+        if (nextScene == "FinalLevel8b"){
             // Debug.Log("just checking......................");
             buttonToRemove.gameObject.SetActive(false);
         }
