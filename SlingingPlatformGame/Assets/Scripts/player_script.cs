@@ -41,7 +41,7 @@ public class player_script : MonoBehaviour
             if (levelText != null){
                 levelText.text = "Level: 1";
             }
-            maxScore = 1;
+            maxScore = 2;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
             if (scoreText != null){
                 scoreText.text = ScoreNum + "/" + maxScore;
@@ -166,7 +166,7 @@ public class player_script : MonoBehaviour
         else if(sceneName == "FinalLevel1")
          {
             if (levelText != null){
-                levelText.text = "Level: 1";
+                levelText.text = "Level: 3";
             }
             maxScore = 4;
             // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
