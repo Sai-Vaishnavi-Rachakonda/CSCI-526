@@ -85,8 +85,45 @@ public class LeaderBoard : MonoBehaviour
 
     public void continueLevel(){
         // Debug.Log(Buttonscript.dbObj.level);
-        int newLevel = Buttonscript.dbObj.level + 1;
-        nextScene = "FinalLevel"+newLevel.ToString();
+        UnityEngine.Debug.Log(Buttonscript.dbObj.level);
+        int newLevel = Buttonscript.dbObj.level;
+        // UnityEngine.Debug.Log("checking what is happpening here "+ newLevel);
+        switch(newLevel){
+            case 1:
+                nextScene = "FinalLevel1";
+                break;
+            case 2:
+                nextScene = "FinalLevel2";
+                break;
+            case 3:
+                nextScene = "FinalLevel3a";
+                break;
+            case 4:
+                nextScene = "FinalLevel3b";
+                break;
+            case 5:
+                nextScene = "FinalLevel4";
+                break;
+            case 6:
+                nextScene = "FinalLevel5";
+                break;
+            case 7:
+                nextScene = "FinalLevel6a";
+                break;
+            case 8:
+                nextScene = "FinalLevel6b";
+                break;
+            case 9:
+                nextScene = "FinalLevel7";
+                break;
+            case 10:
+                nextScene = "FinalLevel8a";
+                break;
+            case 11:
+                nextScene = "FinalLevel8b";
+                break;
+        }
+        // nextScene = "FinalLevel"+newLevel.ToString();
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
         Buttonscript.timePerParse.Reset();
