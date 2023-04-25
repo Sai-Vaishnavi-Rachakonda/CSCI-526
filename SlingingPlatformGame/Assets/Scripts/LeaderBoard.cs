@@ -53,7 +53,7 @@ public class LeaderBoard : MonoBehaviour
     void Update()
     {
         int sameLevel = Buttonscript.dbObj.level;
-        nextScene = "FinalLevel"+sameLevel.ToString();
+        nextScene = switchcase(sameLevel);
         // Debug.Log("Level andawnd"+nextScene);
         if (nextScene == "FinalLevel8b"){
             // Debug.Log("just checking......................");
@@ -85,8 +85,10 @@ public class LeaderBoard : MonoBehaviour
 
     public void continueLevel(){
         // Debug.Log(Buttonscript.dbObj.level);
-        int newLevel = Buttonscript.dbObj.level + 1;
-        nextScene = "FinalLevel"+newLevel.ToString();
+        UnityEngine.Debug.Log(Buttonscript.dbObj.level);
+        int newLevel = Buttonscript.dbObj.level+1;
+        Buttonscript.dbObj.setLevel(newLevel);
+        nextScene = switchcase(newLevel);
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
         Buttonscript.timePerParse.Reset();
@@ -102,9 +104,50 @@ public class LeaderBoard : MonoBehaviour
     public void replayLevel(){
         // Debug.Log(Buttonscript.dbObj.level);
         int sameLevel = Buttonscript.dbObj.level;
-        nextScene = "FinalLevel"+sameLevel.ToString();
+        Debug.Log("Replay checcking the replay button" + sameLevel.ToString());
+        nextScene = switchcase(sameLevel);
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
+    }
+
+    public string switchcase(int level){
+        string nextScene = "";
+        switch(level){
+            case 1:
+                nextScene = "FinalLevel1";
+                break;
+            case 2:
+                nextScene = "FinalLevel2";
+                break;
+            case 3:
+                nextScene = "FinalLevel3a";
+                break;
+            case 4:
+                nextScene = "FinalLevel3b";
+                break;
+            case 5:
+                nextScene = "FinalLevel4";
+                break;
+            case 6:
+                nextScene = "FinalLevel5";
+                break;
+            case 7:
+                nextScene = "FinalLevel6a";
+                break;
+            case 8:
+                nextScene = "FinalLevel6b";
+                break;
+            case 9:
+                nextScene = "FinalLevel7";
+                break;
+            case 10:
+                nextScene = "FinalLevel8a";
+                break;
+            case 11:
+                nextScene = "FinalLevel8b";
+                break;
+        }
+        return nextScene;
     }
 
 }

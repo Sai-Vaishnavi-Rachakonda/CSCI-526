@@ -301,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Testing features
-        else if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("bomb")){
+        else if (other.gameObject.CompareTag("Enemy")){
             if(transform.position.y>other.gameObject.transform.position.y){
                 Destroy(other.gameObject);
             }else if(!ps.shieldBoolean){
@@ -335,7 +335,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("bounce-powerup"))
         {
-            //Destroy(other.gameObject);
+            // Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             for (int i = 0; i < BounceToRespawn.Count; i++) {
                 if(other.gameObject.name == BounceToRespawn[i].name) {
                     BounceToRespawn[i].SetActive(false);
@@ -359,6 +360,7 @@ public class PlayerMovement : MonoBehaviour
         // Wait for 15 seconds
         yield return new WaitForSeconds(15);
         // Reset the positions of the objects to their original positions and set them active again
+        Debug.Log("Are we here?");
         for (int i = 0; i < BounceToRespawn.Count; i++) {
             if (isBounceRespawning[i]) {
                 isBounceRespawning[i] = false;
