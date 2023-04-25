@@ -301,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Testing features
-        else if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("bomb")){
+        else if (other.gameObject.CompareTag("Enemy")){
             if(transform.position.y>other.gameObject.transform.position.y){
                 Destroy(other.gameObject);
             }else if(!ps.shieldBoolean){
