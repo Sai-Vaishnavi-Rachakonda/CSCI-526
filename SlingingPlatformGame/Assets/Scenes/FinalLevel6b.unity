@@ -836,6 +836,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 261db434922dc4ae9bcd6a0bda36a143, type: 3}
+--- !u!95 &118117981 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8546270289387409, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+  m_PrefabInstance: {fileID: 1525126659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &118117982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6573885209849897973, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+  m_PrefabInstance: {fileID: 1525126659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &119954368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1520,7 +1536,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.95
+  m_fontSize: 11.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2819,22 +2835,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825b220e5da6f4040a9671b30e377d78, type: 3}
---- !u!95 &726154286 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5404579508460013755, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
-  m_PrefabInstance: {fileID: 1525126659}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &726154289 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6573885211047810953, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
-  m_PrefabInstance: {fileID: 1525126659}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &744161368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.1
+  m_fontSize: 21.4
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7188,7 +7188,7 @@ PrefabInstance:
       objectReference: {fileID: 1185525056}
     - target: {fileID: 7372079117296790797, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.99996185
+      value: 0.9999695
       objectReference: {fileID: 0}
     - target: {fileID: 7372079117296790797, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7285,11 +7285,11 @@ PrefabInstance:
     - target: {fileID: 8960247085865233162, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 726154286}
+      objectReference: {fileID: 118117981}
     - target: {fileID: 8960247085865233162, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: countVal
       value: 
-      objectReference: {fileID: 726154289}
+      objectReference: {fileID: 118117982}
     - target: {fileID: 8960247085865233162, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: platformType
       value: ice
