@@ -55,21 +55,21 @@ public class FinishLine : MonoBehaviour
             // if (player_script.ScoreNum >= score)
             if(player_script.ScoreNum ==  player_script.maxScore)
             {
-                if(levelType == "real"){
+                // if(levelType == "real"){
                     SceneManager.LoadScene("leaderBoard"); 
-                }else{
-                    SceneManager.LoadScene(nextScene);
-                    Buttonscript.timePerParse.Reset();
-                    Buttonscript.dbObj.resetPlatformCords();
-                    Buttonscript.dbObj.resetPlatformCount();
-                    Buttonscript.dbObj.resetPlatformShoot();
-                    Buttonscript.dbObj.resetOrbsCollected();
-                    Buttonscript.dbObj.resetreasonOfLevelEnd();
-                    Buttonscript.dbObj.resetCheckpoint();
-                    Buttonscript.timePerParse.Start();
-                }
+                // }else{
+                //     SceneManager.LoadScene(nextScene);
+                //     Buttonscript.timePerParse.Reset();
+                //     Buttonscript.dbObj.resetPlatformCords();
+                //     Buttonscript.dbObj.resetPlatformCount();
+                //     Buttonscript.dbObj.resetPlatformShoot();
+                //     Buttonscript.dbObj.resetOrbsCollected();
+                //     Buttonscript.dbObj.resetreasonOfLevelEnd();
+                //     Buttonscript.dbObj.resetCheckpoint();
+                //     Buttonscript.timePerParse.Start();
+                // }
                 int level = Buttonscript.dbObj.level;
-                Buttonscript.dbObj.setLevel(++level);
+                // Debug.Log("We are checking what the level is" + Buttonscript.dbObj.level.ToString());
             }
             else
             {
