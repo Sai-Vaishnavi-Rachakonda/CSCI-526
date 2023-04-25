@@ -86,9 +86,33 @@ public class LeaderBoard : MonoBehaviour
     public void continueLevel(){
         // Debug.Log(Buttonscript.dbObj.level);
         UnityEngine.Debug.Log(Buttonscript.dbObj.level);
-        int newLevel = Buttonscript.dbObj.level;
-        // UnityEngine.Debug.Log("checking what is happpening here "+ newLevel);
-        switch(newLevel){
+        int newLevel = Buttonscript.dbObj.level+1;
+        Buttonscript.dbObj.setLevel(newLevel);
+        nextScene = switchcase(newLevel);
+        Debug.Log(nextScene);
+        SceneManager.LoadScene(nextScene);
+        Buttonscript.timePerParse.Reset();
+        Buttonscript.dbObj.resetPlatformCords();
+        Buttonscript.dbObj.resetPlatformCount();
+        Buttonscript.dbObj.resetPlatformShoot();
+        Buttonscript.dbObj.resetOrbsCollected();
+        Buttonscript.dbObj.resetreasonOfLevelEnd();
+        Buttonscript.dbObj.resetCheckpoint();
+        Buttonscript.timePerParse.Start();
+    }
+
+    public void replayLevel(){
+        // Debug.Log(Buttonscript.dbObj.level);
+        int sameLevel = Buttonscript.dbObj.level;
+        Debug.Log("Replay checcking the replay button" + sameLevel.ToString());
+        nextScene = switchcase(sameLevel);
+        Debug.Log(nextScene);
+        SceneManager.LoadScene(nextScene);
+    }
+
+    public string switchcase(int level){
+        string nextScene = "";
+        switch(level){
             case 1:
                 nextScene = "FinalLevel1";
                 break;
@@ -123,25 +147,7 @@ public class LeaderBoard : MonoBehaviour
                 nextScene = "FinalLevel8b";
                 break;
         }
-        // nextScene = "FinalLevel"+newLevel.ToString();
-        Debug.Log(nextScene);
-        SceneManager.LoadScene(nextScene);
-        Buttonscript.timePerParse.Reset();
-        Buttonscript.dbObj.resetPlatformCords();
-        Buttonscript.dbObj.resetPlatformCount();
-        Buttonscript.dbObj.resetPlatformShoot();
-        Buttonscript.dbObj.resetOrbsCollected();
-        Buttonscript.dbObj.resetreasonOfLevelEnd();
-        Buttonscript.dbObj.resetCheckpoint();
-        Buttonscript.timePerParse.Start();
-    }
-
-    public void replayLevel(){
-        // Debug.Log(Buttonscript.dbObj.level);
-        int sameLevel = Buttonscript.dbObj.level;
-        nextScene = "FinalLevel"+sameLevel.ToString();
-        Debug.Log(nextScene);
-        SceneManager.LoadScene(nextScene);
+        return nextScene;
     }
 
 }
