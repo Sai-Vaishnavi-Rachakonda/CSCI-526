@@ -129,7 +129,7 @@ public class player_script : MonoBehaviour
             if (levelText != null){
                 levelText.text = "Level: 3B";
             }
-             maxScore = 2;
+             maxScore = 3;
              // MyscoreText.text = "Keys Collected : " + ScoreNum + "/" + maxScore;
              if (scoreText != null){
                  scoreText.text = ScoreNum + "/" + maxScore;
