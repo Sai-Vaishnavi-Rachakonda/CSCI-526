@@ -164,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09023106, y: 0.06246389}
   m_AnchorMax: {x: 0.51814574, y: 0.132}
-  m_AnchoredPosition: {x: 2.5741005, y: 0.000015258789}
+  m_AnchoredPosition: {x: 2.5741043, y: 0}
   m_SizeDelta: {x: 2.3134, y: -0.000019073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21428804
@@ -542,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.164, y: 0.2262478}
   m_AnchorMax: {x: 0.85200006, y: 0.8285045}
-  m_AnchoredPosition: {x: -0.74389267, y: -0.21299696}
+  m_AnchoredPosition: {x: -0.74389267, y: -0.21299744}
   m_SizeDelta: {x: 2.4729004, y: 0.6330004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51281774
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.4
+  m_fontSize: 22.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2649,7 +2649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_text
-      value: Bombs kill enemy
+      value: Bomb kills enemy!
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_margin.w
@@ -3323,7 +3323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move the cage by killing enemy
+  m_text: Kill enemy to unlock cage.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
