@@ -53,7 +53,7 @@ public class LeaderBoard : MonoBehaviour
     void Update()
     {
         int sameLevel = Buttonscript.dbObj.level;
-        nextScene = "FinalLevel"+sameLevel.ToString();
+        nextScene = switchcase(sameLevel);
         // Debug.Log("Level andawnd"+nextScene);
         if (nextScene == "FinalLevel8b"){
             // Debug.Log("just checking......................");
