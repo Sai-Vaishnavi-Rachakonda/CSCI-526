@@ -3297,9 +3297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_text
-      value: 'New PowerUp!
-
-        Collect this orb to jump higher!'
+      value: Avoid Spikes!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_margin.w
+      value: 11.385479
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_margin.y
+      value: 7.790039
       objectReference: {fileID: 0}
     - target: {fileID: 6573885209228321283, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Pivot.x
@@ -3599,11 +3605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.31300002
+      value: 0.33636177
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.572
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3615,19 +3621,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.08939934
+      value: -6.9106007
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 7.2812996
+      value: 20.2813
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0083517
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5785418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0083517
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.5989838
+      value: 2.600006
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.2095947
+      value: 4.2904053
       objectReference: {fileID: 0}
     - target: {fileID: 7911377339031616663, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3644,7 +3662,7 @@ PrefabInstance:
     - target: {fileID: 9068349911492544799, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 02d37c8c898c14a4f83a5db3b3a65bd7, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e43334a7d25dd14abbde32fde5759b1, type: 3}
     - target: {fileID: 9068349911492544799, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Color.b
       value: 1

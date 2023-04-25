@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44601268, g: 0.62494797, b: 0.7225996, a: 1}
+  m_IndirectSpecularColor: {r: 0.44600135, g: 0.624972, b: 0.72263163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Follow this flag to reach\n to the next Key and Door!"
+  m_text: It points to the next key
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -830,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_text
-      value: Use the Sling and create your path to victory!!
+      value: Use the Sling to place platforms!
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_fontSize
@@ -1511,16 +1511,16 @@ RectTransform:
   m_GameObject: {fileID: 1000243640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0265002, y: 0.8725252, z: 1.0265002}
+  m_LocalScale: {x: 0.53496987, y: 2.9735715, z: 1.1262761}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 603182238}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.10033911, y: 0.554}
-  m_AnchorMax: {x: 0.36963826, y: 0.65000004}
-  m_AnchoredPosition: {x: -1.1000061, y: 0.40000153}
-  m_SizeDelta: {x: -4.320717, y: -2.1831665}
+  m_AnchorMin: {x: 0.14063825, y: 0.432}
+  m_AnchorMax: {x: 0.27736992, y: 0.68118834}
+  m_AnchoredPosition: {x: 0.5, y: -0.8000002}
+  m_SizeDelta: {x: 37.679283, y: -36.183167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000243642
 MonoBehaviour:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5da7fd36602d2d04abb4815d5d8ee7ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

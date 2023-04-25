@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09023106, y: 0.06246389}
   m_AnchorMax: {x: 0.51814574, y: 0.132}
-  m_AnchoredPosition: {x: 2.5741005, y: 0}
+  m_AnchoredPosition: {x: 2.5741043, y: 0}
   m_SizeDelta: {x: 2.3134, y: -0.000019073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21428804
@@ -737,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.164, y: 0.2262478}
   m_AnchorMax: {x: 0.85200006, y: 0.8285045}
-  m_AnchoredPosition: {x: -0.74389267, y: -0.2129972}
+  m_AnchoredPosition: {x: -0.74389267, y: -0.21299744}
   m_SizeDelta: {x: 2.4729004, y: 0.6330004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51281774
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.3
+  m_fontSize: 8.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.1
+  m_fontSize: 22.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2600,7 +2600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11044707, y: 0.5252162}
   m_AnchorMax: {x: 0.24838094, y: 0.717}
-  m_AnchoredPosition: {x: -0.789978, y: -3.603302}
+  m_AnchoredPosition: {x: 5.700012, y: -16.599998}
   m_SizeDelta: {x: -1.9790039, y: 4.794201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905663596
@@ -2623,7 +2623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f36e82ddf3d542c5aa74074c771947c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b22b6fd408c77484299eadfc66ec4c7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4522,8 +4522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_text
-      value: Bombs added! Select the bombs from the Left panel to load and then shoot
-        the enemy!
+      value: Flame Enemy!
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_margin.w
@@ -5505,7 +5504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shoot the enemy to unlock the cage to collect Key!
+  m_text: Jump on enemy to kill it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5752,7 +5751,7 @@ RectTransform:
   m_GameObject: {fileID: 1753778182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1856, y: 1.54128, z: 1.1856}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1694857166}
@@ -5760,7 +5759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11044707, y: 0.120576575}
   m_AnchorMax: {x: 0.24838094, y: 0.29700002}
-  m_AnchoredPosition: {x: -1.0202026, y: -2.2367096}
+  m_AnchoredPosition: {x: 4.800003, y: -0.90000916}
   m_SizeDelta: {x: -1.5150003, y: -2.3418999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753778184
@@ -5783,7 +5782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 752662c0b17a94d4482127847945e219, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b8d53143cd3f3b42b5ad91ad7c0feb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

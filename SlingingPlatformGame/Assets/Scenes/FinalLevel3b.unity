@@ -3378,8 +3378,32 @@ PrefabInstance:
       value: -1.619873
       objectReference: {fileID: 0}
     - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.96300006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.6933332
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.47810364
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30.910004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3302002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863084294642202534, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.776001
+      value: 2.723999
       objectReference: {fileID: 0}
     - target: {fileID: 3634232188114229662, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3431,9 +3455,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_text
-      value: 'New PowerUp!
+      value: 'Jump PowerUp!
 
-        Collect this orb to jump higher!'
+        Collect to jump higher.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_margin.w
+      value: 12.323704
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436991878948429385, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
+      propertyPath: m_margin.y
+      value: 17.505081
       objectReference: {fileID: 0}
     - target: {fileID: 6573885209228321283, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_Pivot.x
@@ -3757,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.5989838
+      value: 2.699997
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
