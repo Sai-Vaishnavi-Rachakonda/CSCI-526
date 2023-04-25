@@ -22,25 +22,40 @@ public class LeaderBoard : MonoBehaviour
         if(Buttonscript.dbObj.level != null){
 
             switch(Buttonscript.dbObj.level.ToString()){
-                case "0":
+                case "1":
                     rating(starRating.level0Star0, starRating.level0Star1, starRating.level0Star2, starRating.level0Star3);
                 break;
-                case "1":
+                case "2":
                     rating(starRating.level1Star0, starRating.level1Star1, starRating.level1Star2, starRating.level1Star3);
                 break;
-                case "2":
+                case "3":
                     rating(starRating.level2Star0, starRating.level2Star1, starRating.level2Star2, starRating.level2Star3);
                 break;
-                case "3":
+                case "4":
                     rating(starRating.level3Star0, starRating.level3Star1, starRating.level3Star2, starRating.level3Star3);
                 break;
-                case "4":
+                case "5":
                     rating(starRating.level4Star0, starRating.level4Star1, starRating.level4Star2, starRating.level4Star3);
                 break;
-                case "5":
+                case "6":
                     rating(starRating.level5Star0, starRating.level5Star1, starRating.level5Star2, starRating.level5Star3);
                 break;
 
+                case "7":
+                    rating(starRating.level6Star0, starRating.level6Star1, starRating.level6Star2, starRating.level6Star3);
+                break;
+                case "8":
+                    rating(starRating.level7Star0, starRating.level7Star1, starRating.level7Star2, starRating.level7Star3);
+                break;
+                case "9":
+                    rating(starRating.level8Star0, starRating.level8Star1, starRating.level8Star2, starRating.level8Star3);
+                break;
+                case "10":
+                    rating(starRating.level9Star0, starRating.level9Star1, starRating.level9Star2, starRating.level9Star3);
+                break;
+                case "11":
+                    rating(starRating.level10Star0, starRating.level10Star1, starRating.level10Star2, starRating.level10Star3);
+                break;
             }
 
         }
