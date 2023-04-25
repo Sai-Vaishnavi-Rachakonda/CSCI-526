@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.65
+  m_fontSize: 19.35
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3519,7 +3519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210631429463, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.01361084
+      value: -0.013671875
       objectReference: {fileID: 0}
     - target: {fileID: 6573885210631429463, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3623,7 +3623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.5989838
+      value: -2.5989685
       objectReference: {fileID: 0}
     - target: {fileID: 7605197027810746900, guid: 4b530f0a49ad240638a66b15906814ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4103,12 +4103,16 @@ PrefabInstance:
       value: 27979.336
       objectReference: {fileID: 0}
     - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
+      propertyPath: score
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: levelType
       value: real
       objectReference: {fileID: 0}
     - target: {fileID: 6233770839758449339, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: nextScene
-      value: FinalLevel4
+      value: FinalLevel3b
       objectReference: {fileID: 0}
     - target: {fileID: 8858084408783277983, guid: 75a38beae3755447b9770c03b5d688ef, type: 3}
       propertyPath: m_LocalPosition.x
